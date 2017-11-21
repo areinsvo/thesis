@@ -36,7 +36,7 @@
 \ProvidesFile{template.tex}
     [2013/04/16 v3.2013^^J%
      Template file for NDdiss2e class by Sameer Vijay and updated by Megan Patnott^^J]
-\documentclass[review,numrefs,compress]{nddiss2e}
+\documentclass[final,numrefs,compress]{nddiss2e}
                      % One of the options draft, review, final must be chosen.
                      % One of the options textrefs or numrefs should be chosen
                      % to specify if you want numerical or ``author-date''
@@ -68,6 +68,7 @@
  % \secondadvisor{ } % Second advisor, if used option ``twoadvisors''
 \department{Physics}       % Name of the department
 
+%\tracingall
 \maketitle           % The title page is created now
 
  % You must use either the \makecopyright option or the \makepublicdomain option.
@@ -104,7 +105,6 @@
 \newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
 \newcommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
 
-
  %% \renewcommand{\symbolsname}{newsymname} % Replace ``newsymname'' with
                                             % the name you want, and uncomment
                                             % The name must be in all caps,
@@ -138,10 +138,19 @@
 
 \mainmatter
 
-I like \ETmiss.
  % Place the text body here.
- \include{Introduction}
-  \include{Detector}
+ \include{Chapters/Introduction}
+ \include{Chapters/Theory}
+ \include{Chapters/LHC}
+  \include{Chapters/Detector}
+  \include{Chapters/EventReconstruction}
+  \include{Chapters/Trigger}
+  \include{Chapters/EventSelect}
+  \include{Chapters/DataAnalysis}
+  \include{Chapters/Results}
+  \include{Chapters/Conclusions}
+  
+  
  % Begin each chapter with \chapter{TITLE}. Chapter titles must be in all caps
  % and ensuring that they are is your responsibility.
 
@@ -157,7 +166,7 @@ I like \ETmiss.
 
 
 \bibliographystyle{nddiss2e}
- \bibliography{ }           % input the bib-database file name
+ \bibliography{References}           % input the bib-database file name
 
 
 \end{document}
