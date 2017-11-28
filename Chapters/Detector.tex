@@ -1,46 +1,80 @@
 \chapter{CMS DETECTOR}
 \label{chap:Detector}
 
-The CMS Detector is a multi-purpose detector designed to accurately measure the energy of all particles produced in proton-proton collisions. Figure~\ref{figCMS}  shows a schematic of the detector as a whole. Each sub-detector will be described in more detail in the following sections. Moving radially outward from the interaction point, the sub-detectors are the silicon pixel and strip tracker (Section~\ref{sec:Tracker}), the electromagnetic calorimeter (Section~\ref{sec:ECAL}), the hadron calorimeter (Section~\ref{sec:HCAL}), and the muon system (Section~\ref{sec:Muon}). For a full description of the CMS detector, see~\cite{Chatrchyan2008zzk}.
-
+The Compact Muon Solenoid (CMS) detector is a multi-purpose detector designed to accurately measure the energy of all particles produced in proton-proton collisions. Figure~\ref{fig:CMS}  shows a schematic of the detector as a whole. Each subdetector will be described in more detail in the following sections. Moving radially outward from the interaction point, the subdetectors are the silicon pixel and strip tracker (Section~\ref{sec:Tracker}), the electromagnetic calorimeter (Section~\ref{sec:ECAL}), the hadron calorimeter (Section~\ref{sec:HCAL}), and the muon system (Section~\ref{sec:Muon}). For a full description of the CMS detector, see~\cite{Chatrchyan2008zzk}. The full length of the CMS detector is 21.6 m, the diameter of the detector is 21.6 m, and the total weight is 12500 t.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{Figures/Detector/cms_labelled.pdf}
+	\includegraphics[width=0.8\textwidth]{Figures/Detector/cms_labelled.pdf}
        \caption{Schematic of the CMS detector.
 	}
-   	\label{figCMS}
+   	\label{fig:CMS}
 \end{figure}
 
-\section{Coordinate System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coordinate system}
 \label{sec:coordinates}
-The origin of the CMS detector coordinate system is located at the nominal collision point. The $z$-axis is oriented along the beam direction, with the positive $z$-axis pointing in the counter-clockwise direction when viewing the LHC from above. The $y$-axis points directly upward, and the $x$-axis points toward the center of the LHC. The $xy$-plane is referred to as the transverse plane.
+The origin of the CMS detector coordinate system is located at the nominal collision point. The $z$-axis is oriented along the beam direction, with the positive $z$-axis pointing in the counter-clockwise direction when viewing the LHC from above. The $y$-axis points vertically upward, and the $x$-axis points toward the center of the LHC. The $xy$-plane is referred to as the transverse plane.
 
-Due to the nature of particle collisions, however, Cartesian coordinates are often not the most convenient. Because protons are not elementary particles, it is actually the individual quarks or gluons within the proton that interact during the collision. This means that the collision will not be at rest in the lab frame, but will have some non-zero velocity along the $z$-axis. To deal with this it is beneficial to use coordinates that are invariant under boosts in the $z$ direction. CMS follows the particle physics convention of describing the position of a particle in terms of its transverse momentum, azimuthal angle, and pseudorapidity. The transverse momentum pt is defined as the magnitude of the momentum in the $xy$ plane. The azimuthal angle $\phi$ is defined in the transverse plane, with $\phi  = 0$ corresponding to the positive $x$-axis. Finally, the pseudorapidity is defined as $\eta = -\ln{\tan{ (\theta / 2 )} } $, where the polar angle $\theta$ is measured from the $z$-axis.
+Due to the nature of particle collisions, however, Cartesian coordinates are often not the most convenient. Because protons are not elementary particles, it is actually the individual quarks or gluons within the proton that interact during the collision. This means that the collision will not be at rest in the lab frame, but will have some non-zero velocity along the $z$-axis. To deal with this, it is beneficial to use coordinates that are invariant under boosts in the $z$ direction. CMS follows the particle physics convention of describing the position of a particle in terms of its transverse momentum, azimuthal angle, and pseudorapidity. The transverse momentum \pt is defined as the magnitude of the momentum in the $xy$ plane. The azimuthal angle $\phi$ is defined in the transverse plane, with $\phi  = 0$ corresponding to the positive $x$-axis. Finally, the pseudorapidity is defined as $\eta = -\ln{\tan{ (\theta / 2 )} } $, where the polar angle $\theta$ is measured from the $z$-axis.
 
-\section{Superconducting Solenoid}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Superconducting solenoid}
 \label{sec:magnet}
 
-One of the most important components of the CMS detector is the superconducting solenoid. The solenoid provides the bending power necessary to precisely measure the momentum of all charged particles produced in the collision. The magnet is located between the calorimeters and the muon system, is 13 m long and has an inner diameter of 6 m. It is capable of producing magnetic fields up to 4 T, although the magnet is generally operated at 3.8 T to prolong its lifetime. At full current, the magnet has a stored energy of 2.6~GJ. A 10,000 ton iron yoke made up of 5 wheels in the barrel and 6 endcap disks serves to return the magnetic flux. A detailed description of the CMS magnet can be found in~\cite{magnetTDR}.
+One of the most important components of the CMS detector is the superconducting solenoid. The solenoid provides the bending power necessary to precisely measure the momentum of all charged particles produced in the collision. The magnet is located between the calorimeters and the muon system. It is 13 m long and has an inner diameter of 6 m. It is capable of producing magnetic fields up to 4 T, although the magnet is generally operated at 3.8 T to prolong its lifetime. At full current, the magnet has a stored energy of 2.6~GJ. A 10,000 ton iron yoke made up of 5 wheels in the barrel and 6 endcap disks serves to return the magnetic flux. A detailed description of the CMS magnet can be found in~\cite{magnetTDR}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tracker}
 \label{sec:Tracker}
 
-The innermost subdetector is the silicon tracker~\cite{trackerTDR,trackerTDRAddendum}. Silicon pixel detectors are located closest to the beam pipe and provide high granularity position measurements. Just outside the pixel detectors are micro-strip detectors. The full tracking system is cylindrical in shape, comprised of a barrel and two endcaps. The tracker is 5.6 m long and has a radius of 1.2 m. In the barrel there are three layers of pixel detectors followed by ten layers of silicon strips, and in each endcap there are two pixel detectors and twelve layers of micro-strip detectors. In total, there are 66 million 150 × 100 $mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. The \pt of charged hadrons can be measured with a resolution of $1\%$ for hadrons with \pt$~<~20$~GeV. 
+The innermost subdetector is the silicon tracker~\cite{trackerTDR,trackerTDRAddendum}. The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The full tracking system is cylindrical in shape and is comprised of a barrel and two endcaps, each of which is split into layers of silicon pixel detectors and layers of silicon micro-strip detectors. In total, there are 66 million $150\times100~\mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. Figure~\ref{fig:TrackerLayout} shows a schematic drawing of the layout of the tracker subsystems. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/Detector/tracker_layout.png}
+       \caption{Schematic of the CMS tracker system. Detector modules are represented by single lines, and back-to-back modules are represented by double lines.}
+   	\label{fig:TrackerLayout}
+\end{figure}
+
+\subsection{Pixel detector}
+\label{sec:TrackerPixel}
+
+Due to the high occupancy of the tracker within 10 cm of the beam pipe, pixel detectors rather than strip detectors are used as the innermost layers of the tracker. Three barrel layers and two disks of pixel detectors in the endcap give three high-precision points for every charged particle moving away from the interaction point. The small pixel size of $150\times100~\mu$m is critical to allow for good secondary vertex reconstruction and for forming seed tracks that are used for high level triggering (see Chapter~\ref{chap:Trigger}) and for the reconstruction of charged particles in the event (see Chapter~\ref{sec:EventReconstruction}). The three barrel layers are 53 cm long and are located at mean radii of 4.4, 7.3 and 10.2 cm. The endcap modules extend radially from 6 to 15 cm in radius and are placed on each side at $z=\pm34.5$ and $z=\pm46.5$~cm. The endcaps extend the coverage of the subdetector out to $|\eta|~<~ 2.5$. 
 
 
+\subsection{Strip detectors}
+\label{sec:TrackStrip}
+
+\subsection{Tracker performance}
+\label{sec:TrackPerformance}
+For charged hadrons with transverse momentum \pt less than 20 GeV, the \pt can be measured with a resolution of $1\%$. 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Electromagnetic Calorimeter (ECAL)}
 \label{sec:ECAL}
 
 Very important. Finds photons.
 
-\section{Hadron Calorimeter (HCAL)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Hadron calorimeter (HCAL)}
 \label{sec:HCAL}
 
 brass sampling calorimeter
 
-\section{Muon System}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Muon system}
 \label{sec:Muon}
 
 The muon subsystem is located outside of the solenoid and is embedded in the return yoke for the magnetic flux. Three different types of detectors are used in the muon system: drift tube chambers (DTC) = positively charged wire within gas volume. Muon knocks electrons off atoms in the gas, which are attracted to the wire. Can determine where electrons hit and where the muon was from the wire to get 2 coordinates for its position. Barrel
