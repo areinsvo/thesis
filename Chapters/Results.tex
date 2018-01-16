@@ -1,11 +1,96 @@
 \chapter{Results and Interpretations}
 \label{chap:Results}
 
-\section{Comparing observed and expected numbers of events}
+\section{Prediction versus observation}
 \label{sec:fullCount}
+Table~\ref{tab:ExpObs} shows the expected and observed numbers of events for each bin in the signal region.
+
+
+\begin{table}[ht]
+    \caption{EXPECTED AND OBSERVED EVENTS IN THE SIGNAL REGION}
+    \centering
+    \begin{tabular}{ |c|c|c|c|c|c|}
+        \hline
+        $\ETmiss$ (GeV) & Exp. QCD & Exp. EWK &  Z$\gamma\gamma$ events  &Total exp. & Observed \\ [0.5ex]
+        \hline
+        $100 - 115$ & ${69.23}^{+20.67}_{-18.91}$ & 8.17 $\pm$2.5  & 1.30$\pm$0.65 & ${ 78.69 }^{+ 22.58 }_{- 20.98 }$ & 65  \\
+        $115 - 130$ & ${30.89}^{+14.69}_{-12.46}$ & 5.50 $\pm$1.70 & 1.14$\pm$0.57 & ${ 37.53 }^{+ 16.05 }_{- 14.04 }$ & 27 \\
+        $130 - 150$ & ${25.98}^{+15.21}_{-12.76}$ & 4.78 $\pm$1.48 & 1.12$\pm$0.56 & ${ 31.88 }^{+ 16.44 }_{- 14.20 }$ & 17 \\
+        $150 - 185$ & ${20.49}^{+11.65}_{-9.16} $ & 3.95 $\pm$1.24 & 1.32$\pm$0.66 & ${ 25.76 }^{+ 12.80 }_{- 10.59 }$ & 13 \\
+        $185 -  250$& ${8.74} ^{+12.70}_{-7.765}$ & 3.52 $\pm$1.11 & 1.28$\pm$0.64 & ${ 13.55 }^{+ 13.05 }_{- 8.31  }$ & 8  \\
+        $\geq 250$  & ${5.13} ^{+12.31}_{-5.514}$ & 2.11 $\pm$0.69 & 1.14$\pm$0.57 & ${ 8.38  }^{+ 12.48 }_{- 5.88  }$ & 10 \\
+        \hline
+    \end{tabular}
+    \label{tab:ExpObs}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Simplified Models}
 \label{sec:SimplifiedModels}
+
+Two simplified models are used in the interpretation of the results. The T5gg simplified model assumes gluino (\gluino) pair production and the T6gg model assumes squark (\squark) pair production. Example decay chains for both models are shown in Figure~\ref{fig:gluinoSquarkDecay}.
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures/Results/gluinoDecay.pdf}
+    \includegraphics[width=0.45\textwidth]{Figures/Results/squarkDecay.pdf}
+    \caption{Diagrams showing the production of signal events in the collision
+        of two protons with four momenta ${P}_{1}$ and ${P}_{2}$. In gluino
+        \gluino~pair production in the T5gg simplified model (left), the gluino
+       decays to an antiquark \antiquark, quark q, and neutralino \neutralino. In
+        squark \squark~pair production in the T6gg simplified model (right), the
+        squark decays to a quark and a neutralino. In both cases, the
+        neutralino subsequently decays to a photon $\gamma$~and a gravitino \gravitino.
+        In the diagram on the right, we do not distinguish between squarks and
+        antisquarks.}
+    \label{fig:gluinoSquarkDecay}
+\end{figure*}
+
+In both models, the lightest supersymmetric particle (LSP) is the gravitino, \gravitino, which is taken to be nearly massless. The next-to-lightest supersymmetric particle (NLSP) is the neutralino, \neutralino. The models assume 100\% branching fraction for 
+$\neutralino\rightarrow\gravitino\gamma$ and 
+$\gluino\rightarrow \mathrm{q} \antiquark \neutralino$ and 
+$\squark\rightarrow \mathrm{q} \neutralino$.
+
+In order to study the expected SUSY signal distributions, two
+signal Monte Carlo scans were produced.
+The T5Wg scan was produced in bins of gluino mass and neutralino mass,
+and the T6Wg scan was produced in bins of squark mass and neutralino mass.
+The leading-order event generator \textsc{MadGraph}5\_a\MCATNLO~\cite{Alwall:2014hca}
+is used to simulate the signal samples, which
+were generated with either two gluinos or two squarks and up to two additional
+partons in the matrix element calculation. The parton showering, hadronization,
+multiple-parton interactions, and the underlying event were described by the
+\PYTHIA 8~\cite{Sjostrand:2007gs} program with the CUETP8M1 generator tune.
+The detector response is simulated using
+CMS fast simulation~\cite{Abdullin:2011zz}.
+
+A total of 40,000 events were produced for
+each bin, except for bins with gluino or squark masses above 2.0 TeV, where only
+20,000 events were produced per bin.
+For gluino masses from 1,400 to 2,500 GeV, events were generated
+in bins of 50 GeV.  In the T6Wg scan, the squark masses ranged from
+1,400 GeV to 2,050 GeV in bins of 50 GeV.
+The neutralino masses ranged from 10 GeV up to the mass
+of the gluino or squark and were binned in
+100 GeV segments. Finer binning was used in the compressed region where
+$M_{\neutralino}$ is within 300 GeV of $M_{\gluino}$ or $M_{\squark}$,
+and in the region with low $M_{\neutralino}$.
+These mass ranges were selected to overlap and
+expand upon the mass ranges excluded by previous
+searches~\cite{ATLAS:2016aa,CMS:2016_anal}.
+
+The parton distribution
+functions are obtained from NNPDF3.0~\cite{Ball:2014uwa}
+The cross sections are calculated at NLO+NLL accuracy
+~\cite{Kulesza:2009kq, Beenakker:2009ha},
+with all the unconsidered sparticles assumed to be heavy and decoupled.
+The uncertainties on the cross sections are calculated as
+described in Ref. ~\cite{Borschensky:2014cia}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Signal acceptance and efficiency}
 
