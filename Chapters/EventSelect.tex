@@ -1,2 +1,91 @@
-\chapter{Event Selection}
+\chapter{Sample Selection}
 \label{chap:EventSelect}
+
+\section{Object Selection}
+\label{sec:ObjSelect}
+In addition to photons and electrons, a third, orthogonal object definition referred to as ``fake" photons is also used. 
+Fakes are primarily electromagnetically-rich jets that have been misidentified as photons. As will be described in Chapter~\ref{chap:DataAnalysis},
+a control sample made up of events with two fakes is used to estimate the QCD background. 
+
+\subsection{Photon identification}
+\label{sec:phoID}
+
+\subsection{Electron identification}
+\label{sec:eleID}
+
+
+\subsection{Fake identification}
+\label{sec:fakeID}
+Electromagnetically-rich jets that have been misidentified as photons make up the majority of the objects 
+that satisfy our ``fake" definition. These objects are taken from a photon ID sideband. Fakes are required to 
+pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they are required to
+fail either the \sigmaietaieta or the charged hadron isolation requirement. This is described in detail in Table~\ref{tab:ID}
+(XX better if column widths the same XX)
+
+\begin{table}[ht]
+    \caption{ELECTROMAGNETIC OBJECT DEFINITIONS}
+    \centering
+    \begin{tabular}{ | c | c c c |}
+        \hline
+        	\hline
+        \textbf{ID Requirement} & \textbf{Photons} & \textbf{Electrons} & \textbf{Fakes} \\ [0.5ex]
+        \hline
+        	Pixel seed veto    & \multicolumn{1}{c|}{Applied} & \multicolumn{1}{c|}{Reversed} & \multicolumn{1}{c|}{Applied}\\
+	\hline
+	\sigmaietaieta   & \multicolumn{2}{c|}{$ < 0.01022 $} & $0.01022 < \sigmaietaieta < 0.015 $\\
+	Charged hadron isolation & \multicolumn{2}{c|}{$ < 0.441$} & $ 0.441 < iso < 15$\\
+	\hline
+	Photon isolation & \multicolumn{3}{c|}{$ < 2.571 +0.0047~\pt$} \\
+	Neutral hadron isolation   &  \multicolumn{3}{c|}{$ < 2.2725 + 0.0148~\pt+0.000017~\pt^2$} \\
+        R9                      & \multicolumn{3}{c|}{$ > 0.5$} \\
+        H/E                     & \multicolumn{3}{c|}{$ < 0.0396$} \\
+           \hline
+           \hline
+    \end{tabular}
+    \label{tab:ID}
+    \justify{Definitions of photon, electron, and fakes used to define the signal and control samples for this analysis. ``Fakes" refer to 
+    jets that have been misidentified as photons. The definitions of each of the variables used in the object ID's can be found in 
+    Section~\ref{sec:Var}.}
+\end{table}
+
+STOLEN %https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2#Selection_implementation_details
+The uncorrected isolation variables are PF objects 
+Pt sums in a cone 0.3 around the photon and also subjected to 
+the photon footprint removal using the association map of the PF objects. 
+The charge hadron Isolation is calculated using the PF objects that their tracks are associated with the primary vertex only, thus removing pile-up charge hadrons.
+STOLEN 
+
+\begin{table}[ht]
+    \caption{EFFECTIVE AREAS FOR ISOLATION CORRECTIONS}
+    \centering
+    \begin{tabular}{ | c | c c c |}
+        \hline
+        	\hline
+        \textbf{$|\eta|$ Range} & \textbf{Photon Iso} & \textbf{Neutral Hadron Iso} & \textbf{Charged Hadron Iso} \\ [0.5ex]
+        \hline
+        	$|\eta| < 1.0 $                 & 0.120   &  0.0597 & 0.0360\\
+	$ 1.0 < |\eta| < 1.479 $   & 0.1107 & 0.0807 & 0.0377 \\
+		 \hline
+           \hline
+    \end{tabular}
+    \label{tab:ID}
+    \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
+\end{table}
+
+
+
+\subsection{Object Cleaning}
+\label{sec:ObjCleaning}
+
+In order to avoid double counting particles, a set of object cleaning rules are applied. 
+First, because muons are reconstructed with a higher purity than any other particle, 
+any electromagnetic object (photon, electron, or fake) that is within \dR $< 0.3$ of a muon candidate is removed.
+Second, 
+
+all photon, electron, and fake candidates are 
+
+\subsection{Lepton veto}
+\label{sec:lepVeto}
+
+
+
