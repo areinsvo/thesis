@@ -17,7 +17,7 @@ a control sample made up of events with two fakes is used to estimate the QCD ba
 \subsection{Fake identification}
 \label{sec:fakeID}
 Electromagnetically-rich jets that have been misidentified as photons make up the majority of the objects 
-that satisfy our ``fake" definition. These objects are taken from a photon ID sideband. Fakes are required to 
+that satisfy our ``fake" definition. These objects are taken from a photon ID sideband. Fakes must
 pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they are required to
 fail either the \sigmaietaieta or the charged hadron isolation requirement. This is described in detail in Table~\ref{tab:ID}
 (XX better if column widths the same XX)
@@ -80,12 +80,18 @@ STOLEN
 In order to avoid double counting particles, a set of object cleaning rules are applied. 
 First, because muons are reconstructed with a higher purity than any other particle, 
 any electromagnetic object (photon, electron, or fake) that is within \dR $< 0.3$ of a muon candidate is removed.
-Second, 
-
-all photon, electron, and fake candidates are 
+Second, any photon that overlaps within \dR $< 0.3$ of an electron is removed. Finally, if a fake overlaps with an electron or 
+photon candidate within \dR $< 0.4$, the fake candidate is removed. The larger \dR separation for fakes is due to the fact
+that fakes are primarily jets. As described in Section~XX, jets are reconstructed using the \antikt algorithm with a distance
+parameter of 0.4.  
 
 \subsection{Lepton veto}
 \label{sec:lepVeto}
 
+In addition to the cuts described above, any event that contains additional muons or electrons is vetoed. 
+No additional leptons are present in the SUSY signals of interest, so applying a lepton veto will not hurt our signal sensitivity.
+More importantly, by vetoing on the presence of additional leptons, our analysis becomes orthogonal to other CMS searches for
+gauge-mediated supersymmetry breaking with photons in the final state. As described in Section~XX, this is particularly
+important for the combination paper.
 
 

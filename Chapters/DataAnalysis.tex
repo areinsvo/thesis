@@ -1,13 +1,13 @@
-\chapter{Data analysis and background estimation methods}
+\chapter{DATA ANALYSIS AND BACKGROUND ESTIMATION METHODS}
 \label{chap:DataAnalysis}
 
 \section{Overview}
 
 There are several Standard Model processes that can mimic our signal events. The largest background contribution comes from quantum chromodynamics (QCD) processes. These are primarily multi-jet events, where electromagnetically-rich jets are misidentified as photons, but can also include processes with true photons either from associated photon production or initial-state radiation. In both cases, there is no inherent \ETmiss in the event. Instead, the measured \ETmiss is actually the result of mismeasured hadronic activity. As described in Section~\ref{sec:QCD}, this background is estimated in an entirely data-driven way using a control region derived from a sideband of our photon ID. 
 
-The second-largest background is the electroweak (EWK) background. This background is comprised of W$\gamma$ or W+jet events where W$\rightarrow e \nu$. There is inherent \ETmiss from the neutrino, and if the electron is misidentified as a photon, these events can mimic our signal topography. By measuring the misidentification rate in data, we can use an $e\gamma$ control sample to estimate the contribution from the EWK background. The background estimation method is described in detail in Section~\ref{sec:EWK}. 
+The second-largest background is the electroweak (EWK) background. This background is comprised of W$\gamma$ or W+jet events where W$\rightarrow e \nu$. In this case, there is inherent \ETmiss from the neutrino, and these events can mimic our signal topography if the electron is misidentified as a photon. By measuring the misidentification rate in data, we can use an $e\gamma$ control sample to estimate the contribution from the EWK background. The background estimation method is described in detail in Section~\ref{sec:EWK}. 
 
-Finally, there is an irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. This background is modeled via simulation (see Sec.~\ref{sec:Zgg}).
+Finally, there is an irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. This background is modeled via simulation and described in Section~\ref{sec:Zgg}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -17,18 +17,57 @@ Finally, there is an irreducible background from $Z\gamma\gamma\rightarrow\nu\nu
 \subsection{Cross check on QCD background}
 \label{sec:crossCheck}
 
-In order to set a systematic uncertainty on the overall \ETmiss shape predicted using the \diempt reweighting method, we sought an alternate way to estimate the QCD background. This cross check relies on the assumption that the ratio of $\gamma\gamma$ events to $ff$ events should not depend sensitively on the \ETmiss. If this assumption is true, then we should be able to extrapolate from the low-\ETmiss control region to the high-\ETmiss signal region.
+In order to set a systematic uncertainty on the overall \ETmiss shape predicted using the \diempt reweighting method, we sought an alternate way to estimate the QCD background. This cross check relies on the assumption that the ratio of $\gamma\gamma$ events to $ff$ events should not depend sensitively on \ETmiss. If this assumption is true, then we should be able to extrapolate from the low-\ETmiss control region to the high-\ETmiss signal region.
 
-Figure~\ref{fig:crossCheck} shows the ratio of $\gamma\gamma$/$ff$ as a function of \ETmiss in the \ETmiss $<$ 100 GeV control region. The ratio has been fit to a constant function. Using this function, the expected number of $\gamma\gamma$ events in bin $i$ in the signal region is given by the following equation:
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/DataAnalysis/crossCheckFit.pdf}
+\end{center}
+\caption{The ratio of $\gamma\gamma$ to $ff$ events for \ETmiss$ < 100$ GeV. 
+The ratio has been fit to a constant function, which can then be used to 
+extrapolate to the \ETmiss$ >100$ GeV signal region. 
+This provides an alternative estimation method for the QCD background.}
+\label{fig:crossCheck}
+\end{figure*}
+
+Figure~\ref{fig:crossCheck} shows the ratio of $\gamma\gamma$/$ff$ as a function of \ETmiss in the \ETmiss $<$ 100 GeV control region. The ratio has been fit to a constant function $f(\ETmiss)$. Using this function, the expected number of $\gamma\gamma$ events in bin $i$ of the signal region is given by the following equation:
 
 \begin{equation}
 N_{\gamma\gamma}^i = f(\ETmiss) \times N_{ff}^i 
 \end{equation}
 
-XX Insert Figure XX
+Table~\ref{tab:crossCheck} compares the expected QCD background contribution as predicted with the cross check method to that predicted with the \diempt reweighting method. For the cross check method, the uncertainty arising from the choice of fitting function is estimated by taking the difference between the results when fitting to a constant to the results when fitting to a linear function. In addition, the cross check uncertainties listed in Table~\ref{tab:crossCheck} include the statistical uncertainty from the limited control sample statistics and the $1~\sigma$ uncertainties from the fit. For the \diempt reweighting method, the uncertainties include the statistical uncertainty and the uncertainty from the \diempt reweighting procedure (this systematic is described in detail in Section~\ref{sec:QCDSysUncert}). 
 
-XX Table~\ref{tab:crossCheck} XX 
+\begin{table}[ht]
+     \caption{COMPARISON BETWEEN REWEIGHTING METHOD AND RATIO METHOD FOR THE QCD BACKGROUND ESTIMATE}
+     \centering
+     {\renewcommand{\arraystretch}{1.2} %<- modify value to suit your needs                                                            
+     \begin{tabular}{| c | c | c | c |}
+     \hline
+     \hline
+    \ETmiss bin (Gev) & Reweighted ff estimate & Ratio method estimate \\
+     \hline
+    $100-115$ & ${69.23}^{+ 15.18}_{-12.68}$ & ${ 55.19}^{+ 12.03}_{-10.33}$ \\
+    $115-130$ & ${30.89}^{+ 11.76}_{-8.82}$  & ${ 22.08}^{+ 8.39}_{-6.59}$ \\
+    $130-150$ & ${25.98}^{+ 11.95}_{-8.61}$  & ${ 16.55}^{+ 7.56}_{-5.69}$ \\
+    $150-185$ & ${20.49}^{+ 10.12}_{-7.11}$  & ${ 14.72}^{+ 7.26}_{-5.45}$ \\
+    $185-250$ & ${8.74}^{+ 11.65}_{-5.89}$   & ${ 3.68}^{+ 4.85}_{-2.47}$ \\
+    $> 250$     & ${5.13}^{+ 11.86}_{-4.43}$   & ${ 1.84}^{+ 4.23}_{-1.60}$ \\
+     \hline
+     \hline
+     \end{tabular}
+}
+	\justify{Comparison of the background estimate using the di-EM \pt reweighting method and the $\gamma\gamma$/$ff$ ratio method. The uncertainties on the 
+	 di-EM \pt reweighting method include the statistical uncertainties and the reweighting uncertainty. The uncertainties on the ratio method include the 
+	 statistical uncertainties, the uncertainties in the fit parameter, and the uncertainty from the choice of fit function. }
+     \label{tab:crossCheck}
+\end{table}
 
+
+The two methods give overlapping predictions
+within uncertainty, and therefore this cross check serves to validate our di-EM \pt reweighting
+background estimation method. The difference between the two methods
+is taken as a systematic uncertainty on the overall \ETmiss shape.
 
 
 \subsection{Systematic uncertainties on the QCD background}
@@ -51,6 +90,19 @@ To estimate this background, we first calculate the rate at which electrons are 
 \subsection{Calculating EWK estimate}
 
 \subsection{Composition of $e\gamma$ sample}
+The $e\gamma$ control sample is primarily made up of $\gamma~+$ jets or W$\gamma$ events. A data versus Monte Carlo comparison of this control sample is shown in Figure~\ref{fig:dataMCEG}. The data distribution was fit using the simulated $\gamma~+$ jet and W$\gamma$ shapes as templates. From the fit, it was determined that 80\% of the $e\gamma$ events observed in data are from $\gamma~+$ jets  processes, and the remaining 20\% are W$\gamma$ events. However, as seen in the figure, W$\gamma$ dominates at high-\ETmiss.
+
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/DataAnalysis/dataMC_EG.pdf}
+       \caption{Data versus Monte Carlo comparison of the $e\gamma$ control sample \ETmiss distribution. To determine the relative contributions of the
+       $\gamma~+$ jet and W$\gamma$ processes, the data distribution was fit using the $\gamma~+$ jet and W$\gamma$ shapes as templates. The data
+       are shown in black, and the total MC prediction is shown in blue. The $\gamma~+$ jet MC (red) was scaled to 80\% of the observed events in data. and 
+       the W$\gamma$ MC (green) was scaled to 20\% of the data distribution.
+	}
+   	\label{fig:CMS}
+\end{figure*}
+
 
 \subsection{EWK results}
 \label{sec:EWKresults}
