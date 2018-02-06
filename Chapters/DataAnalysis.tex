@@ -5,14 +5,79 @@
 
 There are several Standard Model processes that can mimic our signal events. The largest background contribution comes from quantum chromodynamics (QCD) processes. These are primarily multi-jet events, where electromagnetically-rich jets are misidentified as photons, but can also include processes with true photons either from associated photon production or initial-state radiation. In both cases, there is no inherent \ETmiss in the event. Instead, the measured \ETmiss is actually the result of mismeasured hadronic activity. As described in Section~\ref{sec:QCD}, this background is estimated in an entirely data-driven way using a control region derived from a sideband of our photon ID. 
 
-The second-largest background is the electroweak (EWK) background. This background is comprised of W$\gamma$ or W+jet events where W$\rightarrow e \nu$. In this case, there is inherent \ETmiss from the neutrino, and these events can mimic our signal topography if the electron is misidentified as a photon. By measuring the misidentification rate in data, we can use an $e\gamma$ control sample to estimate the contribution from the EWK background. The background estimation method is described in detail in Section~\ref{sec:EWK}. 
+The second-largest background is the electroweak (EWK) background. This background is comprised of W$\gamma$ or W+jet events where W$\rightarrow e \nu$. In this case, there is inherent \ETmiss from the neutrino, and these events can mimic our signal topography if the electron is misidentified as a photon. By measuring the misidentification rate in data, we can use an $e\gamma$ control sample to estimate the contribution from the EWK background. The EWK background estimation method is described in detail in Section~\ref{sec:EWK}. 
 
-Finally, there is an irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. This background is modeled via simulation and described in Section~\ref{sec:Zgg}.
+Finally, there is an irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. This background is modeled via simulation and is described in Section~\ref{sec:Zgg}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%QCD Methodology %%%%%%%%%%%%%%%%%%
 
 \section{QCD background}
 \label{sec:QCD}
+
+Due to the large QCD cross section, the most significant background for this analysis comes from QCD events without true \ETmiss and without two real photons. 
+The observed \ETmiss is the result of mismeasured hadronic activity, and in most cases the ``photons" are misidentified jets with a large electromagnetic component.
+
+To estimate the contribution from the QCD background in our signal region, we use the ``fake" object selection that was described in Section~\ref{sec:ObjSelect}. The fake identification criteria is orthogonal to the nominal photon identification, and therefore provides a sideband that can be used as a control region. The \ETmiss tail of the QCD background is modeled using a ``fake-fake" (``$ff$") control sample made up of events with two fakes that pass the additional criteria outlined in Section~\ref{sec:samples}.
+
+\subsection{Di-EM \pT reweighting}
+\label{sec:diempt}
+
+Because the \ETmiss in the QCD background and the $ff$ control sample arises from poorly measured hadronic activity, it is important that the amount of hadronic activity in the control sample matches that of the $\gamma\gamma$ events we are trying to model.
+
+To account for potential differences between the samples, we define a variable referred to as the ``\diempt" of an event. Di-EM \pT is defined as the magnitude of
+the vector sum of the transverse momentum of the two electromagnetic objects (photons, electrons or fakes):
+\begin{equation}
+ \vec{\pt}^{di-EM}=\vec{p_{T1}}+\vec{p_{T2}}
+ \label{equ:diempt}
+\end{equation}
+
+As illustrated in Figure~\ref{fig:diempt}, the \diempt variable is used as a measure of the total hadronic recoil. Because CMS measures the energies of electromagnetic objects with greater precision than the energy of jets, this variable is a more accurate representation of the hadronic recoil than simply adding up the transverse momentum of the jets themselves. 
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Figures/DataAnalysis/Diempt.pdf}
+\end{center}
+\caption{The \diempt vector, shown in light blue, is the vector sum of the \pT of the two photons in the event, shown in blue. The magnitude of the \diempt vector is used to model the hadronic recoil, shown in red. }
+\label{fig:diempt}
+\end{figure*}
+
+The \diempt distributions for the $\gamma\gamma$ candidate sample and the $ff$ control sample are shown in Figure~\ref{fig:ggffDiempt}. The $ff$ events are the reweighted using the $\gamma\gamma$/$ff$ ratios displayed in the ratio plot of Figure~\ref{fig:ggffDiempt}. The $ff$ \ETmiss distribution is normalized to the \ETmiss$~<~50$ GeV region of the $\gamma\gamma$ sample, where signal contamination is minimal. 
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/DataAnalysis/ggffDiempt.pdf}
+\end{center}
+\caption{\Diempt distributions of the $ff$ control sample (black) and the $\gamma\gamma$ candidate sample (red). The ratio plot on the bottom shows the $\gamma\gamma$/$ff$ ratios that are used to reweight the $ff$ \ETmiss distribution. }
+\label{fig:ggffDiempt}
+\end{figure*}
+
+The unweighted $ff$ and $\gamma\gamma$ \ETmiss distributions are shown in Figure~\ref{fig:ggffUnweighted}. A comparison between the unweighted and \diempt reweighted $ff$ \ETmiss distributions is shown in Figure~\ref{fig:compareUnweighted}. Finally, Figure~\ref{fig:ggffReweighted} compares the reweighted $ff$ \ETmiss distribution to the candidate $\gamma\gamma$ \ETmiss distribution.
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/DataAnalysis/ggffUnweighted.pdf}
+\end{center}
+\caption{\Diempt distributions of the $ff$ control sample (black) and the $\gamma\gamma$ candidate sample (red). The ratio plot on the bottom shows the $\gamma\gamma$/$ff$ ratios that are used to reweight the $ff$ \ETmiss distribution. }
+\label{fig:ggffUnweighted}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/DataAnalysis/compareUnweighted.pdf}
+\end{center}
+\caption{\Diempt distributions of the $ff$ control sample (black) and the $\gamma\gamma$ candidate sample (red). The ratio plot on the bottom shows the $\gamma\gamma$/$ff$ ratios that are used to reweight the $ff$ \ETmiss distribution. }
+\label{fig:compareUnweighted}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/DataAnalysis/ggffReweighted.pdf}
+\end{center}
+\caption{\Diempt distributions of the $ff$ control sample (black) and the $\gamma\gamma$ candidate sample (red). The ratio plot on the bottom shows the $\gamma\gamma$/$ff$ ratios that are used to reweight the $ff$ \ETmiss distribution. }
+\label{fig:ggffReweighted}
+\end{figure*}
+
+%%%%%%Cross Check and Systematics%%%%%%
 
 \subsection{Cross check on QCD background}
 \label{sec:crossCheck}
@@ -21,7 +86,7 @@ In order to set a systematic uncertainty on the overall \ETmiss shape predicted 
 
 \begin{figure*}[h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Figures/DataAnalysis/crossCheckFit.pdf}
+\includegraphics[width=0.9\textwidth]{Figures/DataAnalysis/crossCheckFit.pdf}
 \end{center}
 \caption{The ratio of $\gamma\gamma$ to $ff$ events for \ETmiss$ < 100$ GeV. 
 The ratio has been fit to a constant function, which can then be used to 
@@ -75,7 +140,7 @@ is taken as a systematic uncertainty on the overall \ETmiss shape.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%EWK background %%%%%%%%%%%%%%%%%%%%%%
 
 \section{Electroweak background}
 \label{sec:EWK}
@@ -90,7 +155,11 @@ To estimate this background, we first calculate the rate at which electrons are 
 \subsection{Calculating EWK estimate}
 
 \subsection{Composition of $e\gamma$ sample}
-The $e\gamma$ control sample is primarily made up of $\gamma~+$ jets or W$\gamma$ events. A data versus Monte Carlo comparison of this control sample is shown in Figure~\ref{fig:dataMCEG}. The data distribution was fit using the simulated $\gamma~+$ jet and W$\gamma$ shapes as templates. From the fit, it was determined that 80\% of the $e\gamma$ events observed in data are from $\gamma~+$ jets  processes, and the remaining 20\% are W$\gamma$ events. However, as seen in the figure, W$\gamma$ dominates at high-\ETmiss.
+The $e\gamma$ control sample is primarily made up of $\gamma~+$ jets or W$\gamma$ events. A data versus Monte Carlo comparison of this control sample is shown in Figure~\ref{fig:dataMCEG}. The data distribution was fit using the simulated $\gamma~+$ jet and W$\gamma$ shapes as templates. From the fit, it was determined that 80\% of the $e\gamma$ events observed in data are from $\gamma~+$ jets  processes, and the remaining 20\% are W$\gamma$ events.  
+In the \ETmiss$>100$~GeV signal region, however, W$\gamma$ events dominate.
+For $100 < \ETmiss < 130$~GeV, 12.1\% of the MC prediction is made up of
+$\gamma$ plus jet processes. For $\ETmiss >130$~GeV, however,
+$\gamma$ plus jet events contribute only 2.6\%.
 
 \begin{figure*}[h!]
 	\centering
