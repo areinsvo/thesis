@@ -1,7 +1,7 @@
 \chapter{TRIGGER SYSTEM}
 \label{chap:Trigger}
 
-\section{Overview of CMS trigger system}
+\section{Overview of the CMS trigger}
 \label{sec:trigOverview}
 Many more collisions occur within the LHC than can be written out to tape and stored for future analysis. At the four interaction points, including inside the CMS detector, bunches of protons collide every 25 ns. For every bunch crossing, there are on average 25 ``soft-scatter" collisions (XX Look up this number XX). This corresponds to an overall event rate of XX. Given that each event produces approximately 1 MB of data, it is impossible to store every event or even the majority of events. This has been especially true in recent years, with the LHC continually breaking new records for instantaneous luminosity. 
 
@@ -16,7 +16,112 @@ The L1 trigger reduces the rate from 1~GHz to 100 kHz.
 
 
 \section{Analysis triggers}
+\label{sec:analysisTrig}
+
+The HLT paths used in this analysis are listed in Table~\ref{tab:triggers}. These triggers were developed for the $H \rightarrow \gamma\gamma$ search, 
+but also serve our analysis well. Two triggers are used: a primary trigger that requires the diphoton invariant mass to be greater than 90 GeV, and a control
+trigger that was designed to collect $Z\rightarrow ee$ events. 
+
+\begin{table}[ht]
+\caption{HLT TRIGGER PATHS}
+\label{tab:triggers}
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+\hline
+\bf{Primary Trigger}   \\                                                                                                 
+HLT\_Diphoton30\_18\_R9Id\_OR\_IsoCaloId\_AND\_HE\_R9Id\_Mass90\_v* \\     
+\hline                                               
+\bf{Control Sample Trigger} \\                                                                                       
+HLT\_Diphoton30\_18\_R9Id\_OR\_IsoCaloId\_AND\_HE\_R9Id\_ \\
+DoublePixelSeedMatch\_Mass70\_v* \\                              
+\hline
+\hline
+\end{tabular}
+ \justify{List of triggers used to accumulate the events in the 35.88~\fbinv data sample.}
+\end{center}
+\end{table}
+
+\subsection{Trigger Requirements}
 \label{sec:trigRequirements}
+The requirements to pass the various parts of the trigger
+are listed in Table~\ref{tab:trigcuts}
+Because we only use photons with $|\eta| < 1.4442$ in this analysis
+(see Chapter~\ref{chap:EventSelect} for full event selection requirements), we list only
+the trigger requirements in the barrel. 
+
+\begin{table}[ht]
+\caption{PRIMARY TRIGGER REQUIREMENTS}
+\label{tab:trigcuts}
+\begin{center}
+\begin{tabular}{|c| c |}
+\hline
+\hline
+\textbf{Name} & \textbf{Cuts} \\
+\hline
+Diphoton30\_18\_ &  Leading photon \pt$ > 30$ GeV \\
+ & Sub-leading photon \pt$ > 18$ GeV \\
+ \hline
+R9Id\_ & $R_9 > 0.85$\\
+\hline
+IsoCaloId\_ &  \sigmaietaieta$< 0.015$\\
+ & ECAL isolation~$<~(6 + 0.012 \times$Photon \ET) \\
+ & Track isolation~$<~(6 + 0.002 \times$Photon \ET) \\
+ \hline
+HE\_R9Id\_ & H/E $< 0.1$ \\
+ & $R_9 > 0.5$\\
+ \hline
+Mass90\_  & $m_{\gamma\gamma} > 90$ GeV \\                                                                        
+\hline
+\hline
+\end{tabular}
+ \justify{Definition of cuts used in the primary analysis trigger, HLT\_Diphoton30\_18\_ R9Id\_OR\_IsoCaloId\_AND\_HE\_R9Id\_Mass90\_v*}
+\end{center}
+\end{table}
+
+Each of the variables used in the trigger are defined below:
+
+\begin{itemize}
+\item{\ET:} The transverse energy \ET of a photon is defined
+as the magnitude of the projection
+of the photon momentum on the plane perpendicular to the beams.
+\item{R9:} The variable $R_9$ is
+a measure of the overall transverse spread of the shower. It is the ratio
+of the energy deposited in the ECAL inside a 3x3 crystal matrix centered on
+the most energetic crystal in the supercluster to the supercluster
+ raw energy.
+\item{\sigmaietaieta:} The shower width \sigmaietaieta is
+      the log-fractional energy-weighted spread within the 5x5 crystal matrix centered on the
+      crystal with the largest energy deposit in the supercluster. The symbol
+      i$\eta$ indicates that the variable is obtained by measuring position by
+      counting crystals.
+\item{ECAL isolation:} The ECAL isolation is
+      the sum of all energy deposits in the ECAL within a cone of \dR
+      $<$ 0.3 centered on the photon.
+\item{Track isolation:} The track isolation is
+      the sum of the energies of tracks in the tracker within a cone of \dR
+      $<$ 0.3 centered on the photon.
+\item{H/E:} The ratio between the energy deposited in the HCAL
+      tower closest to the supercluster position and the energy deposited to
+      that supercluster in the ECAL is referred to as H/E.
+  \end{itemize}
+
+All photons are required to pass the H/E and loose $R_9$ cuts in
+\_HE\_R9Id\_, and either the tighter $R_9$ cuts in
+\_R9Id\_ or the isolation and shape cuts in \_IsoCaloId\_.
+The leading leg of the filter requires the photon candidate
+to be matched to an L1 seed. It can be matched to one of several
+SingleEG and DoubleEG L1 filters, but the largest contribution comes
+from the lowest unprescaled triggers: namely, SingleEG40 and
+DoubleEG$\_$22$\_$15.
+Both photons must satisfy the sub-leading filter, which is unseeded.
+In addition to the cuts listed above, the invariant mass of
+the diphoton system is required to be greater than 90 GeV.
+
+The control trigger shares all of the same requirements as the primary trigger, with two exceptions: 
+the invariant mass of the two electromagnetic objects is required to be greater than 55 GeV rather than 90 GeV, 
+and both electromagnetic objects are required to be matched to a pixel seed. A pixel seed is defined
+as at least two hits in the pixel detectors that are consistent with the location of the energy deposit in the ECAL. 
 
 \section{Trigger efficiency}
 \label{sec:trigEff}
@@ -47,9 +152,11 @@ Finally, we calculated the efficiency of the trigger with respect to the diphoto
 
 XX Insert figure XX
 
-\subsection{Efficiency of di-electron control sample}
+\subsection{Efficiency of secondary trigger}
 \label{sec:eeEff}
-One of the important control samples for our analysis is made up of $Z\rightarrow ee$ events. Due to the invariant mass requirement on the primary analysis, however, a second trigger was used to collect events for the di-electron control sample. This trigger shares all of the same requirements as the primary trigger, with two exceptions: the invariant mass of the two electromagnetic objects is required to be greater than 55 GeV rather than 95 GeV, and both electromagnetic objects are required to be matched to a pixel seed. The pixel seed match requirement affects the efficiency of the trailing leg of the control trigger. This efficiency is shown in Figure~\ref{XX}.
+The efficiency of the sub-leading leg of the secondary trigger is shown in Figure~\ref{XX}. This efficiency differs from that 
+of the primary trigger because both electromagnetic objects are required to be matched to a pixel seed. Since all other 
+cuts are the same between the two triggers, however, the leading leg efficiency is the same as that shown in Figure~\ref{XX}.
 
 XX Insert figure XX
 
