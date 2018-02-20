@@ -90,7 +90,7 @@ a measure of the overall transverse spread of the shower. It is the ratio
 of the energy deposited in the ECAL inside a 3x3 crystal matrix centered on
 the most energetic crystal in the supercluster to the supercluster
  raw energy.
-\item{\sigmaietaieta:} The shower width \sigmaietaieta is
+\item{$\sigma_{i\eta i \eta}:$} The shower width \sigmaietaieta is
       the log-fractional energy-weighted spread within the 5x5 crystal matrix centered on the
       crystal with the largest energy deposit in the supercluster. The symbol
       i$\eta$ indicates that the variable is obtained by measuring position by
@@ -114,7 +114,7 @@ to be matched to an L1 seed. It can be matched to one of several
 SingleEG and DoubleEG L1 filters, but the largest contribution comes
 from the lowest unprescaled triggers: namely, SingleEG40 and
 DoubleEG$\_$22$\_$15.
-Both photons must satisfy the sub-leading filter, which is unseeded.
+Both photons must satisfy the trailing filter, which is unseeded.
 In addition to the cuts listed above, the invariant mass of
 the diphoton system is required to be greater than 90 GeV.
 
@@ -127,12 +127,14 @@ as at least two hits in the pixel detectors that are consistent with the locatio
 \label{sec:trigEff}
 An important input to the analysis is the overall trigger efficiency. Due to the similarity of the ECAL response 
 to electrons and photons, the trigger efficiency can be calculated from 
-$Z\rightarrow ee$ events in data using the tag-and-probe method (CITE XX). In this method, two electron candidates
-are required. One serves as the ``tag" and has to pass electron identification criteria. The second electron candidate serves
-as the ``probe" and has to satisfy the same selection criteria as our offline photon identification requirements (see Section~\ref{XX}). 
+$Z\rightarrow ee$ events in data using the tag-and-probe method. In this method, two electron candidates
+are required. One serves as the ``tag" and is required to pass loose photon identification criteria. 
+The second electron candidate serves
+as the ``probe" and has to satisfy the same selection criteria as our offline photon identification requirements (see Section~\ref{sec:ObjSelect}). 
 In order to ensure a high purity of electromagnetic objects, the invariant mass of the di-electron system must be between 75 and 105~GeV. 
+For this study, tag-and-probe events were collected by requiring that the tag pass
+a single electron control trigger, HLT\_Ele27\_WPTight\_Gsf.
 
-Control trigger
 
 The efficiency of the HLT path or trigger filter that is being studied is given by the following equation, where $N_{total}$ is the total number of tag-and-probe pairs 
 passing all requirements, and $N_{pass}$ is the number of tag-and-probe pairs in which  the probe passes the trigger filter.
@@ -140,24 +142,53 @@ passing all requirements, and $N_{pass}$ is the number of tag-and-probe pairs in
  \epsilon_{trig} = N_{pass} / N_{total}
 \end{equation}
 
-Because our analysis trigger is seeded by the OR of multiple SingleEG and DoubleEG L1 seeds, the names of which changed over the course of the 2016 data-taking period, calculating the L1 efficiency on its own proved tricky. Instead, it was simpler to calculate the total efficiency with which photon candidates pass both the L1 seed and the leading leg of the HLT path. This efficiency as a function of photon \pt is shown in Figure~\ref{XX}. The efficiency was fit to an error function to calculate the overall efficiency at the plateau. For photon \pt $>~40$ GeV, the leading filter is XX\% efficient.
+Because our analysis trigger is seeded by the OR of multiple SingleEG and DoubleEG L1 seeds, the names of which changed over the course of the 2016 data-taking period, calculating the L1 efficiency on its own proved tricky. Instead, it was simpler to calculate the total efficiency with which photon candidates pass both the L1 seed and the leading leg of the HLT path. This efficiency as a function of photon \pt is shown in Figure~\ref{fig:leadEff}. The efficiency was fit to an error function to calculate the overall efficiency at the plateau. For photon \pt $>~40$ GeV, the leading filter is 98.2\% efficient.
 
-XX Insert figure XX
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/Trigger/leadingEff.pdf}
+\end{center}
+\caption{Efficiency of the L1 seed and the leading leg of the primary analysis trigger with respect to photon \pT. 
+For $\pT > 40$ GeV, the trigger is 98.2\% efficient.}
+\label{fig:leadEff}
+\end{figure*}
 
-Tag and probe objects for the trailing leg efficiency must pass the same set of requirements as those used in the leading leg efficiency calculation, with the additional requirement that the tag must pass the leading filter. This requirement comes from how HLT paths are run. Filters are processed sequentially, and if an event fails one filter, the subsequent filters are skipped. Figure~\ref{XX} shows the efficiency of the trailing filter as a function of photon \pt. 
+Tag and probe objects for the trailing leg efficiency must pass the same set of requirements as those used in the leading leg efficiency calculation, with the additional requirement that the tag must pass the leading filter. This requirement arises from the way HLT modules are structured. Filters are processed sequentially, and if an event fails one filter, the subsequent filters are skipped. Figure~\ref{fig:trailEff} shows the efficiency of the trailing filter as a function of photon \pt. For $\pT > 40$ GeV, the trigger is 99.8\% efficient.
 
-XX Insert figure XX
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/Trigger/trailingEff.pdf}
+\end{center}
+\caption{Efficiency of the trailing leg of the primary analysis trigger with respect to photon \pT. 
+For $\pT > 40$ GeV, the trigger is 99.8\% efficient.}
+\label{fig:trailEff}
+\end{figure*}
 
-Finally, we calculated the efficiency of the trigger with respect to the diphoton invariant mass. For this calculation, we required two photons passing our analysis selection criteria and the trailing leg of the trigger and one photon passing the leading leg of the trigger. The efficiency was given by the number of diphoton events passing the full HLT path over the total number of diphoton events passing our requirements. The efficiency of the trigger as a function of invariant mass is shown in Figure~\ref{XX}.
+Finally, we calculated the efficiency of the trigger with respect to the diphoton invariant mass. For this calculation, we required two photons passing our analysis selection criteria, two photons satisfying the trailing leg of the trigger, and one photon passing the leading leg of the trigger. The efficiency was given by the number of diphoton events passing the full HLT path over the total number of diphoton events passing our requirements. The efficiency of the trigger as a function of invariant mass is shown in Figure~\ref{fig:InvMassEff}. For $m_{\gamma\gamma} > 100$ GeV, the trigger is 99.4\% efficient.
 
-XX Insert figure XX
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/Trigger/InvMassEff.pdf}
+\end{center}
+\caption{Efficiency of the primary analysis trigger with respect to the invariant mass of the diphoton system. 
+For $m_{\gamma\gamma} > 100$ GeV, the trigger is 99.4\% efficient.}
+\label{fig:InvMassEff}
+\end{figure*}
 
-\subsection{Efficiency of secondary trigger}
+\subsection{Efficiency of double electron trigger}
 \label{sec:eeEff}
-The efficiency of the sub-leading leg of the secondary trigger is shown in Figure~\ref{XX}. This efficiency differs from that 
-of the primary trigger because both electromagnetic objects are required to be matched to a pixel seed. Since all other 
-cuts are the same between the two triggers, however, the leading leg efficiency is the same as that shown in Figure~\ref{XX}.
+In the secondary trigger listed in Table~\ref{tab:triggers}, the pixel seed requirement is applied only to the trailing
+leg of the trigger. This additional requirement results in a significantly lower overall efficiency for this leg. As shown in Figure~\ref{fig:controlTrailEff},
+the trigger is only 90.4\% efficient for $\pT > 40$ GeV.
+Since all other cuts are the same between the two triggers, however, the leading leg efficiency is the same as that shown in Figure~\ref{fig:leadEff}.
 
-XX Insert figure XX
-
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures/Trigger/controlTrailingEff.pdf}
+\end{center}
+\caption{Efficiency of the trailing leg of the control trigger with respect to photon \pT. 
+For $\pT > 40$ GeV, the trigger is 90.4\% efficient. The drop in efficiency with respect to the primary analysis 
+trigger is caused by requiring both electromagnetic objects to be matched to a pixel seed.}
+\label{fig:controlTrailEff}
+\end{figure*}
 
