@@ -3,17 +3,46 @@
 
 \section{Overview of the CMS trigger}
 \label{sec:trigOverview}
-Many more collisions occur within the LHC than can be written out to tape and stored for future analysis. At the four interaction points, including inside the CMS detector, bunches of protons collide every 25 ns. For every bunch crossing, there are on average 25 ``soft-scatter" collisions (XX Look up this number XX). This corresponds to an overall event rate of XX. Given that each event produces approximately 1 MB of data, it is impossible to store every event or even the majority of events. This has been especially true in recent years, with the LHC continually breaking new records for instantaneous luminosity. 
+Many more collisions occur within the LHC than can be stored and analyzed. At the four interaction points, including inside the CMS detector, bunches of protons collide every 25 ns. For every bunch crossing, there are on average 25 ``soft-scatter" collisions (XX Look up this number XX). This corresponds to an overall event rate of 1 GHz. Given that each event produces approximately 1 MB of data, it is impossible to store every event or even the majority of events. This has been especially true in recent years, with the LHC continually breaking new records for instantaneous luminosity. 
 
-To solve this problem, the CMS detector includes a sophisticated trigger system to determine which events make it into the XX\% that gets written to tape and eventually analyzed. The CMS trigger system is divided into two steps: the Level 1 (L1) trigger which uses customized hardware located in the detector cavern, and the software-based High Level Trigger (HLT). The L1 trigger reduces the rate from 1 GHz to approximately 100 kHz, and the HLT makes the final decisions necessary to reduce the rate to 1 kHz, the maximum amount that can be written to tape and stored. Both steps of the CMS trigger are described in more detail below.
+To solve this problem, the CMS detector includes a sophisticated trigger system to determine which events get written to tape and eventually analyzed. The CMS trigger system is divided into two steps: the hardware-based Level 1 (L1) trigger, and the software-based High Level Trigger (HLT). The L1 trigger reduces the rate from 1 GHz to approximately 100 kHz, and the HLT makes the final decisions necessary to reduce the rate to a few hundred Hz, the maximum amount that can be written and stored. Both steps of the CMS trigger are described in more detail below. The L1 trigger and the HLT are both highly configurable, which allows CMS to define and alter the thresholds as needed to suit different running conditions.
 
 \subsection{Level 1 Trigger}
 \label{sec:L1}
-The L1 trigger reduces the rate from 1~GHz to 100 kHz. 
+The L1 trigger performs rough calculations of event parameters using custom electronics located in the detector cavern. For inputs, the L1 trigger receives data from the ECAL, HCAL, DT, CSC, and RPC detector subsystems. The L1 trigger is naturally divided into two paths. The calorimeter trigger, shown schematically in Figure~\ref{fig:caloL1T}, takes data from the ECAL and HCAL subsystems and builds photon, electron, and jet candidates, as well as overall event quantities such as missing transverse momentum and total hadronic activity. The second half of the L1 trigger is the muon trigger, and its overall structure is shown in Figure~\ref{fig:muonL1T}. The output from the muon and calorimeter triggers goes into the global trigger (GT) processor, which makes the final decision regarding whether or not to accept the event. 
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Figures/Trigger/caloL1T.pdf}
+\end{center}
+\caption{Schematic showing the overall structure of the calorimeter half of the L1 trigger.}
+\label{fig:caloL1T}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/Trigger/muonL1T.pdf}
+\end{center}
+\caption{Schematic showing the overall structure of the muon half of the L1 trigger.}
+\label{fig:muonL1T}
+\end{figure*}
+
+XX cite https://twiki.cern.ch/twiki/bin/view/CMS/L1TriggerPhaseIDiagrams XX 
+
+The reconstructed objects and quantities built by the calorimeter trigger and the muon trigger--photon, electron, jet, and muon candidates, missing energy and total hadronic activity--get fed into the global trigger. 
 
 \subsection{High Level Trigger}
 \label{HLT}
+The High Level Trigger (HLT) uses a large farm of commercially available PCs to further reduce the rate to a few hundred Hz. The HLT receives fully-built event data from the CMS data acquisition system (DAQ) and processes only those bunch crossings that have passed the L1 trigger. The 13,000 CPU cores used in the HLT run the CMS software framework referred to as CMSSW, the same software framework that is used in the offline analysis. 
 
+Approximately 400 HLT ``paths" are used to select events of interest. Each HLT path is a single set of criteria for accepting an event if it satisfies a particular physics signature. The full list of HLT paths is referred to as the HLT menu. The HLT menu is often updated to reflect improvements in the software, updates to the calibrations, changes to the beam condition, or revisions to the physics signatures being sought. 
+
+The HLT has a limited amount of time it can spend making a decision on a single bunch crossing. For this reason, each HLT path is ``seeded" by one or more L1 algorithms. When an event gets passed to the HLT from the DAQ, the HLT only processes those paths that are seeded by L1 bits that fired. 
+For example, the diphoton HLT path used in this analysis is seeded by a combination of single and double e/$\gamma$ (EG) L1 algorithms. If none of those particular L1 seeds fired, then the HLT path will not get run on that event. 
+
+In addition, significant time is saved at the HLT by running the steps (filters) of each HLT path in order from least CPU intensive to most CPU intensive. If the event fails any of the filters in an HLT path, then the processing is immediately aborted and the remaining filters do not get run. In the diphoton HLT path described below, the most CPU intensive filter is the invariant mass requirement, and therefore it runs only if the event has already satisfied all of the remaining requirements of the path.
+
+Based on its general physics signature, each HLT path is assigned to a primary data set (PD). For this analysis, signal events are included in the DoubleEG PD. The SingleElectron and SinglePhoton data sets are also used for object identification studies.
 
 \section{Analysis triggers}
 \label{sec:analysisTrig}
