@@ -1,6 +1,10 @@
 \chapter{Results and Interpretations}
 \label{chap:Results}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Prediction versus observation}
 \label{sec:fullCount}
 After deriving estimates for all Standard Model backgrounds, we compare the number of 
@@ -43,6 +47,8 @@ The combined uncertainty on the background estimation is shown in yellow.}
 \label{fig:FinalPlot}
 \end{figure*}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Simplified Models}
@@ -110,6 +116,86 @@ described in Ref. ~\cite{Borschensky:2014cia}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Signal acceptance and efficiency}
+\subsection{Signal acceptance and efficiency}
+The generated SUSY signal events undergo the same event selection described in Chapter~\ref{chap:EventSelect}. 
+For every mass point, the number of events expected in each of the six signal region bins is calculated. 
+In addition, the overall acceptance $\times$ efficiency ($A \times \epsilon$), defined as the number of events
+passing the full $\gamma\gamma$ selection divided by the total number of generated events, is calculated across the 
+full 2D mass plane. Figures~\ref{fig:accXeff_T5gg} and~\ref{fig:accXeff_T6gg} show the $A \times \epsilon$ distributions for the T5gg and T6gg simplified model 
+frameworks.
 
-\section{Limits}
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/Results/accXeff_T5gg.pdf}
+\end{center}
+    \caption{Acceptance $\times$ efficiency for the T5gg simplified model.}
+    \label{fig:accXeff_T5gg}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/Results/accXeff_T6gg.pdf}
+\end{center}
+    \caption{Acceptance $\times$ efficiency for the T6gg simplified model.}
+    \label{fig:accXeff_T6gg}
+\end{figure*}
+
+%% XX Note when making this plot: numerator should technically only include the number of gg events with MET > 100 GeV XX %%
+%% XX Also label palette/z-axis XX %% 
+
+At low neutralino mass, the $A \times \epsilon$ decreases because the photons are softer and more likely to fail the \pT $> 40$ GeV cut.
+There is also more jet energy at low neutralino masses, which increases the chance that photons will overlap with a jet and fail the 
+isolation requirements.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Confidence level calculations}
+\label{sec:cls}
+
+The statistical uncertainties are modeled with gamma distributions, where $x$ is the expected event yield, 
+$\alpha$ is the original number of events in the control sample, 
+and $\beta$ is the transfer factor, $\beta$ = $x$/$\alpha$. 
+
+\begin{equation}
+	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}
+\end{equation}
+
+The statistical uncertainties include those on the 
+observed number of events in the signal region in data, uncertainties from the limited number of events
+in the control regions used for the data-driven background estimation methods, and the MC statistical uncertainties 
+in the SUSY signal MC and the MC used to model the $Z\gamma\gamma\rightarrow ee \gamma\gamma$ 
+background.
+
+All of the systematic uncertainties described in Chapter~\ref{chap:DataAnalysis} are treated as nuisance parameters
+with a log-normal probability distribution. The peak of the probability distribution 
+is set to the nominal background estimate for that bin, and the size of the systematic uncertainty 
+sets the width of the distribution. 
+
+\section{Limits and Interpretations}
+\label{sec:limits}
+
+The \cls method \cite{Junk:1999kv, Read:2002hq} is applied to our analysis.
+
+In both the T5gg and T6gg simplified models, the cross section is independent of the mass of the neutralino and 
+depends only on the mass of the gluino or squark, respectively. Therefore, it is not surprising that the exclusion contours
+shown in Figures~\ref{fig:limit_T5gg} and~\ref{fig:limit_T6gg}
+do not depend sensitively on the mass of the neutralino. 
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/Results/accXeff_T5gg.pdf}
+\end{center}
+    \caption{Acceptance $\times$ efficiency for the T5gg simplified model.}
+    \label{fig:limit_T5gg}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/Results/accXeff_T6gg.pdf}
+\end{center}
+    \caption{Acceptance $\times$ efficiency for the T6gg simplified model.}
+    \label{fig:limit_T6gg}
+\end{figure*}
+
