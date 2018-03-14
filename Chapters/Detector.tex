@@ -40,7 +40,7 @@ One of the most important components of the CMS detector is the superconducting 
 
 The innermost sub-detector is the silicon tracker~\cite{trackerTDR,trackerTDRAddendum}. The tracker must provide enough information to accurately reconstruct the trajectories of charged particles to a high level of precision. This is accomplished through the use of silicon semiconductors, which rely on the properties of p-n junctions to detect charged particles. A p-n junction is created by bringing a p-type semiconductor into contact with an n-type semiconductor. For p- and n-type semiconductors, the crystal lattice of the semiconductor is doped to either donate or accept extra electrons, respectively. In a p-n junction, the extra electrons in the n-type semiconductor migrate and combine with the electron holes in the p-type semiconductor. This creates a depletion region in the center of the sensor. Charged particles moving through the depletion region will create electron-hole pairs that move towards either end of the junction. The resulting current is proportional to the energy deposited in the detector.
 
-The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The full tracking system is cylindrical in shape and is comprised of a barrel and two endcaps, each of which is split into layers of silicon pixel detectors and layers of silicon micro-strip detectors. In total, there are 48 million $150\times100~\mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. Figure~\ref{fig:TrackerLayout} shows a schematic drawing of the layout of the tracker subsystems. 
+The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The full tracking system is cylindrical in shape and is comprised of a barrel and two endcaps, each of which is split into layers of silicon pixel detectors and layers of silicon micro-strip detectors. In total, there are 48 million $150\times100~\mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. Figure~\ref{fig:TrackerLayout} shows a schematic drawing of the layout of the tracker subsystems. For charged hadrons with transverse momentum \pt less than 20 GeV, the \pt can be measured with a resolution of $1\%$. 
 
 \begin{figure*}[h!]
 	\centering
@@ -53,18 +53,15 @@ The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The fu
 \label{sec:TrackerPixel}
 
 Due to the high occupancy of the tracker within 10 cm of the beam pipe, pixel detectors rather than strip detectors are used as the innermost layers of the tracker. Three layers in the barrel and two disks of pixel detectors in the endcap give three high-precision points for every charged particle moving away from the interaction point. The small pixel size of $150\times100~\mu$m is critical for accurate secondary vertex reconstruction, for forming seed tracks used for high level triggering (see Chapter~\ref{chap:Trigger}), and for the reconstruction of charged particles in the event (see Chapter~\ref{sec:EventReconstruction}). The three barrel layers are 53 cm long and are located at mean radii of 4.4, 7.3 and 10.2 cm. The endcap modules extend radially from 6 to 15 cm and are placed on each side at $z=\pm34.5$ and $z=\pm46.5$~cm. The endcaps extend the coverage of the sub-detector to $|\eta|~<~ 2.5$. 
-%Yutaro: An interpolation of the signal amplitudes gives a spacial resolution of 15-20 ?m, (because charge is shared between several pixels due to the geometry and the magnetic field)
+%Yutaro: An interpolation of the signal amplitudes gives a spacial resolution of 15-20 mum, (because charge is shared between several pixels due to the geometry and the magnetic field)
 
 \subsection{Strip detectors}
 \label{sec:TrackStrip}
+Moving radially beyond the pixel detectors are the silicon strip trackers. These operate on the same basic principles as the pixel detectors, but each silicon strip is 10 cm $\times~80~\mu$m, giving a precise position measurement along one dimension only. In the barrel, the strips run parallel to the $z$-axis with a pitch, or spacing between strips, between 80 and 183 $\mu$m. Strips in the endcaps are aligned radially with a pitch between 100 and 184 $\mu$m. In total there are 10 layers of strip sensors in the barrel and 12 layers in the endcaps.
 
-\subsection{Tracker performance}
-\label{sec:TrackPerformance}
-For charged hadrons with transverse momentum \pt less than 20 GeV, the \pt can be measured with a resolution of $1\%$. 
+The tracker has a spatial resolution of 25-50 $\mu$m perpendicular to the strip direction. In order to improve the precision of the detector in the direction parallel to the strips, several of the layers are arranged in pairs. By aligning the second layer 100 mrad off from the strips in the first layer, a spatial resolution of 230 to 530 $\mu$m can be achieved. These back-to-back modules are represented by double lines in Figure~\ref{fig:TrackerLayout}.
 
-
-
-
+%Yutaro: paragraph on the alignment system for the strips.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
