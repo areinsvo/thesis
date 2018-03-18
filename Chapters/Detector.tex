@@ -45,7 +45,7 @@ The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The fu
 \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/Detector/tracker_layout.png}
-       \caption{Schematic of the CMS tracker system. Detector modules are represented by single lines, and back-to-back modules are represented by double lines. The strip tracker is further divided into the Tracker Inner/Outer Barrel (TIB/TOB), Tracker Inner Disk (TID) and the Tracker Endcap (TED). Reprinted from Reference~\cite{Chatrchyan2008zzk}.}
+       \caption{Schematic of the CMS tracker system. Detector modules are represented by single lines, and back-to-back modules are represented by double lines. The strip tracker is further divided into the Tracker Inner/Outer Barrel (TIB/TOB), Tracker Inner Disk (TID) and the Tracker Endcap (TEC). Reprinted from Reference~\cite{Chatrchyan2008zzk}.}
    	\label{fig:TrackerLayout}
 \end{figure*}
 
@@ -75,15 +75,53 @@ Very important. Finds photons.
 
 \section{Hadron calorimeter (HCAL)}
 \label{sec:HCAL}
+The Hadron Calorimeter (HCAL) is the next sub-detector after the ECAL. It is a brass sampling calorimeter, with alternating layers of plastic scintillator and brass absorbers. 
+Heavy particles such as hadrons interact with the brass layers, and the scintillation light from the nuclear showers is collected with wavelength-shifting optical fibers embedded in the plastic scintillator. The light is then guided to pixelated hybrid photodiodes and electronics that amplify the signal. Figure~\ref{fig:HCAL_layout} shows a longitudinal slice of the full HCAL system. 
 
-brass sampling calorimeter
+%Heavy particles such as hadrons interact with the brass layers, and the energy of the resulting nuclear shower is detected in the plastic scintillators. 
+%When a charged particle passes through the scintillator, the scintillation light is collected with wavelength-shifting optical fibers. 
+
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/Detector/HCAL_layout.pdf}
+       \caption{Longitudinal slice of the CMS HCAL, including the barrel HCAL (HB), outer HCAL (HO), endcap HCAL (HE), and forward HCAL (HF). The dashed lines represent lines of constant pseudorapidity. Reprinted from Reference~\cite{Chatrchyan2008zzk}.}
+       \label{fig:HCAL_layout}
+\end{figure*}
+
+There are 17 scintillator layers in the barrel of the HCAL (HB), which extends radially from 1.77 m to 1.95 m and to a pseudorapidity $|\eta| = 1.3$. The first and last layers of absorber are made of steel rather than brass for structural reasons. The scintillation layers are divided into tiles with area $\Delta\phi \times \Delta\eta = 0.87 \times 0.87$. The tiles are further organized into towers that each get a single readout channel. The outer HCAL (HO) is located outside the solenoid and serves to increase the thickness of the calorimeter. 
+
+The HCAL endcap (HE) covers the pseudorapidity range $1.3 < |\eta| < 3$. There are 17 layers of plastic scintillator and 18 layers of absorber in HE. For $|\eta| < 1.6$, the tile size is the same as those in the barrel, and for $|\eta| >1.6$ the tile size is reduced to $\Delta\phi \times \Delta\eta = 0.17 \times 0.17$. Depending on the pseudorapidity, there are two or three readout channels per tower.
+ 
+The last part of the HCAL system is the forward HCAL (HF) that covers the pseudorapidity range from $3 < |\eta| < 5.2$. Charged particles are detected via Cherenkov radiation in quartz fibers planted in the steel absorber. The quartz fibers were chosen to be able to withstand the high radiation levels of particles emitted close to the beam pipe. 
+All three segments of the HCAL are calibrated using radioactive sources Cs$^{136}$ or Co$^{60}$ mounted on the tip of a moving wire. The radioactive sources produce photons at known energies, allowing for an absolute calibration of each scintillator. 
+
+Because most of the energy from the nuclear showers is deposited in the absorbers rather than the scintillation material, 
+the HCAL naturally has a lower energy resolution than the ECAL . In addition, nuclear showers might start 
+before particles even reach the HCAL, or charged particles might deposit energy in the ECAL via bremsstrahlung. 
+The mean distance travelled by a hadronic particle before undergoing 
+an inelastic nuclear interaction is known as the nuclear interaction length. The ECAL has a nuclear interaction length 
+of 1.1, and the depth of the HCAL corresponds to 5.82 interaction lengths at $|\eta|=0$ and 10.6 interaction lengths at $|\eta|=1.3$. 
+
+
+%The relative energy resolution of the two calorimeters together is $\Delta\mathrm{E}/\mathrm{E} \approx 100\% / \sqrt{\mathrm{E}} $. 
+%look up energy resolution
+%references?
+%this is old, but might work https://arxiv.org/pdf/0911.4991.pdf
+%conference proceeding http://home.fnal.gov/~chlebana/CMS/PAS/HCALPerformance.pdf
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Muon system}
 \label{sec:Muon}
+Aside from weakly-interacting particles such as neutrinos, muons are the only particles that make it past the HCAL. Muons do not interact via the strong force and are too heavy to be stopped by electromagnetic interactions alone. For this reason, the muon detector system is the outermost layer of CMS. Three different types of detectors are used in the muon system: drift tube (DT) chambers, cathode strip chambers (CSC), and resistive plate chambers (RPC). The muon system is located at a radial distance $r > 3.5$ m and is embedded in the return yoke for the magnetic flux.
 
-The muon subsystem is located outside of the solenoid and is embedded in the return yoke for the magnetic flux. Three different types of detectors are used in the muon system: drift tube chambers (DTC) = positively charged wire within gas volume. Muon knocks electrons off atoms in the gas, which are attracted to the wire. Can determine where electrons hit and where the muon was from the wire to get 2 coordinates for its position. Barrel
-Cathode strip chamber (CSC) = better for high flux areas. Crisscrossing positive and negative wires. Muons knock off electrons, which go to positive wires. Ions move toward negative wires. Two position coordinates. Endcaps.
+A drift tube consists of a conducting wire held at high positive voltage in the center of a gas cell. When a charged particle passes through the gas, the gas is ionized. The freed electrons are drawn to the positively charged wire, and in turn cause more ionization as they are accelerated. The time between the passage of the initial particle and the resulting electron avalanche can be used to reconstruct the position of the interaction perpendicular to the wire.
+
+Drift tubes are used in the barrel region of the detector and extend to $|\eta| < 1.2$. The CMS drift tubes are are made from aluminum plates and contain a mixture of 85\% Ar and 15\% CO$_2$. A gold-plated stainless steel anode wire is located at the center of each tube. The wires are held at 3.6 kV and have a thickness of 50$\mu$m. Each drift tube has dimensions 1.3 cm $\times$ 4.2 cm $\times$ 2.4 m. Four layers of drift tubes make up a superlayer, and a group of 2 or 3 superlayers makes up one muon chamber.
+
+The endcap system uses cathode strip chambers (CSC) because of their improved performance in high flux areas and non-uniform magnetic fields. Positively-charged wires are aligned perpendicular to negatively-charged wires in a gas, which gets ionized by passing muons. Electrons produce a signal in the anode wires and ions produce a signal in the cathode wires. This provides two position coordinates for each muon. The spatial resolution in the azimuthal direction is 150 $\mu$m. The CSCs extend the pseudorapidity coverage of the muon system to $|\eta| < 2.4$
+
+Finally, resistive plate chambers are used in both the barrel and the endcap for more precise timing measurements. This is important for triggering purposes and to make sure each muon is assigned to the correct bunch crossing. A high voltage is applied to two large plates with a gaseous layer between them. The plates themselves have a high resistance, and the cascade caused by the passage of a muon through the gas is detected via readout strips outside the chamber. The CMS RPCs have a timing resolution of 1 ns. 
 
 
