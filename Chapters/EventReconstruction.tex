@@ -9,6 +9,27 @@
 
 \subsection{Jet reconstruction}
 \label{sec:Jet}
+Jets are reconstructed using the \antikt algorithm with a distance parameter of $R <$ 0.4~\cite{antikt}.  The \antikt algorithm is a sequential clustering algorithm where the distance $d_{ij}$ between two particles $i$ and $j$ and the distance $d_{iB}$ between particle $i$ and the beam $B$ is given by the following: 
+\begin{equation}
+d_{ij} = \mathrm{min}(k_{ti}^{2p},k_{ti}^{2p})\frac{\Delta^2_{ij}}{R^2},
+d_{iB} =k_{ti}^{2p}
+\end{equation}
+The value $\Delta^2_{ij}$ is equal to $(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2$, $k_t$ is the transverse momentum of the particle, and $R$ is a distance parameter that determines the final radius of the jet.
+
+The clustering algorithm first finds the smallest value of $d_{ij}$ and $d_{iB}$ for all particles in the event. If the minimum distance is $d_{ij}$, then particles $i$ and $j$ are combined into a single entity. If the minimum distance is $d_{iB}$, then particle $i$ is labelled a jet and removed from the list. For the \antikt algorithm, the parameter $p = -1$. Setting $p=0$ corresponds to the inclusive Cambridge/Aachen algorithm, and $p=1$ is the inclusive $k_t$ algorithm. The result of various jet-clustering algorithms is shown in Figure~\ref{fig:jetAlgorithms}.
+ 
+ \begin{figure*}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/EventReconstruction/jetAlgorithms.pdf}
+       \caption{Behavior of several jet-clustering algorithms illustrated with a sample parton-level event. 
+       CMS uses the \antikt algorithm (bottom right) with a distance parameter $R = 0.4$.
+       Reprinted from Reference~\cite{antikt}.}
+       \label{fig:jetAlgorithms}
+\end{figure*}
+ 
+One benefit of the \antikt algorithm is that it is infrared and collinear (IRC) safe. Infrared safe means that \antikt jets are insensitive to nearby soft particles. In the \antikt algorithm, soft particles (those with $k_t \rightarrow 0$) have a large $d_{ij}$ and are therefore clustered last. This leaves hard jets unaffected. Soft particles could possibly by clustered into many soft jets, but those are simple to remove during the analysis. This is particularly important for the high luminosity environment of the LHC, because soft particles from pileup interactions will not change the clustering of the hard jets from the primary interaction. 
+
+Collinear safe means that very energetic initial quarks will still get reconstructed as a single jet. In the \antikt algorithm, collinear particles will have a small value of $\Delta^2_{ij}$ and will be clustered together first. Using an IRC safe algorithm is important for comparing theory and experiment, because if jets are not IRC safe, then their cross sections cannot be calculated using perturbation theory.
 
 \subsection{Pileup subtraction}
 \label{}
