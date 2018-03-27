@@ -1,11 +1,35 @@
-\chapter{Event Reconstruction in the CMS Detector}
+\chapter{OBJECT RECONSTRUCTION AND SAMPLE SELECTION}
 \label{sec:EventReconstruction}
 
+For each event that passes the trigger, the output from all of the sub-detectors described in Chapter~\ref{chap:Detector} is saved by the data acquisition system (DAQ) and eventually recorded to disk and tape. The data format at this stage is referred to as ``RAW" data. It includes information about the response of each detector, but the data are still unprocessed, aside from the minimal processing done to determine whether the event passed the trigger. ``Reconstruction" is the general term for algorithms that convert the detector response data into lists of object candidates---muons, photons, electrons, jets, etc.---and event quantities such as missing transverse momentum \ETmiss.
+
+Figure~\ref{fig:cmsSlice} shows how each type of particle interacts with the different layers of the CMS detector. 
+
+List basic interactions of each particle
+Define jet
+
+ \begin{figure*}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/EventReconstruction/cms_slice.pdf}
+       \caption{Slice of the transverse plane of the CMS detector showing how different particles interact with the detector sub-systems. The most important particle for this analysis is the photon (blue dotted line), which interacts only with the ECAL (shown in green).
+       Reprinted from Reference~\cite{CDS}.}
+       \label{fig:cmsSlice}
+\end{figure*}
+
+Of course, the simplified picture in Figure~\ref{fig:cmsSlice} does not cover the full complexity of how particles can interact with the detector. Photons can ``convert" and produce an electron-positron pair. Hadrons can interact with the material of the tracker or ECAL, and begin to shower before reaching the HCAL. The following sections will describe in more detail how physics objects are reconstructed. 
+
 \subsection{Photons}
+\label{sec:phoReco}
 %https://www3.nd.edu/~cjessop/talks/JessopCMS101.pdf
+
+\subsection{Electrons}
+\label{sec:eleReco}
+
+Describe how tracks are reconstructed
 
 \subsection{Particle Flow Algorithm}
 \label{sec:ParticleFlow}
+Objects that go into the jet clustering algorithm are reconstructed using PF \cite{ParticleFlow}.
 
 \subsection{Jet reconstruction}
 \label{sec:Jet}
