@@ -129,6 +129,7 @@ an inelastic nuclear interaction is known as the nuclear interaction length.
 The radial depth of the ECAL corresponds to 1.1 nuclear interaction lengths, and
 in the HCAL there are 5.82 interaction lengths at $|\eta|=0$ and 10.6 interaction lengths at $|\eta|=1.3$. 
 
+In practice, the HCAL does not detect individual quarks or gluons or even individual hadrons, but objects known as jets. A jet is a spray of particles in a narrow cone that is produced by the hadronization of quarks and gluons. The reconstruction of jets is described in detail in Chapter~\ref{sec:EventReconstruction}.
 
 %The relative energy resolution of the two calorimeters together is $\Delta\mathrm{E}/\mathrm{E} \approx 100\% / \sqrt{\mathrm{E}} $. 
 %look up energy resolution
@@ -147,7 +148,8 @@ The first term is a stochastic term that takes into account random fluctuations 
 
 The $b/E$ term represents electronic noise from the equipment that is used to collect the signal. This term can depend sensitively on the temperature of the electronics, as already mentioned for the EB APDs. Maximizing the energy yield helps improve this contribution to the energy resolution. The final term is a constant and covers any irregularities in the detector response. This can include variations between ECAL crystals, radiation damage effects, or differences in response due to temperature gradients across the detector.
 
-The resolution of the ECAL as measured using $Z\rightarrow ee$ events in the 2015 CMS dataset is shown in Figure~\ref{fig:ecal_resolution}. For the central region of EB. the electron energy resolution is better than 2\%/E. The energy resolution of objects in the HCAL will be described in more detail in Chapter~\ref{sec:EventReconstruction}.
+The resolution of the ECAL as measured using $Z\rightarrow ee$ events in the 2015 CMS dataset is shown in Figure~\ref{fig:ecal_resolution}. For the central region of EB. the electron energy resolution is better than 2\%/E. 
+%The energy resolution of objects in the HCAL will be described in more detail in Chapter~\ref{sec:EventReconstruction}.
 
 \begin{figure*}[h!]
 	\centering
@@ -159,6 +161,13 @@ The resolution of the ECAL as measured using $Z\rightarrow ee$ events in the 201
         Reprinted from Reference~\cite{ECALDPGtwiki2}.}
          \label{fig:ecal_resolution}
 \end{figure*}
+
+The combined energy resolution of the ECAL and HCAL can be expressed as the following \cite{ParticleFlow}:
+\begin{equation}
+\frac{\sigma}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E}  \oplus c 
+\end{equation}
+This resolution was measured using a pion test beam. The energy resolution after applying the full event reconstruction will be described in more detail in Chapter~\ref{sec:EventReconstruction}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
