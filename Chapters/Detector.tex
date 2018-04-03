@@ -41,7 +41,7 @@ One of the most important components of the CMS detector is the superconducting 
 
 The innermost sub-detector is the silicon tracker~\cite{trackerTDR,trackerTDRAddendum}. The tracker must provide enough information to accurately reconstruct the trajectories of charged particles to a high level of precision. This is accomplished through the use of silicon semiconductors, which rely on the properties of p-n junctions to detect charged particles. A p-n junction is created by bringing a p-type semiconductor into contact with an n-type semiconductor. For p- and n-type semiconductors, the crystal lattice of the semiconductor is doped to either donate or accept extra electrons, respectively. In a p-n junction, the extra electrons in the n-type semiconductor migrate and combine with the electron holes in the p-type semiconductor. This creates a depletion region in the center of the crystal. Charged particles passing through the depletion region will create electron-hole pairs that move towards either end of the junction when an external electric field is applied. The resulting current is proportional to the energy deposited in the detector.
 
-The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The full tracking system is cylindrical in shape and is comprised of a barrel and two endcaps, each of which is split into layers of silicon pixel detectors and layers of silicon micro-strip detectors. In total, there are 48 million $150\times100~\mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. Figure~\ref{fig:TrackerLayout} shows a schematic drawing of the layout of the tracker subsystems. For charged hadrons with transverse momentum \pt less than 20 GeV, the \pt can be measured with a resolution of $1\%$. 
+The overall dimensions of the tracker are 5.6 m in length and 1.2 m in radius. The full tracking system is cylindrical in shape and is comprised of a barrel and two endcaps, each of which is split into layers of silicon pixel detectors and layers of silicon micro-strip detectors. In total, there are 48 million $150\times100~\mu$m pixels and 9.6 million strips that are between 80 and 180 $\mu$m wide. Figure~\ref{fig:TrackerLayout} shows a schematic drawing of the layout of the tracker subsystems. For charged hadrons with \pt less than 20 GeV, the \pt can be measured with a resolution of $1\%$. 
 
 \begin{figure*}[h!]
 	\centering
@@ -53,7 +53,7 @@ The overall dimensions of the tracker are 5.6 m long and 1.2 m in radius. The fu
 \subsection{Pixel detectors}
 \label{sec:TrackerPixel}
 
-Due to the high occupancy of the tracker within 10 cm of the beam pipe, pixel detectors rather than strip detectors are used as the innermost layers of the tracker. Three layers in the barrel and two disks of pixel detectors in the endcap give three high-precision points for every charged particle moving away from the interaction point. The small pixel size of $150\times100~\mu$m is critical for accurate secondary vertex reconstruction, for forming seed tracks used for high level triggering (see Chapter~\ref{chap:Trigger}), and for the reconstruction of charged particles in the event (see Chapter~\ref{sec:EventReconstruction}). The three barrel layers are 53 cm long and are located at mean radii of 4.4, 7.3 and 10.2 cm. The endcap modules extend radially from 6 to 15 cm and are placed on each side at $z=\pm34.5$ and $z=\pm46.5$~cm. The endcaps extend the coverage of the sub-detector to $|\eta|~<~ 2.5$. 
+Due to the high occupancy of the tracker within 10 cm of the beam pipe, pixel detectors rather than strip detectors are used as the innermost layers of the tracker. Three layers in the barrel and two disks of pixel detectors in the endcap give three high-precision points for every charged particle moving away from the interaction point. The small pixel size of $150\times100~\mu$m is critical for accurate secondary vertex reconstruction, for forming seed tracks used for high level triggering (see Chapter~\ref{chap:Trigger}), and for the reconstruction of charged particles in the event (see Chapter~\ref{sec:EventReconstruction}). The three barrel layers are 53 cm long and are located at mean radii of 4.4, 7.3 and 10.2 cm. The endcap modules extend radially from 6 to 15 cm and are placed on each side at $z=\pm 34.5$ and $z=\pm 46.5$~cm. The endcaps extend the coverage of the sub-detector to $|\eta|~<~ 2.5$. 
 %Yutaro: An interpolation of the signal amplitudes gives a spacial resolution of 15-20 mum, (because charge is shared between several pixels due to the geometry and the magnetic field)
 
 \subsection{Strip detectors}
@@ -83,9 +83,9 @@ Finally, the last characteristic of PbWO$_4$ that put it ahead of other inorgani
 	\centering
 	\includegraphics[width=\linewidth]{Figures/Detector/ecal_response.png}
        \caption{ Relative response of the ECAL crystals for the 2011 to 2016 data-taking periods.
-       The average observed change in response is up to 10\% in the barrel and 50\% for $|\eta|$ < 2.5. 
+       The average observed change in response is up to 10\% in the barrel and 50\% for $|\eta| <$ 2.5. 
        The bottom plot shows the instantaneous luminosity delivered during this period. The crystals recovered 
-       some, but not all, of their response during 2013-2014 Long Shutdown 1. Reprinted from Reference~\cite{ECALDPGtwiki}.}
+       some, but not all, of their response during Long Shutdown 1 (2013-2014). Reprinted from Reference~\cite{ECALDPGtwiki}.}
    	\label{fig:ecal_response}
 \end{figure*}
 
@@ -101,7 +101,7 @@ The last sections of the ECAL system are two pre-shower detectors located in fro
 
 \section{Hadron calorimeter (HCAL)}
 \label{sec:HCAL}
-The Hadron calorimeter (HCAL) is the next sub-detector after the ECAL. It is a brass sampling calorimeter, with alternating layers of plastic scintillator and brass absorbers. 
+The hadron calorimeter (HCAL) is the next sub-detector after the ECAL. It is a brass sampling calorimeter, with alternating layers of plastic scintillator and brass absorbers. 
 Heavy particles such as hadrons interact with the brass layers, and the scintillation light from the nuclear showers is collected with wavelength-shifting optical fibers embedded in the plastic scintillator. The light is then guided to pixelated hybrid photodiodes and electronics that amplify the signal. Figure~\ref{fig:HCAL_layout} shows a longitudinal slice of the full HCAL system. 
 
 %Heavy particles such as hadrons interact with the brass layers, and the energy of the resulting nuclear shower is detected in the plastic scintillators. 
@@ -124,10 +124,11 @@ All three segments of the HCAL are calibrated using radioactive sources $^{136}$
 Because most of the energy from the nuclear showers is deposited in the absorbers rather than the scintillation material, 
 the HCAL naturally has a lower energy resolution than the ECAL . In addition, nuclear showers might start 
 before particles even reach the HCAL, or charged particles might deposit energy in the ECAL via bremsstrahlung. 
-The mean distance travelled by a hadronic particle before undergoing 
+The mean distance traveled by a hadronic particle before undergoing 
 an inelastic nuclear interaction is known as the nuclear interaction length. 
 The radial depth of the ECAL corresponds to 1.1 nuclear interaction lengths, and
 in the HCAL there are 5.82 interaction lengths at $|\eta|=0$ and 10.6 interaction lengths at $|\eta|=1.3$. 
+The resolution of the calorimeters is described in more detail below.
 
 In practice, the HCAL does not detect individual quarks or gluons or even individual hadrons, but objects known as jets. A jet is a spray of particles in a narrow cone that is produced by the hadronization of quarks and gluons. The reconstruction of jets is described in detail in Chapter~\ref{sec:EventReconstruction}.
 
@@ -164,9 +165,9 @@ The resolution of the ECAL as measured using $Z\rightarrow ee$ events in the 201
 
 The combined energy resolution of the ECAL and HCAL can be expressed as the following \cite{ParticleFlow}:
 \begin{equation}
-\frac{\sigma}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E}  \oplus c 
+\frac{\sigma}{E} = \frac{110\%}{\sqrt{E}} \oplus 9\% 
 \end{equation}
-This resolution was measured using a pion test beam. The energy resolution after applying the full event reconstruction will be described in more detail in Chapter~\ref{sec:EventReconstruction}.
+This resolution was measured using a pion test beam. The jet energy resolution after applying the full event reconstruction will be described in more detail in Chapter~\ref{sec:EventReconstruction}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,12 +197,12 @@ Van der Meer (VdM) scans \cite{VanderMeer} are used to set an absolute calibrati
 L = \frac{R}{\sigma_{vis}}
 \end{equation}
 
-The integrated luminosity $\mathcal{L}$ is the integral of all collisions taking place within CMS and represents the total amount of data collected. Figure~\ref{fig:lumi} shows the integrated luminosity delivered to CMS by the LHC and the integrated luminosity recorded by CMS during the 2016 data-taking period for 13 TeV p-p collisions. CMS collected 92.5\% of the 40.76 \fbinv delivered by the LHC. CMS can fail to record events delivered by the LHC if any sub-detector is off or misbehaving. The 2016 ``golden JSON", the full list of runs and events that are certified for use in data analysis, corresponds to 35.92 \fbinv. The total uncertainty on the integrated luminosity is 2.5\% \cite{lumiPAS}. The LHC is on track to deliver 100 \fbinv over the course of Run II. 
+The integrated luminosity $\mathcal{L}$ is the integral of all collisions taking place within CMS and represents the total amount of data collected. Figure~\ref{fig:lumi} shows the integrated luminosity delivered to CMS by the LHC and the integrated luminosity recorded by CMS during the 2016 data-taking period for 13 TeV $p$-$p$ collisions. CMS collected 92.5\% of the 40.76 \fbinv delivered by the LHC. CMS can fail to record events delivered by the LHC if any sub-detector is off or misbehaving. The 2016 ``golden JSON", the full list of runs and events that are certified for use in data analysis, corresponds to 35.92 \fbinv. The total uncertainty on the integrated luminosity is 2.5\% \cite{lumiPAS}. The LHC is on track to deliver 100 \fbinv over the course of Run II. 
 
 \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/Detector/int_lumi_per_day_cumulative_pp_2016.pdf}
-       \caption{Integrated luminosity delivered to CMS by the LHC (blue) and the integrated luminosity recorded by CMS (orange) during p-p collisions at $\sqrt{s}$ = 13 TeV in 2016.}
+       \caption{Integrated luminosity delivered to CMS by the LHC (blue) and the integrated luminosity recorded by CMS (orange) during $p$-$p$ collisions at $\sqrt{s}$ = 13 TeV in 2016.}
          \label{fig:lumi}
 \end{figure*}
 
