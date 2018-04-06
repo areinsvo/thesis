@@ -1,29 +1,83 @@
-\chapter{Sample Selection}
+\chapter{DATA SETS AND SAMPLE DEFINITIONS}
 \label{chap:EventSelect}
+
+\section{Data Samples}
+
+As already mentioned, this analysis was performed using 35.9 \fbinv collected with the CMS detector in 2016. More specifically, the data sets listed in Table~\ref{tab:datasets} were used. These correspond to the reprocessing of the data that took place in February 2017 to include improved calibrations and performance corrections. The relevant ``golden JSON" file was used to specify which events passed all of the offline CMS data quality monitoring requirements: \\
+Cert$\_$271036-284044$\_$13TeV$\_$23Sep2016ReReco$\_$Collisions16$\_$JSON.txt
+
+\begin{table}[ht]
+\caption{DATA SAMPLES}
+\label{tab:datasets}
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9\linewidth}|}
+\hline
+%\hline
+%\textbf{Data sets} \\
+\hline
+/DoubleEG/Run2016B-03Feb2017$\_$ver2-v2/MINIAOD \\
+/DoubleEG/Run2016C-03Feb2017-v1/MINIAOD \\
+/DoubleEG/Run2016D-03Feb2017-v1/MINIAOD \\
+/DoubleEG/Run2016E-03Feb2017-v1/MINIAOD \\
+/DoubleEG/Run2016F-03Feb2017-v1/MINIAOD \\
+/DoubleEG/Run2016G-03Feb2017-v1/MINIAOD \\
+/DoubleEG/Run2016H-03Feb2017$\_$ver2-v1/MINIAOD \\
+/DoubleEG/Run2016H-03Feb2017$\_$ver3-v1/MINIAOD \\      
+\hline
+\hline
+\end{tabular}
+ \justify{List of data samples used in this analysis.}
+\end{center}
+\end{table}
 
 \section{MC Samples}
 \label{sec:MC}
-The list of all MC samples used for data versus MC comparisons and background studies is shown in Table~\ref{tab:MC}.
+Monte Carlo (MC) simulations are used for several purposes in this analysis. Simulations
+of the signal processes are used to determine signal efficiencies, and
+background process simulations are used for validation of the analysis performance
+and to model the contribution from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$
+events. The full list of MC samples for this analysis is shown in Table~\ref{tab:MC}.
+The details of the signal simulation will be described in more detail in Section~\ref{sec:SimplifiedModels}. 
 
 \begin{table}[ht]
 \caption{MC SAMPLES FOR SIGNAL AND BACKGROUND}
 \label{tab:MC}
 \begin{center}
-\begin{tabular}{|c|}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9\linewidth}|}
 \hline
 \hline
 \bf{SUSY Signal Samples}   \\         
 \hline                                                                                         
-T5Wg \\
-T5Wg ext \\
-T6Wg \\
-T6Wg ext\\
+\small{/SMS-T5Wg$\_$TuneCUETP8M1$\_$13TeV-madgraphMLM-pythia8/
+          RunIISpring16MiniAODv2-PUSpring16Fast$\_$80X$\_$mcRun2$\_$
+          asymptotic$\_$2016$\_$miniAODv2$\_$v0-v1/MINIAODSIM }\\
+\hline
+\small{/SMS-T5Wg$\_$mGo2150To2500$\_$TuneCUETP8M1$\_$13TeV-madgraphMLM-pythia8/
+          RunIISpring16MiniAODv2-PUSpring16Fast$\_$80X$\_$mcRun2$\_$ 
+          asymptotic$\_$2016$\_$miniAODv2$\_$v0-v1/MINIAODSIM }\\
+\hline
+\small{/SMS-T6Wg$\_$TuneCUETP8M1$\_$13TeV-madgraphMLM-pythia8/ 
+ 		     RunIISpring16MiniAODv2-PUSpring16Fast$\_$80X$\_$mcRun2$\_$ 
+		     asymptotic$\_$2016$\_$miniAODv2$\_$v0-v1/MINIAODSIM }\\
+\hline
+\small{/SMS-T6Wg$\_$TuneCUETP8M1$\_$13TeV-madgraphMLM-pythia8/ 
+          RunIISpring16MiniAODv2-PUSpring16Fast$\_$80X$\_$mcRun2$\_$ 
+          asymptotic$\_$2016$\_$miniAODv2$\_$v0-v1/MINIAODSIM }\\
 \hline                                               
 \bf{Background MC Samples} \\ 
 \hline                                                                                      
-GJet \\
-Zgg \\
-DY \\                     
+\small{/GJet$\_$Pt-40toInf$\_$DoubleEMEnriched$\_$MGG-80toInf$\_$TuneCUETP8M1$\_$13TeV$\_$Pythia8/ 
+%\footnotesize{/GJet$\_$Pt-40toInf$\_$DoubleEMEnriched$\_$MGG-80toInf$\_$/
+RunIISummer16MiniAODv2-PUMoriond17$\_$80X$\_$mcRun2$\_$ 
+asymptotic$\_$2016$\_$TrancheIV$\_$v6-v1/MINIAODSIM} \\
+\hline
+\small{/ZGGToNuNuGG$\_$5f$\_$TuneCUETP8M1$\_$13TeV-amcatnlo-pythia8/
+RunIISummer16MiniAODv2-PUMoriond17$\_$80X$\_$mcRun2$\_$
+asymptotic$\_$2016$\_$TrancheIV$\_$v6-v1/MINIAODSIM }\\
+\hline
+\small{/DYJetsToLL$\_$M-50$\_$TuneCUETP8M1$\_$13TeV-madgraphMLM-pythia8/ 
+RunIISpring16MiniAODv2-PUSpring16$\_$80X$\_$mcRun2$\_$
+asymptotic$\_$2016$\_$miniAODv2$\_$v0$\_$ext1-v1/MINIAODSIM }\\                     
 \hline
 \hline
 \end{tabular}
@@ -31,60 +85,33 @@ DY \\
 \end{center}
 \end{table}
 
-\section{Object Selection}
+\section{Object Definitions}
 \label{sec:ObjSelect}
 
-In addition to photons and electrons, a third, orthogonal object definition referred to as ``fake" photons is also used. 
-Fakes are primarily electromagnetically-rich jets that have been misidentified as photons. As will be described in Chapter~\ref{chap:DataAnalysis},
-a control sample made up of events with two fakes is used to estimate the QCD background. 
+The MINIAOD data format of the data sets in Table~\ref{tab:datasets} includes lists of object candidates---photons, electrons, jets, etc.---from the reconstruction algorithms described in Chapter~\ref{sec:EventReconstruction}. Further refinements, however, are needed in the offline analysis to achieve the desired purities. For this analysis, the primary objects of interest are photons and electrons.
 
 \subsection{Photon identification}
 \label{sec:phoID}
+Photons are required to satisfy \pT $> 40$ GeV in order to be in the region where the trigger is fully efficient. Due to the kinematics of the SUSY models under consideration, the majority of photons in SUSY events will be produced in the central region of the detector. For this reason, and to avoid the added complexity of the high-occupancy endcap, photons must be in the fiducial region of the ECAL barrel, $|\eta| < 1.4442$. 
 
-\subsection{Electron identification}
-\label{sec:eleID}
+We use the medium working point of the cut-based photon ID derived by the CMS $e/\gamma$ Physics Object Group (EGM POG). The medium working point was tuned to have an efficiency of 80\% and includes the following cuts:
 
+\begin{itemize}
+\item { H/E :} The ratio of the energy deposited in the HCAL tower directly behind the ECAL supercluster to the supercluster energy is required to be less than $0.0396$.
+\item {$\sigma_{i{\eta}i{\eta}}$:} The log-fractional weighted width of the shower in i{$\eta$}-space is required to be less then $0.01022$.
+\item {Particle Flow Charged Isolation :} The $\pT$ sum of all PF charged hadrons within a hollow cone of $0.02 < \Delta R < 0.3$ around the supercluster is required to be less than $0.441$~GeV.
+\item {Particle Flow Neutral Isolation :} The $\pT$ sum of all neutral hadrons within a cone of $\Delta R <0.3$ around the supercluster
+                                              is required to be less than $2.725 + (0.0148 \times \pT^{\gamma}) + (0.000017 \times (\pT^{\gamma})^2$).
+\item {Particle Flow Photon Isolation :} The $\pT$ sum of all photons within a cone of $\Delta R < 0.3$,
+                                             excluding a strip in $\eta$ of 0.015 around the supercluster, is required to be less than $2.5718 + (0.0047 \times \pT^{\gamma})$.
+\end{itemize}
 
-\subsection{Fake identification}
-\label{sec:fakeID}
-Electromagnetically-rich jets that have been misidentified as photons make up the majority of the objects 
-that satisfy our ``fake" definition. These objects are taken from a photon ID sideband. Fakes must
-pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they are required to
-fail either the \sigmaietaieta or the charged hadron isolation requirement. This is described in detail in Table~\ref{tab:ID}
-(XX better if column widths the same XX)
+All of the isolation values are corrected to remove pileup contributions as described in Section~\ref{sec:pileup}. The corrected value of isolation $I_{\mathrm{corr.}}$ is given by 
+\begin{equation}
+I_{\mathrm{corr.}} = I_{\mathrm{uncorr.}} - \rho A_{\mathrm{eff}}
+\end{equation}
 
-\begin{table}[ht]
-    \caption{ELECTROMAGNETIC OBJECT DEFINITIONS}
-    \centering
-    \begin{tabular}{ | c | c c c |}
-        \hline
-        	\hline
-        \textbf{ID Requirement} & \textbf{Photons} & \textbf{Electrons} & \textbf{Fakes} \\ [0.5ex]
-        \hline
-        	Pixel seed veto    & \multicolumn{1}{c|}{Applied} & \multicolumn{1}{c|}{Reversed} & \multicolumn{1}{c|}{Applied}\\
-	\hline
-	\sigmaietaieta   & \multicolumn{2}{c|}{$ < 0.01022 $} & $0.01022 < \sigmaietaieta < 0.015 $\\
-	Charged hadron isolation & \multicolumn{2}{c|}{$ < 0.441$} & $ 0.441 < iso < 15$\\
-	\hline
-	Photon isolation & \multicolumn{3}{c|}{$ < 2.571 +0.0047~\pt$} \\
-	Neutral hadron isolation   &  \multicolumn{3}{c|}{$ < 2.2725 + 0.0148~\pt+0.000017~\pt^2$} \\
-        R9                      & \multicolumn{3}{c|}{$ > 0.5$} \\
-        H/E                     & \multicolumn{3}{c|}{$ < 0.0396$} \\
-           \hline
-           \hline
-    \end{tabular}
-    \label{tab:ID}
-    \justify{Definitions of photon, electron, and fakes used to define the signal and control samples for this analysis. ``Fakes" refer to 
-    jets that have been misidentified as photons. The definitions of each of the variables used in the object ID's can be found in 
-    Section~\ref{sec:Var}.}
-\end{table}
-
-STOLEN %https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedPhotonIdentificationRun2#Selection_implementation_details
-The uncorrected isolation variables are PF objects 
-Pt sums in a cone 0.3 around the photon and also subjected to 
-the photon footprint removal using the association map of the PF objects. 
-The charge hadron Isolation is calculated using the PF objects that their tracks are associated with the primary vertex only, thus removing pile-up charge hadrons.
-STOLEN 
+The values of the effective area for each isolation correction are listed in Table~\ref{tab:EA}.
 
 \begin{table}[ht]
     \caption{EFFECTIVE AREAS FOR ISOLATION CORRECTIONS}
@@ -99,10 +126,53 @@ STOLEN
 		 \hline
            \hline
     \end{tabular}
-    \label{tab:ID}
+    \label{tab:EA}
     \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
 \end{table}
 
+
+In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to satisfy a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL 
+
+\subsection{Electron identification}
+\label{sec:eleID}
+As already mentioned, electrons---particularly electrons from $Z\rightarrow ee$ decays---are a useful proxy for photons because of the similar response in the ECAL. We define an electron as a photon candidate satisfying all of the requirements of Section~\ref{sec:phoID} but failing the PSV. Using all of the same ID requirements for electrons and photons enables us to define control regions with electrons without introducing any biases between the control region and the candidate di-photon sample we are trying to model. By reversing the pixel seed veto, we make the electron and photon selections orthogonal and avoid double-counting objects.
+
+\subsection{Fake identification}
+\label{sec:fakeID}
+In addition to photons and electrons, a third, orthogonal category referred to as ``fake" photons is defined. 
+Fakes are primarily electromagnetically-rich jets that have been misidentified as photons. As will be described in Chapter~\ref{chap:DataAnalysis},
+the predicted QCD background is derived using a double fake control sample.
+
+The fake definition is taken from a photon ID sideband. Fakes must
+pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they are required to
+fail either the \sigmaietaieta or the charged hadron isolation requirement. This ensures that the photon and fake selection criteria are orthogonal.
+The requirements for photons, electrons and fakes are outlined in detail in Table~\ref{tab:ID}
+
+\begin{table}[ht]
+    \caption{ELECTROMAGNETIC OBJECT DEFINITIONS}
+    \centering
+    \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.175\linewidth} >{\centering\arraybackslash}m{0.175\linewidth} >{\centering\arraybackslash}m{0.3\linewidth} |}
+        \hline
+        	\hline
+        \textbf{ID Requirement} & \textbf{Photons} & \textbf{Electrons} & \textbf{Fakes} \\ [0.5ex]
+        \hline
+        	Pixel seed veto    & \multicolumn{1}{c|}{Applied} & \multicolumn{1}{c|}{Reversed} & \multicolumn{1}{c|}{Applied}\\
+	\hline
+	\sigmaietaieta   & \multicolumn{2}{c|}{$ < 0.01022 $} & $0.01022 < \sigmaietaieta < 0.015 $\\
+	Charged hadron iso. & \multicolumn{2}{c|}{$ < 0.441$} & $ 0.441 <$ Iso $< 15$\\
+	\hline
+	Photon iso. & \multicolumn{3}{c|}{$ < 2.571 +0.0047~\pt$} \\
+	Neutral hadron iso.   &  \multicolumn{3}{c|}{$ < 2.2725 + 0.0148~\pt+0.000017~\pt^2$} \\
+        R9                      & \multicolumn{3}{c|}{$ > 0.5$} \\
+        H/E                     & \multicolumn{3}{c|}{$ < 0.0396$} \\
+           \hline
+           \hline
+    \end{tabular}
+    \label{tab:ID}
+    \justify{Photon, electron, and fake identification criteria used to define the signal and control samples for this analysis. ``Fakes" refer to 
+    jets that have been misidentified as photons. The definitions of each of the variables can be found in 
+    Section~\ref{sec:phoID}.}
+\end{table}
 
 
 \subsection{Object Cleaning}
@@ -113,7 +183,7 @@ First, because muons are reconstructed with a higher purity than any other parti
 any electromagnetic object (photon, electron, or fake) that is within \dR $< 0.3$ of a muon candidate is removed.
 Second, any photon that overlaps within \dR $< 0.3$ of an electron is removed. Finally, if a fake overlaps with an electron or 
 photon candidate within \dR $< 0.4$, the fake candidate is removed. The larger \dR separation for fakes is due to the fact
-that fakes are primarily jets. As described in Section~XX, jets are reconstructed using the \antikt algorithm with a distance
+that fakes are primarily jets and, as described in Section~\ref{sec:Jets}, jets are reconstructed using the \antikt algorithm with a distance
 parameter of 0.4.  
 
 \subsection{Lepton veto}
@@ -122,18 +192,33 @@ parameter of 0.4.
 In addition to the cuts described above, any event that contains additional muons or electrons is vetoed. 
 No additional leptons are present in the SUSY signals of interest, so applying a lepton veto will not hurt our signal sensitivity.
 More importantly, by vetoing on the presence of additional leptons, our analysis becomes orthogonal to other CMS searches for
-gauge-mediated supersymmetry breaking with photons in the final state. As described in Section~XX, this is particularly
-important for the combination paper.
+gauge-mediated supersymmetry breaking with photons in the final state. 
+%As described in Section~XX, this is particularly important for the combination paper.
 
-\subsection{Signal region and control samples}
+\section{Signal region and control samples}
 \label{sec:samples}
-After the individual objects are defined and identified, each event is sorted into one of four exclusive categories based on the electromagnetic objects with the highest \pT in the event. Events with two photons comprise the signal diphoton sample, referred to as the $\gamma\gamma$ sample. Events with two electrons, one electron and one photon, or two fakes are categorized as $ee$, $e\gamma$, or $ff$ events, respectively. 
+After the individual objects are defined and identified, each event is sorted into one of four exclusive categories based on the electromagnetic objects with the highest \pT in the event. Events with two photons comprise the signal diphoton sample, referred to as the $\gamma\gamma$ sample. Events with two electrons, one electron and one photon, or two fakes are categorized as $ee$, $e\gamma$, or $ff$ events, respectively. In each case, the two electromagnetic objects are required to be separated by \dR $ > 0.6$. 
 
 The  $\gamma\gamma$, $ff$, and $e\gamma$ samples are required to pass the primary trigger described in Section~\ref{sec:analysisTrig}. 
 In order to ensure that the events pass the trigger with a high efficiency, the invariant mass of the two electromagnetic objects is required to be greater than 105 GeV. 
 The $ee$ sample, on the other hand, is collected using the control trigger listed in Table~\ref{tab:triggers} and is required to satisfy $75 < m_{ee} < 105$ GeV. Chapter~\ref{chap:DataAnalysis} will explain in detail how each of these samples is used in this analysis.
 
-
 \section{Photon ID scale factor}
 \label{sec:phoSF}
+It is important that 
+
+
+\subsection{Scale factor for $R_9$ requirement}
+\label{sec:R9SF}
+The photon ID used in this analysis differs from the official POG recipe in one aspect: we apply an $R_9 > 0.5$ requirement on top of the medium ID due to the presence of an $R_9$ cut in our analysis trigger. A check was performed to make sure that the presence of the $R_9$ requirement does not change the photon scale factors. The results of this study are shown in Figure~\ref{fig:R9SF}. The $R_9$ cut has a negligible impact on the data/MC scale factors. We therefore choose to simply use the official scale factors described above. 
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/EventSelect/R9SF.pdf}
+    \caption{Scale factor for applying $R_9 > 0.5$ on top of the cut-based medium photon ID.
+    The scale factors are consistent with unity in all bins. Therefore, no additional corrections are applied to
+    the scale factors described in Section~\ref{sec:phoSF}.}
+    \label{fig:R9SF}
+\end{figure*}
+
 

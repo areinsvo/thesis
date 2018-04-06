@@ -1,4 +1,4 @@
-\chapter{OBJECT RECONSTRUCTION AND SAMPLE SELECTION}
+\chapter{CMS RECONSTRUCTION}
 \label{sec:EventReconstruction}
 
 \section{Overview of the CMS reconstruction process}
@@ -30,7 +30,7 @@ The ingredients to the PF algorithm are reconstructed tracks and calorimeter clu
 \label{sec:trackReco}
 Tracking in CMS takes place with a combinatorial track finder that is applied in ten iterations. The iterations use successively more complex algorithms with looser requirements on the track properties. Each iteration includes three basic steps:
 \begin{itemize}
-\item Seed generation: The first step is to find a track seed consisting of two or three hits compatible with a charge-particle track.
+\item Seed generation: The first step is to find a track seed consisting of two or three hits compatible with a charged-particle track.
 \item Track finding: Pattern recognition is used to identify hits in all layers of the tracker that are compatible with the trajectory implied by the track seed. 
 \item Track fitting: A global $\chi_2$ fit is performed to determine the final properties of the track, including origin, direction, and transverse momentum. 
 \end{itemize}
@@ -62,9 +62,9 @@ Because of the extensive amount of material that muons must traverse before reac
 
 \subsection{Reconstruction of calorimeter clusters}
 \label{sec:clusterReco}
-Calorimeter clusters are an important input for the PF algorithm. They are the sole means of detection for photons and neutral hadrons, and they are essential for improving the energy resolution of electrons and high-\pt jets. The reconstruction of a cluster begins with a ``seed" cell (ECAL crystal or HCAL scintillating tile) that corresponds to a local energy maxima above a given threshold. Starting from the seed cell, topological clusters are formed by adding cells that share a side or corner with the cluster and have an energy that is at least twice the noise threshold. For the EB, the seed energy must be greater than 230 MeV, and subsequent crystals must have an energy of at least 80 MeV in order to be added to the topological cluster. Finally, a fit is performed to determine what fraction of the energy in the cell is associated with each PF cluster, where the number of PF clusters is equal to the number of seeds incorporated into the topological cluster.
+Calorimeter clusters are an important input for the PF algorithm. They are the sole means of detection for photons and neutral hadrons, and they are essential for improving the energy resolution of electrons and high-\pt jets. The reconstruction of a cluster begins with a seed cell (ECAL crystal or HCAL scintillating tile) that corresponds to a local energy maxima above a given threshold. Starting from the seed cell, topological clusters are formed by adding cells that share a side or corner with the cluster and have an energy that is at least twice the noise threshold. For the EB, the seed energy must be greater than 230 MeV, and subsequent crystals must have an energy of at least 80 MeV in order to be added to the topological cluster. Finally, a fit is performed to determine what fraction of the energy in the cell is associated with each PF cluster, where the number of PF clusters is equal to the number of seeds incorporated into the topological cluster.
 
-The ECAL clusters are calibrated for photons and electrons using test beam data and radioactive sources, and residual corrections are derived using single photon MC samples. For hadrons, however, the ECAL must be re-calibrated, since the response of the ECAL to hadrons is significantly different than its response to electrons. A large simulated sample of neutral hadrons is used to derive a simultaneous calibration for the portions of the hadronic shower's energy deposited in the ECAL and HCAL. 
+The ECAL clusters are calibrated for photons and electrons using test beam data and radioactive sources, and residual corrections are derived using simulated single photon events. For hadrons, however, the ECAL must be re-calibrated, since the response of the ECAL to hadrons is significantly different than its response to electrons. A large simulated sample of neutral hadrons is used to derive a simultaneous calibration for the portions of the hadronic shower's energy deposited in the ECAL and HCAL. 
 
 One complication in the reconstruction of ECAL clusters is the presence of signals known as spikes. These occur when a particle directly ionizes an ECAL APD. The result is a signal whose amplitude is $10^5$ times higher than the signal from the scintillation light alone. Because these spikes appear in only one or two crystals, they are rejected by considering the ratio of energy deposited in the central crystal to that deposited in the neighboring 4 crystals. In the case where the spike affects two adjacent crystals, the energy deposited in the two crystals is compared to that of their six neighbors. These ratios are referred to as $E_4/E_1$ and $E_6/E_2$, and are required to be less than 5\% and 10\%, respectively. 
 
@@ -76,18 +76,7 @@ Particle flow is an iterative procedure. As object candidates are identified wit
 
 First, muon candidates are identified with two sets of identification criteria: one for isolated muons and one for muons inside or near jets. Next, electron candidates and photon candidates are reconstructed. Finally, any remaining tracks or calorimeter clusters in the PF block are assigned to a neutral hadron, charged hadron, or photon candidates.
 
-Because photons are the primary object of interest in this analysis, their reconstruction is described in more detail below. 
-
-\section{Photon identification}
-\label{sec:phoReco}
-
-
-
-
-%https://www3.nd.edu/~cjessop/talks/JessopCMS101.pdf
-The reconstruction of photon clusters with a seed as defined in Section~\ref{sec:clusterReco}. The ratio of the energy in a 3 $\times$ 3 array of crystals to that in a $5 \times 5$ region is referred to R9. If R9 is greater than 0.93, than the photon is classified as unconverted, and the energy of the 5 $\times 5$ region is assigned as the photon super-cluster energy. If the photon has converted (ie, R9 $< 0.93$), then the super-cluster is built starting with the seed crystal and moving outward.
-
-
+%Because photons are the primary object of interest in this analysis, their reconstruction is described in more detail below. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,13 +111,13 @@ Collinear safe means that very energetic initial quarks will still get reconstru
 \subsection{Jet energy corrections}
 \label{sec:JEC}
 
-A series of jet energy corrections (JEC) are applied to the jets after clustering to improve the calibration and energy resolution \cite{JEC}. The $L1$ correction is a flat correction designed to remove contributions to the jet energy from pileup (see Section~\ref{sec:pileup} for a more thorough description of pileup mitigation techniques). The $L2$ corrections are $eta$-dependent and the $L3$ corrections are \pt-dependent. These are calculated in simulation using generator truth information. In data, the correction factors are derived using dijet events and events where a jet is emitted back-to-back with an photon. In the latter case, the superior energy resolution of the ECAL is exploited to provide a handle on the jet energy. The effects of JEC on jet response in QCD MC is shown in Figure~\ref{fig:JEC}.
+A series of jet energy corrections (JEC) are applied to the jets after clustering to improve the calibration and energy resolution \cite{JEC}. The $L1$ correction is a flat correction designed to remove contributions to the jet energy from pileup (see Section~\ref{sec:pileup} for a more thorough description of pileup mitigation techniques). The $L2$ corrections are $\eta$-dependent and the $L3$ corrections are \pt-dependent. These are calculated in simulation using generator truth information. In data, the correction factors are derived using dijet events and events where a jet is emitted back-to-back with an photon. In the latter case, the superior energy resolution of the ECAL is exploited to provide a handle on the jet energy. The effects of JEC on jet response in QCD simulation is shown in Figure~\ref{fig:JEC}.
 
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{Figures/EventReconstruction/JEC1.png}
 	\includegraphics[width=0.5\linewidth]{Figures/EventReconstruction/JEC2.png}
-       \caption{Ratio of the average reconstructed jet \pt to the particle-level jet \pt ($p_{\mathrm{T,ptcl}}$) in QCD MC simulation.
+       \caption{Ratio of the average reconstructed jet \pt to the particle-level jet \pt ($p_{\mathrm{T,ptcl}}$) in QCD Monte Carlo simulation.
        The ratio is calculated in bins of $p_{\mathrm{T,ptcl}}$ before applying any JEC (top left), after applying the $L1$ pileup corrections
        (top right), and after all JEC (bottom). The different curves correspond to different numbers of pileup interactions $\mu$.
        Reprinted from Reference~\cite{JEC}.}
@@ -153,7 +142,7 @@ After the JEC are applied, resolutions of 10\% and 5\% are achieved for 100 GeV 
 
 \section{Missing transverse momentum}
 \label{sec:MET_Reco}
-After the full set of PF objects have been identified and reconstructed, the missing transverse momentum $\vec{\pt}^{\mathrm{miss}}$ is given by the following, where the sum is over all Particle Flow objects:
+After the full set of PF objects have been identified and reconstructed, the missing transverse momentum $\vec{\pt}^{\mathrm{miss}}$ is given by the following, where the sum is over all PF objects:
 \begin{equation}
 \vec{\pt}^{\mathrm{miss}} = \Sigma \ptvec
 \end{equation}
@@ -179,20 +168,58 @@ In addition to the post-processing corrections just described, a series of \ETmi
 \section{Pileup subtraction}
 \label{sec:pileup}
 
-The presence of pileup interactions affects many aspects of the reconstruction process, in particular the jet energy resolution, lepton isolation values, and \ETmiss. Fortunately, there are several ways in which the PF algorithm can be used to mitigate the effects from pileup. Charged-hadron subtraction (CHS), for example, is the procedure of removing charged hadrons from consideration if they are associated with a pileup vertex rather than the hard-scatter vertex. Figure~\ref{fig:jetComp} shows the composition of jets in data and simulation as a function of the number of pileup interactions $\mu$. For an event with $\mu = 30$, 10\% of the uncorrected jet energy is due to charged hadrons from pileup interactions. 
+The presence of pileup interactions affects many aspects of the reconstruction process, in particular the jet energy resolution, lepton isolation values, and \ETmiss. Figure~\ref{fig:pileup} shows the observed pileup distribution for the 2016 CMS $p$-$p$ collisions. 
 
  \begin{figure*}[h!]
 	\centering
-	\includegraphics[width=0.65\linewidth]{Figures/EventReconstruction/jetComp.png}
+	\includegraphics[width=0.65\linewidth]{Figures/EventReconstruction/pileup_pp_2016.pdf}
+       \caption{Number of pileup interactions per bunch crossing as observed in $p$-$p$ collisions with the CMS detector in 2016. On average, 27 pileup interactions were observed per bunch crossing. }
+       \label{fig:pileup}
+\end{figure*}
+
+Fortunately, there are several ways in which the PF algorithm can be used to mitigate the effects from pileup. Charged-hadron subtraction (CHS), for example, is the procedure of removing charged hadrons from consideration if they are associated with a pileup vertex rather than the hard-scatter vertex. Figure~\ref{fig:jetComp} shows the composition of jets in data and simulation as a function of the number of pileup interactions $\mu$. For an event with $\mu = 30$, 10\% of the uncorrected jet energy is due to charged hadrons from pileup interactions. 
+
+ \begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/EventReconstruction/jetComp.png}
        \caption{Energy composition as a function of the number of pileup (PU) interactions $\mu$ for jets in 
        data (markers) and simulation (histogram). The data distributions correspond to 19.7\fbinv collected at 
        $\sqrt{s} = 8$ TeV with the CMS detector in 2012.
        The contribution from charged hadrons from pileup is shown in dark red.
-       The bottom pane shows the agreement between data and MC for each category.
+       The bottom pane shows the agreement between data and simulation for each category.
        Reprinted from Reference~\cite{ParticleFlow}.}
        \label{fig:jetComp}
 \end{figure*}
 
-The pileup contributions from photons and neutral hadrons, however, cannot be subtracted on an object-by-object basis, since there is no good way to identify whether these neutral particles were produced in the primary interaction or in a pileup interaction. These effects can only be subtracted from the event on average. For lepton and photon isolation, this is done by calculating $\rho$, the \pt density due to pileup interactions \cite{XX}. The average contribution to the isolation sum from pileup is then given by $\rho$ times the effective area of the object under consideration. The calculation of the effective areas for photons and electrons is described in Reference~\cite{XX}.
+The pileup contributions from photons and neutral hadrons, however, cannot be subtracted on an object-by-object basis, since there is no good way to identify whether these neutral particles were produced in the primary interaction or in a pileup interaction. These effects can only be subtracted from the event on average. 
+For lepton and photon isolation, this is done by calculating $\rho$, the average \pt density due to pileup interactions. Figure~\ref{fig:rho} shows the average value of $\rho$ for events passing the primary analysis trigger. To calculate $\rho$, the \pT of all PF candidates in a fixed grid in $\eta$ and $\phi$ is summed. The value $\rho$ is defined as the median energy of the grid divided by the area in $\eta \times \phi$. 
 
+The average contribution to the isolation sum from pileup is then given by $\rho$ times the effective area $A_{\mathrm{eff}}$ of the object under consideration. The calculation of $A_{\mathrm{eff}}$ for photons and electrons is done in a data-driven way by plotting the isolation versus $\rho$ and fitting the distribution:
+\begin{equation}
+I_{\mathrm{ave}}  = I_0 + A_{\mathrm{eff}}\rho
+\end{equation}
+where $I_0$ is an offset value and $I_{\mathrm{ave}}$ is the average isolation for a given value of $\rho$. The values for $A_{\mathrm{eff}}$ are calculated in bins of $\eta$. 
 
+ \begin{figure*}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/EventReconstruction/rho.pdf}
+       \caption{Average transverse momentum density $\rho$ for the 2016 $p$-$p$ data set. }
+       \label{fig:rho}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Photon reconstruction}
+\label{sec:phoReco}
+For defining jets and calculating \ETmiss, the PF reconstruction of photons and electrons is used. 
+For photons and electrons used to define signal regions or control samples, however, a more optimized reconstruction that achieves a better energy resolution is employed \cite{phoPerf8TeV,elePerf8TeV}. First, an intercalibration is performed between the ECAL crystals to ensure their responses are uniform. The first-order intercalibration is applied using the laser monitoring system described in Section~\ref{sec:ECAL}. Further corrections are derived by looking at the invariant mass distribution in $\pi_0 \rightarrow \gamma\gamma$ and $\eta \rightarrow \gamma\gamma$ decays, and by noting that the energy deposited by pileup and the underlying event should be symmetric in $\phi$.
+
+In order to achieve an excellent energy resolution, the clustering algorithm must collect the deposits corresponding to all electrons from photon conversions and all photons from electron bremsstrahlung. Similar to the PF cluster reconstruction described above, the reconstruction of photon clusters begins with a local energy maxima or ``seed" crystal. In the barrel, clusters have a fixed width of 5 crystals in $\eta$ centered on the seed. The initial cluster is made from parallel 5 $\times$ 1 strips in $\eta \times \phi$, and further strips in the $\phi$ direction (up to a total of 17 strips) are added if the energy is above a set threshold and lower than the previously added strip. In the endcap, the default cluster size is a 5 $\times$ 5 region, and adjacent 5 $\times$ 5 regions are added to the supercluster if they are sufficiently energetic. Any overlapping signal in the preshower detectors is simply added to the supercluster energy.
+
+The variable $R_9$ is defined as the ratio of the energy in a 3 $\times$ 3 array of crystals to the energy in the full supercluster. It is used to distinguish between converted and unconverted photons. For photons that have converted, the value of $R_9$ is lower because the $e^+/e^-$ pair will separate in the $\phi$ direction due to the strong magnetic field. If $R_9$ is greater than 0.93, then the photon is classified as unconverted, and the energy of the 5 $\times$ 5 region is assigned as the photon supercluster energy. If the photon has converted (ie, $R_9 < 0.93$), then the full supercluster energy is used. 
+
+A series of corrections are applied to the supercluster energy to account for variations in the shower containment and any potential losses for photons that convert in the tracker. Shower containment can vary for several reasons, including variations in the longitudinal depth at which the shower passes through the sides of the crystal and is lost in the inter-crystal dead space. The corrections are derived in simulation as a function of $\eta$, \ET, $R_9$, and the spread of the cluster in $\phi$. After the corrections, the photon energy resolution is better than 3\% for photons in the barrel \cite{phoPerf8TeV}.
+
+It is worthwhile to note that the photon reconstruction algorithm does not differentiate between showers initiated by an electron and those initiated by a photon. This is important, because it means that $Z \rightarrow ee$ events can be used as a high-purity sample of $e/\gamma$ objects to study essential analysis inputs. These include the trigger efficiency (as previously described in Chapter~\ref{chap:Trigger}) and the photon ID efficiency in data and simulation (see Section~\ref{sec:phoSF}). 
+
+Chapter~\ref{chap:EventSelect} will discuss the offline criteria used to further refine the photon selection.
