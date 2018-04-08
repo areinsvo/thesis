@@ -203,14 +203,75 @@ The  $\gamma\gamma$, $ff$, and $e\gamma$ samples are required to pass the primar
 In order to ensure that the events pass the trigger with a high efficiency, the invariant mass of the two electromagnetic objects is required to be greater than 105 GeV. 
 The $ee$ sample, on the other hand, is collected using the control trigger listed in Table~\ref{tab:triggers} and is required to satisfy $75 < m_{ee} < 105$ GeV. Chapter~\ref{chap:DataAnalysis} will explain in detail how each of these samples is used in this analysis.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Photon ID scale factor}
 \label{sec:phoSF}
-It is important that 
+The efficiency of the photon ID is measured via the tag-and-probe method in $Z \rightarrow ee$ events~\cite{phoPerf8TeV}. 
+The procedure is similar to the one described in Chapter~\ref{chap:Trigger} for calculating the trigger efficiency.
+A sample of $Z \rightarrow ee$ events is collected using a single electron trigger. One electron is used as the tag, and 
+one electron is used as the probe. The efficiency is given by the number of probes that pass the photon ID over the 
+total number of tag and probe pairs. This value is computed in both data and simulation,
+and the ratio of the two efficiencies is referred to as the scale factor. 
+
+For this analysis, the official
+scale factors calculated by the EGM POG for Moriond 2017 were used.
+The scale factors from the EGM POG are calculated in bins of photon \pt and
+$\eta$. These are shown in Figure~\ref{fig:SF} along with the
+associated uncertainties~\cite{SF_twiki}.
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.49\textwidth]{Figures/EventSelect/scalefactors.png}
+    \includegraphics[width=0.49\textwidth]{Figures/EventSelect/sf_errors.png}
+    \caption{Calculated scale factors (left) and uncertainties (right)
+      in bins of photon \pt and $\eta$.}
+    \label{fig:SF}
+\end{figure*}
+
+Rather than using the full map of scale factors shown in Figure~\ref{fig:SF},
+we compute a weighted average over all photons passing our selection criteria
+in each SUSY signal mass point.
+The average scale factors and uncertainties are shown in Figure~\ref{fig:SFmap}.
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/EventSelect/sfmap.pdf}
+    \includegraphics[width=0.8\textwidth]{Figures/EventSelect/sfmap_errors.pdf}
+    \caption{Scale factors (top) and uncertainties (bottom)
+      averaged over all photons in each bin in the neutralino
+      versus gluino mass plane.}
+    \label{fig:SFmap}
+\end{figure*}
+
+The final value used in the analysis was an average over the mass
+points shown in Figure~\ref{fig:SFmap}:
+\begin{equation}
+  \textrm{Photon Scale Factor} = 1.002\pm0.013
+\end{equation}
+
+\subsection{Scale factor for pixel seed veto}
+\label{sec:PSV_SF}
+Our prescription for photon identification is nearly identical to that for
+electron identification, differing only by the presence or absence of a seed
+track in the pixel detector. The efficiency of the pixel seed veto
+for photons cannot be determined from the tag-and-probe method described above,
+and must be obtained from photons in $Z\rightarrow \mu\mu\gamma$
+events. Again we use the official scale factor calculated by the
+EGM POG:
+\begin{equation}
+  \textrm{Pixel Seed Veto Scale Factor} = 0.998\pm0.013
+\end{equation}
+
+Since our candidate sample requires two photons in the final state,
+two factors of both values are used.
 
 
 \subsection{Scale factor for $R_9$ requirement}
 \label{sec:R9SF}
-The photon ID used in this analysis differs from the official POG recipe in one aspect: we apply an $R_9 > 0.5$ requirement on top of the medium ID due to the presence of an $R_9$ cut in our analysis trigger. A check was performed to make sure that the presence of the $R_9$ requirement does not change the photon scale factors. The results of this study are shown in Figure~\ref{fig:R9SF}. The $R_9$ cut has a negligible impact on the data/MC scale factors. We therefore choose to simply use the official scale factors described above. 
+The photon ID used in this analysis differs from the official POG recipe in one aspect: we apply an $R_9 > 0.5$ requirement on top of the medium ID due to the presence of an $R_9$ cut in our analysis trigger. A check was performed to make sure that the $R_9$ requirement does not change the photon scale factors. The results of this study are shown in Figure~\ref{fig:R9SF}. The data/MC scale factors. We therefore choose to simply use the official scale factors described above. 
 
 \begin{figure*}[htbp]
     \centering
