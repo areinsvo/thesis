@@ -17,10 +17,16 @@ G_{SM} = SU(3)_C \otimes SU(2)_L \otimes SU(1)_\Upsilon
 where $SU(3)_C$ is responsible for mixing the 3 \textit{colors} of quarks and antiquarks, $SU(2)_L$ represents \textit{weak isospin}, and $U(1)_\Upsilon$ couples to the \textit{weak hypercharge $\Upsilon$}. The combination $SU(2)_L \otimes SU(1)_\Upsilon$ corresponds to the electroweak interactions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\subsection{Particle content of the standard model}
+\label{sec:SMparts}
 The fields in the SM are identified by their representation in the symmetry group of Equation~\ref{equ:symm}. These are listed for the SM fermions in Table~\ref{tab:fermions} and for the gauge bosons in Table~\ref{tab:bosons}. There are three generations of quarks and three generations of leptons in the SM. The quarks are in a non-trivial representation of all three SM symmetries, and therefore interact via the strong, weak, and electromagnetic interactions. The three ``up-type" quarks are the up quark $u$, the charm quark $c$, and the top quark $t$. The three ``down-type" quarks are the down quark $d$, the strange quark $s$, and the bottom quark $b$. 
 
 The three generations of leptons include the electron $e$, muon $\mu$, and tau $\tau$ and the corresponding neutrinos. In the SM, the neutrinos are massless, even though it has been experimentally established that at least two of the neutrinos must have non-zero mass XX citeXX. The electron, muon and tau particles participate in the weak interaction and the electromagnetic interaction, but the neutrinos, being electromagnetically neutral, only participate in the weak interaction. 
+
+As can be seen in Table~\ref{tab:fermions}, the weak interaction does not respect parity. The left-handed quarks and leptons belong to $SU(2)_L$ doublets, whereas the right-handed quarks and leptons form $SU(2)_L$ singlets.
+%right-handed leptons form singlets. If right-handed neutrinos exist, they are sterile and we have no evidence (can't have evidence?) for them
+%Dirac spinor $\Psi$ and conjugate $\bar{\Psi}$ are equivalent to two left-handed Weyl spinors ($\chi$ and $\tilde{\chi}$)
+%and their right-handed conjugates ($\chi^\dagger$ and $\tilde{\chi}^\dagger$).Tilde = anti
 
 \begin{table}[ht]
     \caption{FERMIONS IN THE STANDARD MODEL}
@@ -48,7 +54,7 @@ leptons       & ($\nu~e_L$)      &  (\textbf{1}, \textbf{2}, $-\frac{1}{2}$) \\
 
 The gauge bosons are responsible for mediating the interactions between the fermions. Before electroweak symmetry breaking (EWSB), the three gauge bosons of $SU(2)_L$ are the $W^+,~W^-,$ and $W^0$, and the $U(1)_\Upsilon$ gauge boson is the $B$ boson. After EWSB, the $W^+$ and $W^-$ bosons gain a mass, and the $W_0$ and $B$ bosons mix to form the massive $Z$ boson and the massless photon $\gamma$. EWSB will be described in more detail in Section~\ref{sec:EWSB}.
 
-For the strong force $SU(3)_C$, the gauge bosons are the gluons. Processes involving the interactions of quarks and gluons are referred to as QCD processes. The QCD interaction is different from the electroweak interactions in that the strong force grows in strength at larger distances. This leads to the phenomenon of \textit{confinement}: at low energies and large distances (greater than ~1 GeV$^-1$), we cannot identify individual quarks or gluons. Instead, these particles can only be found in $SU(3)_C$ singlets, typically either mesons ($q\bar{q}$) or baryons ($qqq$ or $\bar{q}\bar{q}\bar{q}$). 
+For the strong force $SU(3)_C$, the gauge bosons are the gluons. Processes involving the interactions of quarks and gluons are referred to as QCD processes. The QCD interaction is different from the electroweak interactions in that the strong force grows in strength at larger distances. This leads to the phenomenon of \textit{confinement}: at low energies and large distances (greater than ~1 GeV$^{-1}$), we cannot identify individual quarks or gluons. Instead, these particles can only be found in $SU(3)_C$ singlets, typically either mesons ($q\bar{q}$) or baryons ($qqq$ or $\bar{q}\bar{q}\bar{q}$). 
 
 \begin{table}[ht]
     \caption{GAUGE BOSONS IN THE STANDARD MODEL}
@@ -90,36 +96,56 @@ Figure~\ref{fig:SMint} summarizes the SM particles and their allowed interaction
 
 \subsection{Electroweak symmetry breaking}
 \label{sec:EWSB}
-The electroweak symmetry is spontaneously broken by the non-zero vacuum expectation value (vev) of the Higgs. After spontaneous symmetry breaking (SSB), the remaining symmetry is $U(1)_{\textrm{EM}}$, which corresponds to the electromagnetic interaction. After electroweak symmetry breaking, there are three massive gauge bosons---the $W-^\pm$ and $Z$ bosons---and the massless photon $\gamma$.  The photon couples to the electric charge q: 
+Electroweak symmetry breaking is a crucial feature of the standard model. The electroweak symmetry is spontaneously broken through the Higgs mechanism. 
+The scalar potential of the complex Higgs field $H$ is
 \begin{equation}
-q = T^3 + \Upsilon
+V(H^\dagger H) =  \mu^2(H^\dagger H) + \lambda(H^\dagger H)^2. 
+\label{equ:HiggsV}
 \end{equation}
-where $\Upsilon$ is the weak hypercharge and $T^3$ is the isospin.
+
+The mass parameter $\mu^2$ is negative, which means that the vacuum expectation value (vev) of the Higgs (written as $\langle H \rangle$ or $v$) is non-zero. The Higgs potential is illustrated in Figure~\ref{fig:HiggsV}. Spontaneous symmetry breaking occurs when the value of the Higgs field ``rolls" from the unstable position at the origin and comes to rest at the stable minima:
+\begin{equation}
+\langle H \rangle= v = \sqrt{\frac{-\mu^2}{2\lambda}}.
+\end{equation}
+
+During EWSB, three of the four degrees of freedom in the Higgs complex scalar doublet get ``eaten" to give mass to the $W^\pm$ and $Z$ bosons. The last degree of freedom becomes the scalar Higgs boson. The mass $m_H$ of the Higgs boson can be written in terms of the parameters $\mu$ and $\lambda$: 
+\begin{equation}
+m_H = \sqrt{-\mu^2} = v\sqrt{2\lambda} = 125 \mathrm{GeV}.
+\label{equ:HiggsMass}
+\end{equation}
+
+The remaining symmetry is $U(1)_{\textrm{EM}}$, which corresponds to the electromagnetic interaction. The massless photon is the gauge boson of $U(1)_{\textrm{EM}}$ and couples to the electric charge Q: 
+\begin{equation}
+Q = T^3 + \Upsilon
+\end{equation}
+where $\Upsilon$ is the weak hypercharge and $T^3$ is the isospin. The short-range weak interactions are mediated by the $W^\pm$ and $Z$ bosons, and the photon mediates the long-range electromagnetic interactions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Limitations of the standard model}
 \label{sec:SMweakness}
+It is undeniable that the standard model has been a huge triumph of modern physics. However, there are known limitations. These fall into two categories: experimentally-established phenomena which are not incorporated into the standard model, and unsettling questions that the standard model cannot answer but which perhaps would be explained by some more fundamental theory. 
 
+Neutrino masses---an example of the first category---have already been mentioned. The prevalence of matter over antimatter (CP violation) is another observed contradiction to the standard model as it exists today. The only SM source of CP violation is quark mixing, which is not nearly large enough to explain why the universe is more than just a bath of radiation from the annihilation of particles and antiparticles. 
+
+The existence of dark matter also falls into the first category. A wealth of evidence, including galaxy cluster velocity dispersions, gravitational lensing studies, and measurements of the Cosmic Microwave Background, indicates that approximately 25\% of the energy budget of the universe is contained in dark matter (see Reference~\cite{DarkMatterReview} for a review). We know that dark matter interacts gravitationally, and stringent limits have been placed on the strength of its other interactions. However, so far there is no conclusive evidence as to the nature of dark matter.
+
+The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as unsettling that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with a fine-tuning, it is a very unsatisfying way to solve a problem.
+
+The hierarchy problem is a particularly worrisome fine-tuning problem. As already stated in Equation~\ref{equ:HiggsMass}, the mass parameter $\mu$ in the Higgs potential can be written in terms $v$ and $\lambda$, where the vev $v$ has been measured to be \~174 Gev. What was not mentioned, however, is that there are huge quantum corrections to $\mu^2$ from loop diagrams. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Weak interactions only occur over short ranges because $W-^\pm$ and $Z$ are massive.
+%12 vector fields (spin 1)- gauge fields of the SU(3) x SU(2) x U(1)
+%45 Weyl fermion fields: [21 Dirac spinors  (3 colors x 6 quarks) + 3 charged leptons] x2 to get to  weyl+ 3 neutrinos
+%complex doublet H of scalar fields
 
-particle content: three generations of leptons and quarks
-plot showing how the particles interact
-Bosons mediate the interactions
+%Left-handed Weyl components of quark Dirac spinors form 9 doublets of $SU(2)_W$ (3 flavor doublets per 3 color)
+%Right-handed Weyl components of quark Dirac spinors are 18 $SU(2)_W$ singlets. Weak interactions can break parity
 
-12 vector fields (spin 1)- gauge fields of the SU(3) x SU(2) x U(1)
-45 Weyl fermion fields: [21 Dirac spinors  (3 colors x 6 quarks) + 3 charged leptons] x2 to get to  weyl+ 3 neutrinos
-complex doublet H of scalar fields
-
-Left-handed Weyl components of quark Dirac spinors form 9 doublets of $SU(2)_W$ (3 flavor doublets per 3 color)
-Right-handed Weyl components of quark Dirac spinors are 18 $SU(2)_W$ singlets. Weak interactions can break parity
-
-Left-handed leptons form 3 $SU(2)_W$ doublets 
-right-handed leptons form singlets. If right-handed neutrinos exist, they are sterile and we have no evidence (can't have evidence?) for them
-Dirac spinor $\Psi$ and conjugate $\bar{\Psi}$ are equivalent to two left-handed Weyl spinors ($\chi$ and $\tilde{\chi}$)
-and their right-handed conjugates ($\chi^\dagger$ and $\tilde{\chi}^\dagger$).Tilde = anti
+%Left-handed leptons form 3 $SU(2)_W$ doublets 
+%right-handed leptons form singlets. If right-handed neutrinos exist, they are sterile and we have no evidence (can't have evidence?) for them
+%Dirac spinor $\Psi$ and conjugate $\bar{\Psi}$ are equivalent to two left-handed Weyl spinors ($\chi$ and $\tilde{\chi}$)
+%and their right-handed conjugates ($\chi^\dagger$ and $\tilde{\chi}^\dagger$).Tilde = anti
 
 
 %http://bolvan.ph.utexas.edu/~vadim/Classes/2011f/SM.pdf
