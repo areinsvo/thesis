@@ -4,8 +4,10 @@
 \section{The standard model of particle physics}
 \label{sec:StandardModel}
 The standard model (SM) of particle physics is a non-Abelian gauge theory that describes elementary particles and their allowed interactions
-The first piece of the standard model was developed in 1961 (XX references! XX) with the unification of the electromagnetic and weak interactions. 
-The Higgs mechanism was later incorporated into the standard model in 1967 (XX cite XX), and 
+The first piece of the standard model was developed in 1961 with the unification of the electromagnetic and weak interactions 
+\cite{GLASHOW1961579,Glashow:1970gm}. 
+The Higgs mechanism was incorporated into the standard model a few years later 
+\cite{PhysRev.127.965,PhysRevLett.13.508,PhysRevLett.13.321,Guralnik:1964eu}, and 
 the standard model took on the form we know today with the inclusion of the strong force and quantum chromodynamics (QCD) in the 1970's (XX cite XX).
 The standard model is incredibly successful, and it has made absurdly precise predictions that have held up to experimental scrutiny. 
 
@@ -79,7 +81,7 @@ $B$ boson & $B^0$ & (\textbf{1}, \textbf{1}, 0) \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Finally, the only particle not included in Table~\ref{tab:fermions} or \ref{tab:bosons} is the Higgs boson. The Higgs boson was discovered by the CMS and ATLAS collaborations in 2012 XX cite XX, and is responsible for electroweak symmetry breaking (EWSB), which will be described in Section~\ref{sec:EWSB}. It is the only fundamental scalar in the SM and has a mass of approximately 125 GeV. The Higgs boson is in the  (\textbf{1}, \textbf{2}, $+\frac{1}{2}$) representation of $G_{SM}$, and is therefore uncharged under the strong and electromagnetic interactions. 
+Finally, the only particle not included in Table~\ref{tab:fermions} or \ref{tab:bosons} is the Higgs boson. The Higgs boson was discovered by the CMS and ATLAS collaborations in 2012 \cite{ATLASHiggs,CMSHiggs}, and is responsible for electroweak symmetry breaking (EWSB), which will be described in Section~\ref{sec:EWSB}. It is the only fundamental scalar in the SM and has a mass of approximately 125 GeV. The Higgs boson is in the  (\textbf{1}, \textbf{2}, $+\frac{1}{2}$) representation of $G_{SM}$, and is therefore uncharged under the strong and electromagnetic interactions. 
 
 Figure~\ref{fig:SMint} summarizes the SM particles and their allowed interactions.
 
@@ -107,6 +109,15 @@ The mass parameter $\mu^2$ is negative, which means that the vacuum expectation 
 \begin{equation}
 \langle H \rangle= v = \sqrt{\frac{-\mu^2}{2\lambda}}.
 \end{equation}
+The value of $v$ has been measured using electroweak observables to be about 174 Gev. 
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/Theory/improvedMexicanHat.pdf}
+    \caption{Cartoon illustrating the Higgs potential. The Higgs field during spontaneous symmetry breaking can be thought of as the ball, which ``rolls" from the unstable point to the stable minima.
+    Reprinted from Reference~\cite{mexicanHat}.}
+    \label{fig:HiggsV}
+\end{figure*}
 
 During EWSB, three of the four degrees of freedom in the Higgs complex scalar doublet get ``eaten" to give mass to the $W^\pm$ and $Z$ bosons. The last degree of freedom becomes the scalar Higgs boson. The mass $m_H$ of the Higgs boson can be written in terms of the parameters $\mu$ and $\lambda$: 
 \begin{equation}
@@ -120,18 +131,62 @@ Q = T^3 + \Upsilon
 \end{equation}
 where $\Upsilon$ is the weak hypercharge and $T^3$ is the isospin. The short-range weak interactions are mediated by the $W^\pm$ and $Z$ bosons, and the photon mediates the long-range electromagnetic interactions.
 
+Yukawa couplings are the mass terms for fermions
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Limitations of the standard model}
 \label{sec:SMweakness}
-It is undeniable that the standard model has been a huge triumph of modern physics. However, there are known limitations. These fall into two categories: experimentally-established phenomena which are not incorporated into the standard model, and unsettling questions that the standard model cannot answer but which perhaps would be explained by some more fundamental theory. 
+It is undeniable that the standard model has been a huge triumph of modern physics. However, there are known limitations. These fall into two categories: 
+\begin{enumerate}
+	\item Experimentally-established phenomena which are not incorporated into the standard model
+	\item Unsettling questions that the standard model cannot answer but which perhaps would be explained by some more fundamental theory
+\end{enumerate}
 
-Neutrino masses---an example of the first category---have already been mentioned. The prevalence of matter over antimatter (CP violation) is another observed contradiction to the standard model as it exists today. The only SM source of CP violation is quark mixing, which is not nearly large enough to explain why the universe is more than just a bath of radiation from the annihilation of particles and antiparticles. 
+Neutrino masses---an example of the first category---have already been mentioned. The prevalence of matter over antimatter is another observed contradiction to the standard model as it exists today. The only SM source of CP violation is quark mixing, which is not nearly large enough to explain why the universe is more than just a bath of radiation from the annihilation of particles and antiparticles. 
 
 The existence of dark matter also falls into the first category. A wealth of evidence, including galaxy cluster velocity dispersions, gravitational lensing studies, and measurements of the Cosmic Microwave Background, indicates that approximately 25\% of the energy budget of the universe is contained in dark matter (see Reference~\cite{DarkMatterReview} for a review). We know that dark matter interacts gravitationally, and stringent limits have been placed on the strength of its other interactions. However, so far there is no conclusive evidence as to the nature of dark matter.
 
-The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as unsettling that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with a fine-tuning, it is a very unsatisfying way to solve a problem.
+The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as disconcerting that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with fine-tuning, it as an unsatisfying way to solve a problem. Many people use fine-tuned parameters as sign-posts pointing to the existence of a broader theory in which the coincidences are explained.
 
-The hierarchy problem is a particularly worrisome fine-tuning problem. As already stated in Equation~\ref{equ:HiggsMass}, the mass parameter $\mu$ in the Higgs potential can be written in terms $v$ and $\lambda$, where the vev $v$ has been measured to be \~174 Gev. What was not mentioned, however, is that there are huge quantum corrections to $\mu^2$ from loop diagrams. 
+The hierarchy problem (footnote) is a particularly worrisome fine-tuning problem. The squared mass parameter $\mu^2$ in the Higgs potential receives huge quantum corrections from loop diagrams. As already stated in Equation~\ref{equ:HiggsMass}, $\mu^2$ can be written in terms $v$ and $\lambda$, and $v$ has been measured to be approximately 174 GeV. Some fantastic cancellation must occur to counteract these quantum corrections, but there is no motivation for such cancellations in the standard model. 
+
+footnote: Much of the description here and in Section~\ref{sec:SUSY} is derived from the pedagogical paper "A Supersymmetry Primer" by Stephen P. Martin \cite{SUSYprimer}.
+
+Every particle that couples directly or indirectly to the Higgs field contributes to the quantum corrections to $\mu^2$. For a fermion $f$, the loop-level contributions comes from the Feynman diagram of Figure~\ref{fig:hierarchy}a:
+\begin{equation}
+\Delta\mu^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda^2_\mathrm{UV} + ....
+\label{equ:corrFermion}
+\end{equation}
+where the relevant term in the Lagrangian is $-\lambda_fH\bar{f}f$ and $\Lambda_\mathrm{UV}$ is the ultraviolet momentum cutoff of the theory \cite{SUSYprimer}. 
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Theory/hierarchyLoop.pdf}
+    \caption{One-loop quantum corrections to the Higgs mass parameter $\mu^2$ from a Dirac fermion $f$ (left) and a scalar $S$ (right).
+    Reprinted from Reference~\cite{SUSYprimer}.}
+    \label{fig:hierarchy}
+\end{figure*}
+
+
+Even if it does not couple directly to the Higgs, any new particle would also contribute to $\mu^2$ at the two-loop level if it participates in the SM gauge interactions. For example, consider a heavy fermion $F$ with mass $m_F$ that only couples indirectly to the Higgs. Example two-loop Feynman diagrams are shown in 
+\ref{fig:hierarchyFermi}. For such a fermion, the quantum corrections will be given by
+\begin{equation}
+\Delta\mu^2 = C(\frac{g^2}{16\pi^2})^2 [a \Lambda^2_\mathrm{UV} + 24m_F^2 \ln(\Lambda_\mathrm{UV}/m_F) +...]
+\label{equ:corrTwoLoopFermi}
+\end{equation}
+where the constant $C$ represents several group theory factors and $g$ is the gauge coupling. 
+
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/Theory/hierarchyLoopFermi.pdf}
+    \caption{Two-loop quantum corrections to the Higgs mass parameter $\mu^2$ from a fermion $F$ that indirectly couples to the Higgs through gauge interactions.
+    Reprinted from Reference~\cite{SUSYprimer}.}
+    \label{fig:hierarchyFermi}
+\end{figure*}
+
+The root of the hierarchy problem is the presence of $\Lambda^2_\mathrm{UV}$ in both Equations~\ref{equ:corrFermion} and \ref{equ:corrTwoLoopFermi}. If $\Lambda^2_\mathrm{UV}$ is near the Planck scale ($M_P = 2 \times 10^{18}$ GeV), then the corrections to $\mu^2$ are 30 orders of magnitude above its observed value. If we use dimensional regularization, it is possible to get rid of the $\Lambda^2_\mathrm{UV}$ terms in Equations~\ref{equ:corrFermion} and \ref{equ:corrTwoLoopFermi}, but the term proportional to $m_F^2$ remains \cite{SUSYprimer}. Since it seems incredibly unlikely that there are no new particles to be found in the 16 orders of magnitude between the electroweak and Planck scales, there is a tension between the experimentally- and theoretically- preferred values.
+
+As will be discussed next, this observation has motivated many proposed extensions to the standard model, including supersymmetry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -153,9 +208,45 @@ The hierarchy problem is a particularly worrisome fine-tuning problem. As alread
 \section{Supersymmetry}
 \label{sec:SUSY}
 
-Motivations:
-Higgs mass, contributions 
-Hierarchy problem 
+Supersymmetry is a particularly beautiful theoretical framework that addresses several of the standard model limitations described above. A ``supersymmetry" is a symmetry relating bosons and fermions. The supersymmetric operator $Q$ turns a bosonic state into a fermionic state:
+\begin{equation}
+Q|\mathrm{boson}\rangle = |\mathrm{fermion}\rangle, \hspace{35pt} Q|\mathrm{fermion}\rangle = |\mathrm{boson}\rangle
+\end{equation}
+
+In practice, this implies that the number of elementary particles is at least double that in the standard model. For each SM boson, there will be a fermion ``superpartner" and vice versa. 
+
+\subsection{SUSY's solution to the hierarchy problem}
+\label{sec:SUSYhierarchy}
+
+The key to solving the hierarchy problem with supersymmetry appears if we consider a heavy complex scalar $S$ with mass $m_S$. If the interaction term between $S$ and $H$ in the Lagrangian is $-\lambda_S|H|^2|S|^2$, then diagrams such as those in Figure~\ref{fig:hierarchy}b contribute:
+\begin{equation}
+\Delta\mu^2 = -\frac{\lambda_S^2}{16\pi^2} [ \Lambda^2_\mathrm{UV} - 2 m_S^2 \ln{\Lambda_\mathrm{UV} / m_S) }+ ... ]
+\label{equ:corrScalar}
+\end{equation}
+
+Upon close inspection of Equations~\ref{equ:corrFermion} and \ref{equ:corrScalar}, it becomes apparent that if
+there are two complex scalars per fermion that satisfy $\lambda_S = |\lambda_f|^2$, then the contributions to $\mu^2$ cancel exactly. 
+Less obvious is what happens at higher-orders, but it can be shown that 
+the contributions to $\mu^2$ cancel to all orders
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Particles in minimal SUSY models}
+\label{sec:SUSYparticles}
+In a supersymmetric theory, the SM particles shown in Tables~\ref{tab:fermions} and \ref{tab:bosons} must be arranged into ``supermultiplets" containing the SM fermions and bosons and their superpartners. There must be an equal number of bosonic and fermionic degrees of freedom in each supermultiplet ($n_b$ and $n_f$, respectively). The SM particles fall into two types of supermultiplets:
+\begin{itemize}
+\item The standard model fermions belong to \textbf{chiral supermultiplets}. Each chiral supermultiplet contains one Weyl fermion ($n_f = 2$) and a complex scalar field ($n_b = 2$).
+\item The gauge bosons belong to \textbf{gauge supermultiplets}. Before EWSB, the gauge bosons are massless and have $n_b = 2$. Their superpartners are massless spin-1/2 Weyl fermions with $n_f = 2$. 
+\end{itemize}
+
+The Minimal Supersymmetric Standard Model (MSSM) is the most basic SM extension that incorporates SUSY. Table~\ref{tab:SUSY_fermions} lists the chiral supermultiplets in the MSSM, and the gauge supermultiplets are listed in Table~\ref{tab:SUSY_bosons}. Note that all particles in a supermultiplet have the same quantum numbers under $G_{SM}$. 
+
+There must be two Higgs chiral supermultiplets in the MSSM to avoid gauge anomalies in the electroweak gauge symmetry, one with hypercharge $\Upsilon = 1/2$ and one with $\Upsilon = -1/2$. The $\Upsilon = 1/2$ chiral supermultiplet $H_u$ has the Yukawa couplings to give masses to the up-type quarks, and the Yukawa couplings of the $\Upsilon = -1/2$ chiral supermultiplet $H_d$ give masses to the down-type quarks. The 125 GeV standard model Higgs boson is a linear combination of $H_u^0$ and $H_d^0$.
+
+%popular proposed SM extensions to solve the hierarchy problem. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[ht]
     \caption{CHIRAL SUPERMULTIPLETS IN MSSM}
@@ -181,7 +272,121 @@ Higgs, higgsinos & $H_u$  & ($H_u^+ ~ H_u^0$) & ($\tilde{H}_u^+ ~ \tilde{H}_u^0$
     \label{tab:SUSY_fermions}
     \justify{Reprinted from Reference~\cite{SUSYprimer}.}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[ht]
+    \caption{GAUGE SUPERMULTIPLETS IN THE MSSM}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \hline
+    Names & Spin 1/2 & Spin 1 &$SU(3)_C,~SU(2)_L,~U(1)_\Upsilon $\\
+  	  \hline
+           \hline    
+gluino, gluon & $\tilde{g}$ & $g$   & (\textbf{8}, \textbf{1}, 0) \\
+\hline
+wino, $W$ bosons & $\widetilde{W}^\pm,~\widetilde{W}^0$ & $W^\pm,~W^0$ & (\textbf{1}, \textbf{3}, 0) \\
+\hline
+bino, $B$ boson & $\widetilde{B}^0$ & $B^0$ & (\textbf{1}, \textbf{1}, 0) \\
+           \hline
+           \hline
+    \end{tabular}
+    \label{tab:SUSY_bosons}
+    \justify{Reprinted from Reference~\cite{SUSYprimer}.}
+\end{table}
+
+The names of the MSSM superpartners are very creatively derived from their SM counterparts. For fermions, the SM names are prefixed with ``s" to get the superpartner name: electrons to selectrons, quarks to squarks, etc. For bosons, the suffix ``ino" is added: $W$ to wino, gauge boson to gaugino, etc. The symbols for supersymmetric particles are given simply by adding a tilde to the SM symbol (for example, $e \rightarrow \tilde{e}$)
+
+After EWSB, the neutral higgsinos ($\widetilde{H}_u^0$ and $\widetilde{H}_d^0$) and the neutral electroweak gauginos ($\widetilde{W}_0$ and $\widetilde{B}_0$) form four mass eigenstates known as neutralinos $\widetilde{\chi}^0$. The charged higgsinos ($\widetilde{H}_u^+$ and $\widetilde{H}_d^-$) and charged winos ($\widetilde{W}_\pm$) form four mass eigenstates known as charginos $\widetilde{\chi}^\pm$. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{$R$-parity}
+\label{sec:Rparity}
+Phenomenologically, an important feature of many SUSY models is $R$-parity conservation.
+$R$-parity is a new symmetry introduced in the MSSM to get rid of interactions that violate lepton number $L$
+or baryon number $B$. 
+Experimentally, we know that if $B$- and $L$-violating processes occur, they must be extremely suppressed. 
+In particular, the lifetime of the proton must be greater than $10^{32}$ years \cite{SUSYprimer}. 
+However, it is possible to write down terms in the MSSM Lagrangian that would allow the proton to decay to $e^+\pi^0$ or other 
+lepton + meson combinations with a lifetime of less than a second.
+
+$R$-parity (also known as matter parity) is a conserved quantum number:
+\begin{equation}
+P_R = (-1)^{3(B-L)+2s}
+\end{equation}
+where $s$ is the spin of the particle. All terms in the Lagrangian are required to satisfy $\prod P_{R,i} = +1$, where the product
+is over all fields in the term. The SM particles and the Higgs bosons have $P_R = +1$, and
+all SUSY particles---squarks, sleptons, gauginos, and higgsinos---have $P_R = -1$.
+
+Most models of SUSY, including those explored in this analysis, assume $R$-parity conservation.
+One immediate consequence is that each vertex must have an even number of supersymmetric particles (``sparticles").
+In a collider experiment 
+%where there are no SUSY particles initially, 
+this means that sparticles must be pair-produced.
+Additionally, $R$-parity conservation implies that the lightest supersymmetric particle (LSP) must be absolutely stable.
+All other sparticles will eventually decay to the LSP. From the high energy experimentalist's point of view, this means that the 
+primary signature of SUSY production in colliders will be significant missing transverse momentum from the stable LSP 
+leaving the detector. From the cosmologist's point of view, this means that the LSP, if electrically neutral, 
+is a potential dark-matter candidate
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cite http://pdg.lbl.gov/2015/reviews/rpp2015-rev-susy-2-experiment.pdf
 
 \section{Gauge-mediated supersymmetry breaking}
 \label{sec:gmsb}
+
+So far no SUSY particles have been observed. If SUSY were an unbroken symmetry, then the masses of the superpartners
+would be the same as their SM counterparts. The lack of experimental detection means that SUSY must be a broken symmetry.
+Theorists have come up with many different mechanisms by which SUSY can be broken. The SUSY breaking mechanism and the SUSY breaking scale 
+determine the phenomenology of the model, including the SUSY particle masses and their allowed decay modes.
+
+The lightest supersymmetric particle is the gravitino \gravitino, the superpartner of the graviton. The graviton is a spin-2 particle, which means the graviton and gravitino do not belong to either the chiral or gauge supermultiplets described in Section~\ref{sec:SUSYparticles}. Instead, \gravitino is a spin-3/2 particle.
+
+
+\section{Experimental bounds on supersymmetry}
+\label{sec:SUSYlimits}
+
+
+
+\subsection{Exclusion contours for GMSB in the diphoton final state}
+\label{sec:GMSBlimits}
+Both CMS and ATLAS have published searches for GMSB models in the diphoton final state, both at 8 TeV \cite{Aad:2015hea,Khachatryan:2015exa} and at 13 TeV \cite{ATLAS:2016aa,CMS:2015_anal}. Figure~\ref{fig:Limits2015CMS} shows the 95\% confidence level limits in the gluino versus neutralino and the squark versus neutralino mass planes using 2.3 \fbinv of 13 TeV data collected with the CMS detector in 2015. 
+Gluino masses below 1.65 TeV and squark masses below 1.37 TeV have been excluded.
+The simplified models used for the interpretation of results in Figure~\ref{fig:Limits2015CMS} will be described in more detail in Section~\ref{sec:SimplifiedModels}.
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{Figures/Theory/2015gg.pdf}
+\includegraphics[width=0.49\textwidth]{Figures/Theory/2015qq.pdf}
+\end{center}
+    \caption{The 95\% CL upper limits on the gluino (left) and squark (right)
+        pair production cross sections as a function of neutralino versus
+	gluino (squark) mass. The contours show the observed and median
+        expected exclusions with their one
+        standard deviation uncertainties. Reprinted from \cite{CMS:2015_anal}}
+    \label{fig:Limits2015CMS}
+\end{figure*}
+
+The 2015 ATLAS results are shown in Figure~\ref{fig:Limits2015ATLAS}. 
+Limits were placed only on the masses of particles in a gluino pair production model. 
+Gluino masses below 1650 GeV were excluded at a 95\% confidence level.
+The ATLAS analysis has a similar search strategy to CMS, which will be outlined in Chapter~\ref{chap:DataAnalysis}. 
+The primary difference is that ATLAS defines their signal regions so that the expected SM background is close to zero. 
+This is the source of the asymmetric expected limits in Figure~\ref{fig:Limits2015ATLAS}.
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/Theory/2015ATLAS.pdf}
+\end{center}
+    \caption{95\% confidence level exclusion contours in the neutralino-gluino mass plane derived using 3.2 \fbinv of data collected with the ATLAS detector in 2015. The expected limits are shown in black, with a yellow band representing $\pm~1~\sigma$, and the observed limits are shown in red, with dotted red lines representing $\pm~1~\sigma$. The gray area is the region previously excluded by 8 TeV ATLAS analyses. Reprinted from \cite{ATLAS:2016aa}}
+    \label{fig:Limits2015ATLAS}
+\end{figure*}
+
 
