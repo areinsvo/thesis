@@ -116,7 +116,7 @@ The values of the effective area for each isolation correction are listed in Tab
 \begin{table}[ht]
     \caption{EFFECTIVE AREAS FOR ISOLATION CORRECTIONS}
     \centering
-    \begin{tabular}{ | c | c c c |}
+    \begin{tabular}{ | c | c | c | c |}
         \hline
         	\hline
         \textbf{$|\eta|$ Range} & \textbf{Photon Iso} & \textbf{Neutral Hadron Iso} & \textbf{Charged Hadron Iso} \\ [0.5ex]
@@ -143,47 +143,77 @@ In addition to photons and electrons, a third, orthogonal category referred to a
 Fakes are primarily electromagnetically-rich jets that have been misidentified as photons. As will be described in Chapter~\ref{chap:DataAnalysis},
 the predicted QCD background is derived using a double fake control sample.
 
-The fake definition is taken from a photon ID sideband. Fakes must
-pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they are required to
-fail either the \sigmaietaieta or the charged hadron isolation requirement. This ensures that the photon and fake selection criteria are orthogonal.
-The requirements for photons, electrons and fakes are outlined in detail in Table~\ref{tab:ID}
+The fake definition is taken from a photon ID sideband. Fakes are required to
+% must pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they
+fail either the \sigmaietaieta or the charged hadron isolation requirement of the photon ID. 
+This ensures that the photon and fake selection criteria are orthogonal.
+
+
+The requirements for photons and electrons are listed in detail in Table~\ref{tab:ID}, and 
+the fake ID requirements are listed in Table~\ref{tab:fakeID}.
 
 \begin{table}[ht]
-    \caption{ELECTROMAGNETIC OBJECT DEFINITIONS}
+    \caption{PHOTON AND ELECTRON ID CRITERIA}
     \centering
-    \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.175\linewidth} >{\centering\arraybackslash}m{0.175\linewidth} >{\centering\arraybackslash}m{0.3\linewidth} |}
+    \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.25\linewidth} >{\centering\arraybackslash}m{0.25\linewidth} |}
         \hline
         	\hline
-        \textbf{ID Requirement} & \textbf{Photons} & \textbf{Electrons} & \textbf{Fakes} \\ [0.5ex]
+        \textbf{ID Requirement} & \textbf{Photons} & \textbf{Electrons} \\ [0.5ex]
         \hline
-        	Pixel seed veto    & \multicolumn{1}{c|}{Applied} & \multicolumn{1}{c|}{Reversed} & \multicolumn{1}{c|}{Applied}\\
+        	Pixel seed veto    & \multicolumn{1}{c|}{Applied} & \multicolumn{1}{c|}{Reversed} \\
 	\hline
-	\sigmaietaieta   & \multicolumn{2}{c|}{$ < 0.01022 $} & $0.01022 < \sigmaietaieta < 0.015 $\\
-	Charged hadron iso. & \multicolumn{2}{c|}{$ < 0.441$} & $ 0.441 <$ Iso $< 15$\\
+	\sigmaietaieta   & \multicolumn{2}{c|}{$ < 0.01022 $} \\
+	Charged hadron iso. & \multicolumn{2}{c|}{$ < 0.441$} \\
 	\hline
-	Photon iso. & \multicolumn{3}{c|}{$ < 2.571 +0.0047~\pt$} \\
-	Neutral hadron iso.   &  \multicolumn{3}{c|}{$ < 2.2725 + 0.0148~\pt+0.000017~\pt^2$} \\
-        R9                      & \multicolumn{3}{c|}{$ > 0.5$} \\
-        H/E                     & \multicolumn{3}{c|}{$ < 0.0396$} \\
+	Photon iso. & \multicolumn{2}{c|}{$ < 2.571 +0.0047~\pt$} \\
+	Neutral hadron iso.   &  \multicolumn{2}{c|}{$ < 2.2725 + 0.0148~\pt+0.000017~\pt^2$} \\
+        $R_9$                      & \multicolumn{2}{c|}{$ > 0.5$} \\
+        H/E                     & \multicolumn{2}{c|}{$ < 0.0396$} \\
            \hline
            \hline
     \end{tabular}
     \label{tab:ID}
-    \justify{Photon, electron, and fake identification criteria used to define the signal and control samples for this analysis. ``Fakes" refer to 
-    jets that have been misidentified as photons. The definitions of each of the variables can be found in 
+    \justify{Photon and electron identification criteria used to define the signal and control samples for this analysis. 
+    The definitions of each of the variables can be found in 
     Section~\ref{sec:phoID}.}
 \end{table}
 
+
+\begin{table}[ht]
+    \caption{FAKE ID CRITERIA}
+    \centering
+    \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.5\linewidth} |}
+        \hline
+        	\hline
+        \textbf{ID Requirement} & \textbf{Fakes} \\ [0.5ex]
+        \hline
+        	Pixel seed veto    & Applied\\
+	\hline
+	\sigmaietaieta   & $0.01022 < \sigmaietaieta < 0.015 $\\
+	Charged hadron iso. & $ 0.441 <$ Iso $< 25$\\
+	\hline
+	Photon iso. &$ < 15 +0.0047~\pt$\\
+	Neutral hadron iso. & $< 15 + 0.0148~\pt+0.000017~\pt^2$\\
+        $R_9$    & $0.5 < R_9 < 0.9$ \\
+        H/E      & $ < 0.0396$\\
+           \hline
+           \hline
+    \end{tabular}
+    \label{tab:fakeID}
+    \justify{Identification criteria for ``fakes." Fakes come from a photon ID sideband and are primarily
+    jets that have been misidentified as photons. The definitions of each of the variables can be found in 
+    Section~\ref{sec:phoID}.}
+\end{table}
 
 \subsection{Object Cleaning}
 \label{sec:ObjCleaning}
 
 In order to avoid double counting particles, a set of object cleaning rules are applied. 
 First, because muons are reconstructed with a higher purity than any other particle, 
-any electromagnetic object (photon, electron, or fake) that is within \dR $< 0.3$ of a muon candidate is removed.
-Second, any photon that overlaps within \dR $< 0.3$ of an electron is removed. Finally, if a fake overlaps with an electron or 
-photon candidate within \dR $< 0.4$, the fake candidate is removed. The larger \dR separation for fakes is due to the fact
-that fakes are primarily jets and, as described in Section~\ref{sec:Jets}, jets are reconstructed using the \antikt algorithm with a distance
+any electromagnetic object (photon, electron, or fake) that is within \dR~$< 0.3$ of a muon candidate is removed.
+Second, any photon that overlaps within \dR~$< 0.3$ of an electron is removed. Finally, if a fake overlaps with an electron or 
+photon candidate within \dR~$< 0.4$, the fake candidate is removed. The larger \dR~separation for fakes is due to the fact
+that fakes are primarily jets and, as described in Section~\ref{sec:Jet}, jets are reconstructed using the \antikt algorithm with a distance
 parameter of 0.4.  
 
 \subsection{Lepton veto}
@@ -197,7 +227,7 @@ gauge-mediated supersymmetry breaking with photons in the final state.
 
 \section{Signal region and control samples}
 \label{sec:samples}
-After the individual objects are defined and identified, each event is sorted into one of four exclusive categories based on the electromagnetic objects with the highest \pT in the event. Events with two photons comprise the signal diphoton sample, referred to as the $\gamma\gamma$ sample. Events with two electrons, one electron and one photon, or two fakes are categorized as $ee$, $e\gamma$, or $ff$ events, respectively. In each case, the two electromagnetic objects are required to be separated by \dR $ > 0.6$. 
+After the individual objects are defined and identified, each event is sorted into one of four exclusive categories based on the electromagnetic objects with the highest \pT in the event. Events with two photons comprise the signal diphoton sample, referred to as the $\gamma\gamma$ sample. Events with two electrons, one electron and one photon, or two fakes are categorized as $ee$, $e\gamma$, or $ff$ events, respectively. In each case, the two electromagnetic objects are required to be separated by \dR~$ > 0.6$. 
 
 The  $\gamma\gamma$, $ff$, and $e\gamma$ samples are required to pass the primary trigger described in Section~\ref{sec:analysisTrig}. 
 In order to ensure that the events pass the trigger with a high efficiency, the invariant mass of the two electromagnetic objects is required to be greater than 105 GeV. 
@@ -271,7 +301,7 @@ two factors of both values are used.
 
 \subsection{Scale factor for $R_9$ requirement}
 \label{sec:R9SF}
-The photon ID used in this analysis differs from the official POG recipe in one aspect: we apply an $R_9 > 0.5$ requirement on top of the medium ID due to the presence of an $R_9$ cut in our analysis trigger. A check was performed to make sure that the $R_9$ requirement does not change the photon scale factors. The results of this study are shown in Figure~\ref{fig:R9SF}. The data/MC scale factors. We therefore choose to simply use the official scale factors described above. 
+The photon ID used in this analysis differs from the official POG recipe in one aspect: we apply an $R_9 > 0.5$ requirement on top of the medium ID due to the presence of an $R_9$ cut in our analysis trigger. A check was performed to make sure that the $R_9$ requirement does not change the photon scale factors. The results of this study are shown in Figure~\ref{fig:R9SF}. The data/MC scale factors are all consistent with unity. We therefore choose to simply use the official scale factors described above, rather than applying any additional corrections.
 
 \begin{figure*}[htbp]
     \centering

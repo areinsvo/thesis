@@ -79,7 +79,7 @@ $B$ boson & $B^0$ & (\textbf{1}, \textbf{1}, 0) \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Finally, the only particle not included in Table~\ref{tab:fermions} or \ref{tab:bosons} is the Higgs boson. The Higgs boson was discovered by the CMS and ATLAS collaborations in 2012 \cite{ATLASHiggs,CMSHiggs}, and is responsible for EWSB. It is the only fundamental scalar in the SM and has a mass of approximately 125 GeV. The Higgs boson is in the (\textbf{1}, \textbf{2}, $+\frac{1}{2}$) representation of $G_{SM}$, and is therefore uncharged under the strong and electromagnetic interactions. 
+Finally, the only particle not included in Table~\ref{tab:fermions} or \ref{tab:bosons} is the Higgs boson. The Higgs boson was discovered by the CMS and ATLAS collaborations in 2012 \cite{ATLASHiggs,CMSHiggs}, and is responsible for EWSB. It is the only fundamental scalar in the SM and has a mass of approximately 125 GeV. The Higgs boson is in the (\textbf{1}, \textbf{2}, $+\frac{1}{2}$) representation of $G_{SM}$. It is uncharged under the strong and electromagnetic interactions. 
 
 Figure~\ref{fig:SMint} summarizes the SM particles and their allowed interactions.
 
@@ -142,16 +142,19 @@ Neutrino masses---an example of the first category---have already been mentioned
 
 The existence of dark matter also falls into the first category. A wealth of evidence, including galaxy cluster velocity dispersions, gravitational lensing studies, and measurements of the Cosmic Microwave Background, indicates that approximately 25\% of the energy budget of the universe is contained in dark matter (see Reference~\cite{DarkMatterReview} for a review). We know that dark matter interacts gravitationally, and stringent limits have been placed on the strength of its other interactions. However, so far there is no conclusive evidence as to the nature of dark matter.
 
-The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as disconcerting that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with fine-tuning, it as an unsatisfying way to solve a problem. Many people use fine-tuned parameters as sign-posts pointing to the existence of a broader theory in which the coincidences are explained.
+The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as disconcerting that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. This 
+has motivated the formation of flavor models that explain the mass structure between the generations of quarks and leptons.
 
-The hierarchy problem\footnote{Much of the description here and in Section~\ref{sec:SUSY} is derived from the excellent pedagogical paper ``A Supersymmetry Primer" by Stephen P. Martin \cite{SUSYprimer}.} is a particularly worrisome fine-tuning problem. The squared mass parameter $\mu^2$ in the Higgs potential receives huge quantum corrections from loop diagrams. As already stated in Equation~\ref{equ:HiggsMass}, $\mu^2$ can be written in terms $v$ and $\lambda$, and $v$ has been measured to be approximately 174 GeV. Some fantastic cancellation must occur to counteract these quantum corrections, but there is no motivation for such cancellations in the standard model. 
+The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with fine-tuning, it as an unsatisfying way to solve a problem. Many people use fine-tuned parameters as sign-posts pointing to the existence of a broader theory in which the coincidences are explained.
+
+The hierarchy problem\footnote{Much of the description here and in Section~\ref{sec:SUSY} is derived from the excellent pedagogical paper ``A Supersymmetry Primer" by Stephen P. Martin \cite{SUSYprimer}.} is a particularly worrisome fine-tuning problem. The squared mass parameter $\mu^2$ in the Higgs potential receives huge quantum corrections from loop diagrams. As already stated in Equation~\ref{equ:HiggsMass}, $\mu^2$ can be written in terms $v$ and $\lambda$, and $v$ has been measured to be approximately 174 GeV. Some fantastic cancellation must occur to counteract these quantum corrections.
 
 Every particle that couples directly or indirectly to the Higgs field contributes to the quantum corrections to $\mu^2$. For a fermion $f$, the loop-level contributions come from the Feynman diagram of Figure~\ref{fig:hierarchy}a:
 \begin{equation}
 \Delta\mu^2 = -\frac{|\lambda_f|^2}{8\pi^2}\Lambda^2_\mathrm{UV} + ....
 \label{equ:corrFermion}
 \end{equation}
-where the relevant term in the Lagrangian is $-\lambda_fH\bar{f}f$ and $\Lambda_\mathrm{UV}$ is the ultraviolet momentum cutoff of the theory \cite{SUSYprimer}. 
+where the relevant term in the Lagrangian is $-\lambda_fH\bar{f}f$ and $\Lambda_\mathrm{UV}$ is the ultraviolet momentum cutoff of the theory. 
 
 \begin{figure*}[htbp]
     \centering
@@ -168,7 +171,7 @@ Even if it does not couple directly to the Higgs, any new particle would also co
 \Delta\mu^2 = C(\frac{g^2}{16\pi^2})^2 [a \Lambda^2_\mathrm{UV} + 24m_F^2 \ln(\Lambda_\mathrm{UV}/m_F) +...]
 \label{equ:corrTwoLoopFermi}
 \end{equation}
-where the constant $C$ represents several group theory factors, $a$ depends on the renormalization method, and $g$ is the gauge coupling. 
+where the constant $C$ represents several group theory factors, $a$ depends on the renormalization method, and $g$ is the gauge coupling \cite{SUSYprimer}. 
 
 \begin{figure*}[htbp]
     \centering
@@ -223,7 +226,7 @@ The key to solving the hierarchy problem with supersymmetry appears if we consid
 Upon close inspection of Equations~\ref{equ:corrFermion} and \ref{equ:corrScalar}, it becomes clear that if
 there are two complex scalars per fermion that satisfy $\lambda_S = |\lambda_f|^2$, then the contributions to $\mu^2$ proportional to $ \Lambda^2_\mathrm{UV}$ cancel exactly. 
 Less obvious is whether the contributions from diagrams with more loops also cancel. The good news is that it can be shown that 
-the contributions to $\mu^2$ cancel to all orders in a supersymmetric theory. Any new particles, even extremely massive ones, would be
+the contributions to $\mu^2$ cancel to all orders in a supersymmetric theory \cite{SUSYproof}. Any new particles, even extremely massive ones, would be
 accompanied by their superpartners and $\mu^2$ would remain unaffected.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,7 +243,7 @@ In a supersymmetric theory, the SM particles shown in Tables~\ref{tab:fermions} 
 
 The Minimal Supersymmetric Standard Model (MSSM) is the most basic SM extension that incorporates SUSY. Table~\ref{tab:SUSY_fermions} lists the chiral supermultiplets in the MSSM, and the gauge supermultiplets are listed in Table~\ref{tab:SUSY_bosons}. Note that all particles in a supermultiplet are in the same representation of $G_{SM}$. 
 
-There must be two Higgs chiral supermultiplets in the MSSM to avoid gauge anomalies in the electroweak gauge symmetry, one with hypercharge $\Upsilon = 1/2$ and one with $\Upsilon = -1/2$. The $\Upsilon = 1/2$ chiral supermultiplet $H_u$ has the Yukawa couplings necessary to give masses to the up-type quarks, and the Yukawa couplings of the $\Upsilon = -1/2$ chiral supermultiplet $H_d$ give masses to the down-type quarks. The 125 GeV standard model Higgs boson is a linear combination of $H_u^0$ and $H_d^0$.
+There must be two Higgs chiral supermultiplets in the MSSM to avoid gauge anomalies in the electroweak gauge symmetry, one with hypercharge $\Upsilon = 1/2$ and one with $\Upsilon = -1/2$. The $\Upsilon = 1/2$ chiral supermultiplet $H_u$ has the Yukawa couplings necessary to give masses to the up-type quarks, and the Yukawa couplings of the $\Upsilon = -1/2$ chiral supermultiplet $H_d$ give masses to the down-type quarks and leptons. The 125 GeV standard model Higgs boson is a linear combination of $H_u^0$ and $H_d^0$.
 
 %popular proposed SM extensions to solve the hierarchy problem. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,7 +309,8 @@ Phenomenologically, an important feature of many SUSY models is $R$-parity conse
 $R$-parity is a new symmetry introduced in the MSSM to get rid of interactions that violate lepton number $L$
 or baryon number $B$. 
 Experimentally, we know that if $B$- and $L$-violating processes occur, they must be extremely suppressed. 
-In particular, the lifetime of the proton must be greater than $10^{32}$ years \cite{SUSYprimer}. 
+In particular, such processes would mediate proton decay, but we know that the 
+lifetime of the proton must be greater than $10^{32}$ years \cite{SUSYprimer}. 
 Without $R$-parity conservation, however, it is possible to write down terms in the MSSM Lagrangian 
 that would allow the proton to decay to $e^+\pi^0$ or other 
 lepton + meson combinations with a lifetime of less than one second.
@@ -325,10 +329,15 @@ In a collider experiment
 %where there are no SUSY particles initially, 
 this means that sparticles must be pair-produced.
 Additionally, $R$-parity conservation implies that the lightest supersymmetric particle (LSP) must be absolutely stable.
-All other sparticles will eventually decay to the LSP. From the high energy experimentalist's point of view, this means that the 
-primary signature of SUSY production in colliders will be significant missing transverse momentum. 
-From the cosmologist's point of view, this means that the LSP, if electrically neutral, 
-is a potential dark matter candidate
+All other sparticles will eventually decay to the LSP. From the cosmologist's point of view, this means that the LSP, if electrically neutral, 
+is a potential dark matter candidate.
+From the high energy experimentalist's point of view, this means that the 
+primary signature of SUSY production in colliders will be an imbalance in the reconstructed momentum in the transverse
+plane of the detector. This is referred to as missing 
+transverse momentum, $\vec{\pt}^{\mathrm{miss}}$. The magnitude of $\vec{\pt}^{\mathrm{miss}}$ is called the
+missing transverse energy, or \ETmiss.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -353,8 +362,9 @@ SM gauge interactions. The messengers are said to communicate between the two se
 From the lack of experimental observation, we know that the masses of the messenger particles must be very high. 
 
 One of the nice features of GMSB is that the flavor symmetry of the SM is preserved, because the gauge interactions are flavor-blind. 
-The messengers give mass to the sparticles through loop diagrams such as those shown in 
-Figure~\ref{fig:GMSBgaugino} for gauginos and Figure~\ref{fig:GMSBscalars} for the squarks and sleptons. 
+The messengers provide large contributions to the sparticle masses that are sensitive to the scale of SUSY breaking. 
+Figure~\ref{fig:GMSBgaugino} shows the relevant loop diagrams for gauginos, and Figure~\ref{fig:GMSBscalars}
+shows the two-loop diagrams for squarks and sleptons.
 
 \begin{figure*}[htbp]
     \centering
@@ -379,7 +389,7 @@ Figure~\ref{fig:GMSBgaugino} for gauginos and Figure~\ref{fig:GMSBscalars} for t
     \label{fig:GMSBscalars}
 \end{figure*}
 
-GMSB usually refers to the minimal version of the theory, where the hidden sector includes a single field $S$ that is a singlet under $G_{SM}$. 
+GMSB usually refers to the minimal version of the theory, where the hidden sector includes a field $S$ that is a singlet under $G_{SM}$. 
 The more general framework is referred to as general gauge mediation (GGM). 
 
 The GGM phenomenology is independent from the exact SUSY-breaking mechanism in the hidden sector. In particular, 
@@ -387,10 +397,8 @@ in all GGM models, the lightest supersymmetric particle is the gravitino \gravit
 The graviton is a spin-2 particle, which means the graviton and gravitino can not belong to either the chiral or gauge supermultiplets described in Section~\ref{sec:SUSYparticles}. Instead, the gravitino is a spin-3/2 particle.
 
 In GGM, the gravitino must be significantly lighter than all other sparticles, on the order of eV to keV. The gravitino only interacts
-gravitationally with SM particles and therefore escapes the detector without depositing its energy. This causes 
-an imbalance in the reconstructed momentum in the transverse plane of the detector and is referred to as missing 
-transverse momentum $\vec{\pt}^{\mathrm{miss}}$. The magnitude of $\vec{\pt}^{\mathrm{miss}}$ is called the
-missing transverse energy, or \ETmiss.
+gravitationally with SM particles and therefore escapes the detector without depositing its energy, resulting in 
+significant \ETmiss in the final state.
 
 The next-to-lightest supersymmetric particle (NLSP) is either the lightest chargino or the lightest neutralino.
 In this analysis, we will only consider models where the NLSP is the neutralino. We further constrain 
