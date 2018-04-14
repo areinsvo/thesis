@@ -110,7 +110,6 @@ All of the isolation values are corrected to remove pileup contributions as desc
 \begin{equation}
 I_{\mathrm{corr.}} = I_{\mathrm{uncorr.}} - \rho A_{\mathrm{eff}}
 \end{equation}
-
 The values of the effective area for each isolation correction are listed in Table~\ref{tab:EA}.
 
 \begin{table}[ht]
@@ -129,13 +128,11 @@ The values of the effective area for each isolation correction are listed in Tab
     \label{tab:EA}
     \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
 \end{table}
-
-
-In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to satisfy a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL 
+In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to pass a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL 
 
 \subsection{Electron identification}
 \label{sec:eleID}
-As already mentioned, electrons---particularly electrons from $Z\rightarrow ee$ decays---are a useful proxy for photons because of the similar response in the ECAL. We define an electron as a photon candidate satisfying all of the requirements of Section~\ref{sec:phoID} but failing the PSV. Using all of the same ID requirements for electrons and photons enables us to define control regions with electrons without introducing any biases between the control region and the candidate di-photon sample we are trying to model. By reversing the pixel seed veto, we make the electron and photon selections orthogonal and avoid double-counting objects.
+As already mentioned, electrons---particularly electrons from $Z\rightarrow ee$ decays---are a useful proxy for photons because of the similar response in the ECAL. We define an electron as a candidate object satisfying all of the requirements of Section~\ref{sec:phoID} but failing the PSV. Using the same ID requirements for electrons and photons enables us to define control regions with electrons without introducing any biases between the control region and the candidate di-photon sample we are trying to model. By reversing the pixel seed veto, we make the electron and photon selections orthogonal and avoid double-counting objects. The requirements for photons and electrons are listed in detail in Table~\ref{tab:ID}. 
 
 \subsection{Fake identification}
 \label{sec:fakeID}
@@ -143,14 +140,19 @@ In addition to photons and electrons, a third, orthogonal category referred to a
 Fakes are primarily electromagnetically-rich jets that have been misidentified as photons. As will be described in Chapter~\ref{chap:DataAnalysis},
 the predicted QCD background is derived using a double fake control sample.
 
+Table~\ref{tab:fakeID} lists the ID criteria for fakes.
 The fake definition is taken from a photon ID sideband. Fakes are required to
 % must pass all of the photon identification criteria described in Section~\ref{sec:phoID}, except they
 fail either the \sigmaietaieta or the charged hadron isolation requirement of the photon ID. 
-This ensures that the photon and fake selection criteria are orthogonal.
+This ensures that the photon and fake selection criteria are orthogonal. Upper bounds
+(0.015 and 25 for \sigmaietaieta and charged hadron isolation, respectively)
+are placed on the values of both variables to ensure that the fake definition does not differ too much 
+from the nominal photon definition. 
 
-
-The requirements for photons and electrons are listed in detail in Table~\ref{tab:ID}, and 
-the fake ID requirements are listed in Table~\ref{tab:fakeID}.
+In addition, fakes must satisfy $0.5 < R_9 < 0.9$. Using the more inclusive cut $R_9 > 0.5$
+resulted in significant contamination from SUSY events in the double fake control sample. To
+counteract the effect this cut has on the already-limited fake statistics, the
+neutral hadron isolation and photon isolation cuts are loosened significantly.
 
 \begin{table}[ht]
     \caption{PHOTON AND ELECTRON ID CRITERIA}
