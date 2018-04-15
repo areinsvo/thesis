@@ -154,13 +154,21 @@ isolation requirements.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Confidence level calculations}
-\label{sec:cls}
+
+\section{Limits and interpretations}
+\label{sec:limits}
+
+As shown in Table~\ref{tab:ExpObs}, the observed number of events is consistent with (or less than) the total number of 
+expected background events in each bin in the signal region. In the absence of a signal, these results can 
+be used to set limits on the allowed squark, gluino, and neutralino masses in the T5gg and T6gg simplified models.
+
+To determine 95\% confidence level intervals for the cross section times branching fraction in each mass bin, we use the \cls method \cite{Junk:1999kv, Read:2002hq}. The final cross section limits and exclusion contours are shown in Figure~\ref{fig:limit_T5gg} for the T5gg simplified model
+and Figure~\ref{fig:limit_T6gg} for the T6gg simplified model.
+
 
 The statistical uncertainties are modeled with gamma distributions, where $x$ is the expected event yield, 
 $\alpha$ is the original number of events in the control sample, 
 and $\beta$ is the transfer factor, $\beta$ = $x$/$\alpha$. 
-
 \begin{equation}
 	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}
 \end{equation}
@@ -175,16 +183,6 @@ All of the systematic uncertainties described in Chapter~\ref{chap:DataAnalysis}
 with a log-normal probability distribution. The peak of the probability distribution 
 is set to the nominal background estimate for that bin, and the size of the systematic uncertainty 
 sets the width of the distribution. 
-
-\section{Limits and Interpretations}
-\label{sec:limits}
-
-The \cls method \cite{Junk:1999kv, Read:2002hq} is applied to our analysis.
-
-In both the T5gg and T6gg simplified models, the cross section is independent of the mass of the neutralino and 
-depends only on the mass of the gluino or squark, respectively. Therefore, it is not surprising that the exclusion contours
-shown in Figures~\ref{fig:limit_T5gg} and~\ref{fig:limit_T6gg}
-do not depend sensitively on the mass of the neutralino. 
 
 \begin{figure*}[h]
 \begin{center}
@@ -210,3 +208,13 @@ do not depend sensitively on the mass of the neutralino.
     \label{fig:limit_T6gg}
 \end{figure*}
 
+In both the T5gg and T6gg simplified models, the cross section is independent of the mass of the neutralino and 
+depends only on the mass of the gluino or squark, respectively. Therefore, it is not surprising that the exclusion contours
+shown in Figures~\ref{fig:limit_T5gg} and~\ref{fig:limit_T6gg}
+do not depend sensitively on the mass of the neutralino. 
+
+In the bulk of the distribution, gluino masses below 1.90 TeV and squark masses below 
+1.62 TeV are excluded at a 95\% confidence level. The expected exclusions were
+1.75 TeV for gluino pair production and 1.58 TeV for squark pair production. 
+This is a large jump in sensitivity compared to the 2015 ATLAS and CMS results, which excluded 
+masses less than 1.65 TeV and 1.37 TeV for gluinos and squarks, respectively. 
