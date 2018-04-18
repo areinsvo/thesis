@@ -1,7 +1,7 @@
 \chapter{DATA SETS AND SAMPLE DEFINITIONS}
 \label{chap:EventSelect}
 
-\section{Data Samples}
+\section{Data samples}
 
 As already mentioned, this analysis was performed using 35.9 \fbinv collected with the CMS detector in 2016. More specifically, the data sets listed in Table~\ref{tab:datasets} were used. These correspond to the reprocessing of the data that took place in February 2017 to include improved calibrations and performance corrections. The relevant ``golden JSON" file was used to specify which events passed all of the offline CMS data quality monitoring requirements: \\
 Cert$\_$271036-284044$\_$13TeV$\_$23Sep2016ReReco$\_$Collisions16$\_$JSON.txt
@@ -30,14 +30,51 @@ Cert$\_$271036-284044$\_$13TeV$\_$23Sep2016ReReco$\_$Collisions16$\_$JSON.txt
 \end{center}
 \end{table}
 
-\section{MC Samples}
+\section{MC samples}
 \label{sec:MC}
 Monte Carlo (MC) simulations are used for several purposes in this analysis. Simulations
 of the signal processes are used to determine signal efficiencies, and
 background process simulations are used for validation of the analysis performance
 and to model the contribution from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$
-events. The full list of MC samples for this analysis is shown in Table~\ref{tab:MC}.
-The details of the signal simulation will be described in more detail in Section~\ref{sec:SimplifiedModels}. 
+events. 
+
+There are three steps to created simulated events. The first step is the 
+event generation, which simulates the primary scattering given an 
+initial state ($p$-$p$ collisions in our case) and a list of final state particles.
+To do so, a Monte Carlo (MC) method is utilized. The momentum phase-space
+of the final particles is randomly sampled using a probability distribution
+proportional to the differential cross section. For our analysis samples,
+the M\textsc{AD}G\textsc{RAPH}5~\cite{Alwall:2014hca} matrix-element generator was used.
+
+The second step is to take the list of partons and corresponding 
+momentum 4-vectors from the output of the event generator and 
+perform parton showering. The partons are randomly fragmented into
+multiple partons until the energy of each parton is below a set threshold. 
+The partons are then hadronized. Additionally, the generation of initial state radiation
+(ISR) occurs during this step. 
+We used the general-purpose event generator 
+\textsc{PYTHIA}8~\cite{Sjostrand:2007gs}.
+
+Finally, the last step is to simulate the detector response and to convert the list
+of particles into detector observables. There are two approaches that were used
+for the detector simulation: full simulation (FullSim) and fast simulation (FastSim). Both
+rely on the G\textsc{EANT}4 program.
+In FullSim, the interactions are calculated from first principles using the full 
+geometry of the detector modeled with as much detail as possible. In FastSim, 
+the detector response is parameterized to avoid the time-consuming steps of FullSim. 
+The modeling of the particle interactions 
+with the tracker and calorimeters is replaced with libraries of particle showers~\cite{Abdullin:2011zz}.
+
+The simulated tracker hits and calorimeter deposits are passed through the
+full reconstruction algorithm that was previously described in
+Chapter~\ref{sec:EventReconstruction} with one exception: in FastSim, the time-consuming track 
+reconstruction uses the MC truth information rather than the simulated
+detector hist. The final simulated output ends up in the same format as the output of the 
+data reconstruction.
+
+The full list of MC samples for this analysis is shown in Table~\ref{tab:MC}.
+The background MC samples are generated with FullSim, and the signal samples 
+are generated with FastSim. The signal simulation will be described in more detail in Section~\ref{sec:SimplifiedModels}. 
 
 \begin{table}[ht]
 \caption{MC SAMPLES FOR SIGNAL AND BACKGROUND}
@@ -85,7 +122,7 @@ asymptotic$\_$2016$\_$miniAODv2$\_$v0$\_$ext1-v1/MINIAODSIM }\\
 \end{center}
 \end{table}
 
-\section{Object Definitions}
+\section{Object definitions}
 \label{sec:ObjSelect}
 
 The MINIAOD data format of the data sets in Table~\ref{tab:datasets} includes lists of object candidates---photons, electrons, jets, etc.---from the reconstruction algorithms described in Chapter~\ref{sec:EventReconstruction}. Further refinements, however, are needed in the offline analysis to achieve the desired purities. For this analysis, the primary objects of interest are photons and electrons.
@@ -207,7 +244,7 @@ neutral hadron isolation and photon isolation cuts are loosened significantly.
     Section~\ref{sec:phoID}.}
 \end{table}
 
-\subsection{Object Cleaning}
+\subsection{Object cleaning}
 \label{sec:ObjCleaning}
 
 In order to avoid double counting particles, a set of object cleaning rules are applied. 
