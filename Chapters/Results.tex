@@ -111,7 +111,8 @@ functions are obtained from NNPDF3.0~\cite{Ball:2014uwa}.
 Figure~\ref{fig:xSec} shows the cross sections as a function
 of squark and gluino mass.
 The cross sections are calculated at next-to-leading order 
-(NLO) accuracy including the resummation of soft gluon emissionat next-to-leading-logarithmic (NLL) accuracy~\cite{Kulesza:2009kq, Beenakker:2009ha},
+(NLO) accuracy including the resummation of soft gluon emission
+at next-to-leading-logarithmic (NLL) accuracy~\cite{Kulesza:2009kq, Beenakker:2009ha},
 with all the unconsidered sparticles assumed to be heavy and decoupled.
 The uncertainties on the cross sections are calculated as
 described in Reference~\cite{Borschensky:2014cia}.
@@ -171,27 +172,78 @@ As shown in Table~\ref{tab:ExpObs}, the observed number of events is consistent 
 expected background events in each bin in the signal region. In the absence of a signal, these results can 
 be used to set limits on the allowed squark, gluino, and neutralino masses in the T5gg and T6gg simplified models.
 
-To determine 95\% confidence level intervals for the cross section times branching fraction in each mass bin, we use the \cls method \cite{Junk:1999kv, Read:2002hq}. The final cross section limits and exclusion contours are shown in Figure~\ref{fig:limit_T5gg} for the T5gg simplified model
-and Figure~\ref{fig:limit_T6gg} for the T6gg simplified model.
+\subsection{Statistical analysis}
+\label{sec:stats}
 
+The probability $P$ of observing $n$ events if we expect $s$ signal events and $b$ background events
+in a given bin or channel
+can be expressed using a Poisson distribution:
+\begin{equation}
+P(n|\mu, \bm{\theta}) = \frac{(\mu s(\bm{\theta})+b(\bm{\theta}))^ne^{-\mu s(\bm{\theta})-b(\bm{\theta})}}{n!}
+\end{equation}
+The expected number of signal events is parameterized with a \textit{signal strength modifier} $\mu$, where $\mu = 1$ 
+corresponds to the  nominal cross section. The systematic and statistical uncertainties described in 
+Chapter~\ref{chap:DataAnalysis} are treated as nuisance parameters,
+and their effects on $s$ and $b$ are encoded in the parameter set $\bm{\theta}$.
+%probabilities of nuisances
 
+Each nuisance parameter $\theta_i$ must have an associated probability distribution $p_i(\theta)$.
 The statistical uncertainties are modeled with gamma distributions, where $x$ is the expected event yield, 
 $\alpha$ is the original number of events in the control sample, 
-and $\beta$ is the transfer factor, $\beta$ = $x$/$\alpha$. 
+and $\beta$ is the transfer factor, $\beta$ = $x$/$\alpha$: 
 \begin{equation}
-	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}
+p(\theta) =	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}.
 \end{equation}
 
 The statistical uncertainties include those on the 
 observed number of events in the signal region in data, uncertainties from the limited number of events
 in the control regions used for the data-driven background estimation methods, and the MC statistical uncertainties 
-in the SUSY signal MC and the MC used to model the $Z\gamma\gamma\rightarrow ee \gamma\gamma$ 
+in the SUSY signal MC and the MC used to model the $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ 
 background.
 
-All of the systematic uncertainties described in Chapter~\ref{chap:DataAnalysis} are treated as nuisance parameters
-with a log-normal probability distribution. The peak of the probability distribution 
+All of the systematic uncertainties described in Chapter~\ref{chap:DataAnalysis} are constrained
+with log-normal probability distributions. The peak of the probability distribution 
 is set to the nominal background estimate for that bin, and the size of the systematic uncertainty 
 sets the width of the distribution. 
+
+To combine several channels or bins---in our case, the six signal bins for \ETmiss $> 100$ GeV---the 
+probabilities are combined into a \textit{likelihood function} $\mathcal{L}$. The likelihood is
+the probability of having a signal strength $\mu$ and nuisance parameters $\bm{\theta}$ given the observed
+number of events in each bin, $\bm{n} = \{n_1,n_2,...n_i\}$:
+ \begin{equation}
+ \mathcal{L}(\mu, \bm{\theta}|\bm{n}) = \prod_i P(n_i|\mu,\bm{\theta})  \prod_jp_j(\bm{\theta}).
+ \end{equation}
+ 
+Maximizing $\mathcal{L}$ gives us the best fit values for the signal strength and nuisance parameters, referred to
+as $\hat{\mu}$ and $\bm{\hat{\theta}}$, respectively.
+
+To describe how compatible a given value of $\mu$ is with the observed data, we use the following test statistic:
+\begin{equation}
+t_\mu = -2 \ln{ \frac{\mathcal{L}(\mu,\bm{\tilde{\theta}})}{\mathcal{L}(\hat{\mu},\bm{\hat{\theta}})} },
+\end{equation}
+where $\bm{\tilde{\theta}}$ is the value of the nuisance parameters that maximizes $\mathcal{L}(\mu)$. Larger 
+values of $t_\mu$ represent increased tension between $\mu$ and the observed data. 
+
+The probability of getting a value for $t_\mu$ larger than what was actually observed is known as the $p$-value, 
+$p_\mu$. If $p_{\mu=1}$ is less than 0.05, then we say that we have excluded the signal hypothesis at a 95\% 
+\textit{confidence level}. In order to claim a discovery, the convention in high energy physics is to require
+$p_{\mu =0} < 2.87 \times 10^{-7}$, which corresponds to 5 $\sigma$ in a Gaussian distribution. 
+
+In this analysis, we use the standard \cls method \cite{Junk:1999kv, Read:2002hq} to 
+determine 95\% confidence level intervals for the cross section times branching fraction in each mass bin.
+The \cls method avoids over-estimating the limits in the case of downward fluctuations in data by
+normalizing the $p$-value for the signal plus background hypothesis ($CL_{s+b} = p_{\mu=1}$) to the
+probability of the background-only hypothesis ($CL_{b} = p_{\mu=0}$):
+\begin{equation}
+CL_s = \frac{CL_{s+b}}{CL_{b}}.
+\end{equation}
+If $1 - \cls \leq 0.95$, then we have excluded the signal hypothesis at a 95\% confidence level.
+
+\subsection{T5gg and T6gg limits}
+\label{sec:limitResults}
+
+The final cross section limits and exclusion contours are shown in Figure~\ref{fig:limit_T5gg} for the T5gg simplified model
+and Figure~\ref{fig:limit_T6gg} for the T6gg simplified model.
 
 \begin{figure*}[h]
 \begin{center}
