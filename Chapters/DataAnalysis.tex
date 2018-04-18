@@ -1,7 +1,21 @@
-\chapter{BACKGROUND ESTIMATION METHODS}
+\chapter{DATA ANALYSIS}
 \label{chap:DataAnalysis}
 
-\section{Overview}
+\section{Signal region}
+The signal region for this analysis is made up of events with \ETmiss $> 100$ GeV that have two photons passing the medium ID requirements listed in Table~\ref{tab:ID}. The signal region is divided into six \ETmiss bins, with bin boundaries at 100, 115, 130, 150, 185, and 250 GeV. The last bin includes all events with \ETmiss $> 250$ GeV. 
+
+Figure~\ref{fig:eventDisplay} shows an event display of an event in our signal region. The event was recorded on June 12, 2016. 
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/DataAnalysis/eventDisplay.png}
+\end{center}
+\caption{Event display of one of the candidate $\gamma\gamma$ events. The event was recorded by the CMS detector on June 12, 2016. The red and blue blocks represent energy deposits in the ECAL and HCAL, respectively. The size of the blocks are proportional to the amount of deposited energy. The green lines represent reconstructed tracks. The green arrow represents the \ETmiss. This event has \ETmiss $ = XX$ GeV and two photons (large red blocks) passing our ID criteria. }
+\label{fig:eventDisplay}
+\end{figure*}
+
+
+\section{Overview of backgrounds}
 
 There are several standard model processes that can mimic our signal events. The largest background contribution comes from quantum chromodynamics (QCD) processes. These are primarily multi-jet events, where electromagnetically-rich jets are misidentified as photons, but can also include processes with true photons either from associated photon production or initial-state radiation. In both cases, there is no inherent \ETmiss in the event. Instead, the apparent \ETmiss is actually the result of mismeasured hadronic activity. As described in Section~\ref{sec:QCD}, this background is estimated in an entirely data-driven way using a control region derived from a sideband of our photon ID. 
 
@@ -20,6 +34,8 @@ The observed \ETmiss is the result of mismeasured hadronic activity, and in most
 ``photons" are misidentified jets with a large electromagnetic component.
 
 To estimate the contribution from the QCD background in our signal region, we use the ``fake" object selection that was described in Section~\ref{sec:ObjSelect}. The fake identification criteria is orthogonal to the nominal photon identification, and therefore provides a sideband that can be used as a control region. The \ETmiss tail of the QCD background is modeled using a ``fake-fake" (``$ff$") control sample made up of events with two fakes that pass the additional criteria outlined in Section~\ref{sec:samples}.
+
+In the 2015 analysis, a double electron ($ee$) control sample was used as the primary estimate, and $ff$ was used to set an uncertainty on the \ETmiss shape. The various reasons for not using $ee$ anymore and the results if we did choose to use $ee$ are described in Appendix~\ref{app:ee}.
 
 \subsection{Di-EM \pT reweighting}
 \label{sec:diempt}
