@@ -73,7 +73,7 @@ Two simplified models are used in the interpretation of the results. The T5gg si
     \label{fig:gluinoSquarkDecay}
 \end{figure*}
 
-In both models, the lightest supersymmetric particle (LSP) is the gravitino, \gravitino, which is taken to be nearly massless. The next-to-lightest supersymmetric particle (NLSP) is the neutralino, \neutralino. The models assume 100\% branching fraction for 
+In both models, the lightest supersymmetric particle (LSP) is the gravitino, \gravitino, which is taken to be nearly massless. The next-to-lightest supersymmetric particle (NLSP) is the neutralino, \neutralino. The models assume 100\% branching fractions for 
 $\neutralino\rightarrow\gravitino\gamma$ and 
 $\gluino\rightarrow \mathrm{q} \antiquark \neutralino$ and 
 $\squark\rightarrow \mathrm{q} \neutralino$.
@@ -192,9 +192,8 @@ The statistical uncertainties are modeled with gamma distributions, where $x$ is
 $\alpha$ is the original number of events in the control sample, 
 and $\beta$ is the transfer factor, $\beta$ = $x$/$\alpha$: 
 \begin{equation}
-p(\theta) =	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}.
+p(\theta) =	\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1}e^{-\beta x}
 \end{equation}
-
 The statistical uncertainties include those on the 
 observed number of events in the signal region in data, uncertainties from the limited number of events
 in the control regions used for the data-driven background estimation methods, and the MC statistical uncertainties 
@@ -211,15 +210,15 @@ probabilities are combined into a \textit{likelihood function} $\mathcal{L}$. Th
 the probability of having a signal strength $\mu$ and nuisance parameters $\bm{\theta}$ given the observed
 number of events in each bin, $\bm{n} = \{n_1,n_2,...n_i\}$:
  \begin{equation}
- \mathcal{L}(\mu, \bm{\theta}|\bm{n}) = \prod_i P(n_i|\mu,\bm{\theta})  \prod_jp_j(\bm{\theta}).
+ \mathcal{L}(\mu, \bm{\theta}|\bm{n}) = \prod_i P(n_i|\mu,\bm{\theta})  \prod_jp_j(\bm{\theta})
+ \label{equ:likelihood}
  \end{equation}
- 
 Maximizing $\mathcal{L}$ gives us the best fit values for the signal strength and nuisance parameters, referred to
 as $\hat{\mu}$ and $\bm{\hat{\theta}}$, respectively.
 
 To describe how compatible a given value of $\mu$ is with the observed data, we use the following test statistic:
 \begin{equation}
-t_\mu = -2 \ln{ \frac{\mathcal{L}(\mu,\bm{\tilde{\theta}})}{\mathcal{L}(\hat{\mu},\bm{\hat{\theta}})} },
+t_\mu = -2 \ln{ \frac{\mathcal{L}(\mu,\bm{\tilde{\theta}})}{\mathcal{L}(\hat{\mu},\bm{\hat{\theta}})} }
 \end{equation}
 where $\bm{\tilde{\theta}}$ is the value of the nuisance parameters that maximizes $\mathcal{L}(\mu)$. Larger 
 values of $t_\mu$ represent increased tension between $\mu$ and the observed data. 
@@ -227,7 +226,7 @@ values of $t_\mu$ represent increased tension between $\mu$ and the observed dat
 The probability of getting a value for $t_\mu$ larger than what was actually observed is known as the $p$-value, 
 $p_\mu$. If $p_{\mu=1}$ is less than 0.05, then we say that we have excluded the signal hypothesis at a 95\% 
 \textit{confidence level}. In order to claim a discovery, the convention in high energy physics is to require
-$p_{\mu =0} < 2.87 \times 10^{-7}$, which corresponds to 5 $\sigma$ in a Gaussian distribution. 
+$p_{\mu =0} < 2.87 \times 10^{-7}$, which corresponds to 5$\sigma$ in a Gaussian distribution. 
 
 In this analysis, we use the standard \cls method \cite{Junk:1999kv, Read:2002hq} to 
 determine 95\% confidence level intervals for the cross section times branching fraction in each mass bin.
@@ -244,6 +243,9 @@ If $1 - \cls \leq 0.95$, then we have excluded the signal hypothesis at a 95\% c
 
 The final cross section limits and exclusion contours are shown in Figure~\ref{fig:limit_T5gg} for the T5gg simplified model
 and Figure~\ref{fig:limit_T6gg} for the T6gg simplified model.
+In both models, the cross section is independent of the mass of the neutralino and 
+depends only on the mass of the gluino or squark. Therefore, it is not surprising that the exclusion contours
+do not depend sensitively on the mass of the neutralino. 
 
 \begin{figure*}[h]
 \begin{center}
@@ -279,3 +281,8 @@ In the bulk of the distribution, gluino masses below 1.90 TeV and squark masses 
 1.75 TeV for gluino pair production and 1.58 TeV for squark pair production. 
 This is a large jump in sensitivity compared to the 2015 ATLAS and CMS results, which excluded 
 masses less than 1.65 TeV and 1.37 TeV for gluinos and squarks, respectively. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

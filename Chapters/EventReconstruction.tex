@@ -6,7 +6,7 @@
 
 For each event that passes the trigger, the output from all of the sub-detectors described in Chapter~\ref{chap:Detector} is saved by the data acquisition system (DAQ) and eventually recorded to disk and tape. The data format at this stage is referred to as ``RAW" data. It includes information about the response of each detector, but the data are still unprocessed, aside from the minimal processing done to determine whether the event passed the trigger. ``Reconstruction" is the general term for algorithms that convert the detector response data into lists of object candidates---muons, photons, electrons, jets, etc.---and event quantities such as missing transverse momentum \ptmiss. 
 
-Figure~\ref{fig:cmsSlice} shows how each type of particle interacts with the different layers of the CMS detector. Photons, being neutral, do not interact with the tracker, and deposit their energy in the ECAL. Electrons have a very similar response in the ECAL, but unlike photons, they also leave hits in the tracker. Hadrons deposit their energy in the HCAL, and charged hadrons have an associated track in the tracker. Finally, muons interact with the tracker and the muon system. 
+Figure~\ref{fig:cmsSlice} shows how each type of particle interacts with the different layers of the CMS detector. Photons, being neutral, do not interact with the tracker and instead deposit their energy in the ECAL. Electrons have a very similar response in the ECAL, but unlike photons, they also leave hits in the tracker. Hadrons deposit their energy in the HCAL, and charged hadrons have an associated track in the tracker. Finally, muons interact with the tracker and the muon system. 
 
  \begin{figure*}[h!]
 	\centering
@@ -16,7 +16,7 @@ Figure~\ref{fig:cmsSlice} shows how each type of particle interacts with the dif
        \label{fig:cmsSlice}
 \end{figure*}
 
-Of course, the simplified picture in Figure~\ref{fig:cmsSlice} does not cover the full complexity of how particles can interact with the detector. Photons can ``convert" and produce an electron-positron pair. Hadrons can interact with the material of the tracker or ECAL, and begin to shower before reaching the HCAL. The following sections will describe in more detail how physics objects are reconstructed. 
+Of course, the simplified picture in Figure~\ref{fig:cmsSlice} does not cover the full complexity of how particles can interact with the detector. Photons can ``convert" and produce an electron-positron pair. Hadrons can interact with the material of the tracker or ECAL and begin to shower before reaching the HCAL. The following sections will describe in more detail how physics objects are reconstructed. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -32,20 +32,18 @@ Tracking in CMS takes place with a combinatorial track finder that is applied in
 \begin{itemize}
 \item Seed generation: The first step is to find a track seed consisting of two or three hits compatible with a charged-particle track.
 \item Track finding: Pattern recognition is used to identify hits in all layers of the tracker that are compatible with the trajectory implied by the track seed. 
-\item Track fitting: A global $\chi_2$ fit is performed to determine the final properties of the track, including origin, direction, and transverse momentum. 
+\item Track fitting: A global $\chi^2$ fit is performed to determine the final properties of the track, including origin, direction, and transverse momentum. 
 \end{itemize}
 
-Because the charged particles can change direction suddenly through interactions with the tracker material, the track finder uses a Kalman filter method~\cite{Kalman}. The goal of each iteration is to find tracks with as high of a purity as possible, at the cost of moderate efficiency. The high purity is accomplished through quality cuts on the seeds and the $\chi_2$ of the track fit. Any hits that are associated with a track are masked for the subsequent iterations. This reduces the combinatorial possibilities, which in turn reduces the likelihood of random hits being built up into a fake tracks. 
+Because the charged particles can change direction suddenly through interactions with the tracker material, the track finder uses a Kalman filter method~\cite{Kalman}. The goal of each iteration is to find tracks with as high of a purity as possible, at the cost of moderate efficiency. The high purity is accomplished through quality cuts on the seeds and the $\chi^2$ of the track fit. Any hits that are associated with a track are masked for the subsequent iterations. This reduces the combinatorial possibilities, which in turn reduces the likelihood of random hits being built up into a fake tracks. 
 
 In addition to particle identification and determination of transverse momentum, tracks are also used to reconstruct vertices in the event. 
 The vertex with the largest value of $\Sigma\pT^2$ is identified as the primary vertex, associated with the hard-scatter interaction. The other vertices arise from soft-scatter pileup interactions. Thus, the number of reconstructed vertices in an event can be used to approximate the number of pileup interactions. Two of the later iterations of the track finder are applied with reduced constraints on the origin vertex, in order to reconstruct displaced secondary vertices from the decays of long-lived particles. 
 
-Specialized algorithms are used to reconstruct tracks for electrons and muons. Those are described in detail next.
-
 \subsection{Electron track reconstruction}
 \label{sec:eleTrackReco}
 
-Electrons have a higher probability of scattering in the tracker than other charged particles, and so electrons are reconstructed using a separate tracking algorithm that is optimized for multiple scatters. In particular, a Gaussian-sum filter (GSF) is used rather than a Kalman filter because it adapts better in the case of sudden and substantial momentum changes. Two approaches are used: an ECAL-driven approach and a tracker-driven approach. In the ECAL-driven method, ECAL clusters are used to infer the hit locations assuming that the cluster came from either a positron or an electron. 
+Electrons have a higher probability of scattering in the tracker than other charged particles. Therefore, electrons are reconstructed using a separate tracking algorithm that is optimized for multiple scatters. In particular, a Gaussian-sum filter (GSF) is used rather than a Kalman filter because it adapts better in the case of sudden and substantial momentum changes. Two approaches are used: an ECAL-driven approach and a tracker-driven approach. In the ECAL-driven method, ECAL clusters are used to infer the hit locations assuming that the cluster came from either a positron or an electron. 
 
 The tracker-driven method is better for electrons in jets and for low-\pt electrons, when the ECAL clusters are overlapping with deposits from other particles or are too spread out to reconstruct fully. In this approach, all tracks with \pt greater than 2 GeV are used as seeds for an electron. Each track is propagated to the surface of the ECAL and checked to see if it is consistent with the position of an ECAL cluster. The final step of the algorithm uses a boosted decision tree (BDT) to quantify the goodness of fit. This last step serves to reduce the misidentification rate, which is especially important in the context of the PF algorithm to avoid double counting energy.
 
@@ -66,7 +64,7 @@ Calorimeter clusters are an important input for the PF algorithm. They are the s
 
 The ECAL clusters are calibrated for photons and electrons using test beam data and radioactive sources, and residual corrections are derived using simulated single photon events. For hadrons, however, the ECAL must be re-calibrated, since the response of the ECAL to hadrons is significantly different than its response to electrons. A large simulated sample of neutral hadrons is used to derive a simultaneous calibration for the portions of the hadronic shower's energy deposited in the ECAL and HCAL. 
 
-One complication in the reconstruction of ECAL clusters is the presence of signals known as spikes. These occur when a particle directly ionizes an ECAL APD. The result is a signal whose amplitude is $10^5$ times higher than the signal from the scintillation light alone. Because these spikes appear in only one or two crystals, they are rejected by considering the ratio of energy deposited in the central crystal to that deposited in the neighboring 4 crystals. In the case where the spike affects two adjacent crystals, the energy deposited in the two crystals is compared to that of their six neighbors. These ratios are referred to as $E_4/E_1$ and $E_6/E_2$, and are required to be less than 5\% and 10\%, respectively. 
+One complication in the reconstruction of ECAL clusters is the presence of signals known as spikes. These occur when a particle directly ionizes an ECAL avalanche photodiode. The result is a signal whose amplitude is $10^5$ times higher than the signal from the scintillation light alone. Because these spikes appear in only one or two crystals, they are rejected by considering the ratio of energy deposited in the central crystal to that deposited in the neighboring 4 crystals. In the case where the spike affects two adjacent crystals, the energy deposited in the two crystals is compared to that of their six neighbors. These ratios are referred to as $E_4/E_1$ and $E_6/E_2$, and are required to be less than 5\% and 10\%, respectively. 
 
 \subsection{Particle identification}
 \label{sec:partID}
@@ -90,7 +88,6 @@ d_{ij} &= \mathrm{min}(k_{ti}^{2p},k_{ti}^{2p})\frac{\Delta^2_{ij}}{R^2} \\
 d_{iB} &= k_{ti}^{2p}
 \end{aligned}
 \end{equation}
-
 The value $\Delta^2_{ij}$ is equal to $(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2$, $k_t$ is the transverse momentum of the particle, and $R$ is a distance parameter that determines the final radius of the jet.
 
 The clustering algorithm first finds the smallest value of $d_{ij}$ and $d_{iB}$ for all particles in the event. If the minimum distance is $d_{ij}$, then particles $i$ and $j$ are combined into a single entity. If the minimum distance is $d_{iB}$, then particle $i$ is labeled a jet and removed from the list. For the \antikt algorithm, the parameter $p = -1$. Setting $p=0$ corresponds to the inclusive Cambridge/Aachen algorithm, and $p=1$ is the inclusive $k_t$ algorithm. The result of various jet-clustering algorithms is shown in Figure~\ref{fig:jetAlgorithms}. One obvious feature of the \antikt algorithm is the production of very circular jets compared to jets identified using other clustering algorithms.
@@ -127,7 +124,7 @@ A series of jet energy corrections (JEC) are applied to the jets after clusterin
 \subsection{Jet energy resolution}
 \label{sec:JER}
 
-After the JEC are applied, resolutions of 10\% and 5\% are achieved for 100 GeV and 1 TeV jets in the barrel, respectively. Figure~\ref{fig:JER} shows the jet energy resolution as a function of jet \pt in 8 TeV simulation. 
+After the JEC are applied, resolutions of 10\% and 5\% are achieved for 100 GeV and 1 TeV jets in the barrel, respectively. Figure~\ref{fig:JER} shows the jet energy resolution as a function of jet \pt in simulated 8 TeV events. 
 
  \begin{figure*}[h!]
 	\centering
@@ -216,10 +213,8 @@ For photons and electrons used to define signal regions or control samples, howe
 
 In order to achieve an excellent energy resolution, the clustering algorithm must collect the deposits corresponding to all electrons from photon conversions and all photons from electron bremsstrahlung. Similar to the PF cluster reconstruction described above, the reconstruction of photon clusters begins with a local energy maxima or ``seed" crystal. In the barrel, clusters have a fixed width of 5 crystals in $\eta$ centered on the seed. The initial cluster is made from parallel 5 $\times$ 1 strips in $\eta \times \phi$, and further strips in the $\phi$ direction (up to a total of 17 strips) are added if the energy is above a set threshold and lower than the previously added strip. In the endcap, the default cluster size is a 5 $\times$ 5 region, and adjacent 5 $\times$ 5 regions are added to the supercluster if they are sufficiently energetic. Any overlapping signal in the preshower detectors is simply added to the supercluster energy.
 
-The variable $R_9$ is defined as the ratio of the energy in a 3 $\times$ 3 array of crystals to the energy in the full supercluster. It is used to distinguish between converted and unconverted photons. For photons that have converted, the value of $R_9$ is lower because the $e^+/e^-$ pair will separate in the $\phi$ direction due to the strong magnetic field. If $R_9$ is greater than 0.93, then the photon is classified as unconverted, and the energy of the 5 $\times$ 5 region is assigned as the photon supercluster energy. If the photon has converted (ie, $R_9 < 0.93$), then the full supercluster energy is used. 
+The variable $R_9$ is defined as the ratio of the energy in a 3 $\times$ 3 array of crystals to the energy in the full supercluster. It is used to distinguish between converted and unconverted photons. For photons that have converted, the value of $R_9$ is lower because the $e^+e^-$ pair will separate in the $\phi$ direction due to the strong magnetic field. If $R_9$ is less than 0.93, then the photon is classified as converted, and the energy of the supercluster is used. If the photon is unconverted (ie, $R_9 < 0.93$), then the energy of the 5 $\times$ 5 region is assigned as the photon supercluster energy.
 
-A series of corrections are applied to the supercluster energy to account for variations in the shower containment and any potential losses for photons that convert in the tracker. Shower containment can vary for several reasons, including variations in the longitudinal depth at which the shower passes through the sides of the crystal and is lost in the inter-crystal dead space. The corrections are derived in simulation as a function of $\eta$, \ET, $R_9$, and the spread of the cluster in $\phi$. After the corrections, the photon energy resolution is better than 3\% for photons in the barrel \cite{phoPerf8TeV}.
+A series of corrections are applied to the supercluster energy to account for variations in the shower containment and any potential losses for photons that convert in the tracker. The shower containment can vary for several reasons, including variations in the longitudinal depth at which the shower passes through the sides of the crystal and is lost in the inter-crystal dead space. The corrections are derived in simulation as a function of $\eta$, \ET, $R_9$, and the spread of the cluster in $\phi$. After the corrections, the photon energy resolution is better than 3\% for photons in the barrel \cite{phoPerf8TeV}.
 
-It is worthwhile to note that the photon reconstruction algorithm does not differentiate between showers initiated by an electron and those initiated by a photon. This is important, because it means that $Z \rightarrow ee$ events can be used as a high-purity sample of $e/\gamma$ objects to study essential analysis inputs. These include the trigger efficiency (as previously described in Chapter~\ref{chap:Trigger}) and the photon ID efficiency in data and simulation (see Section~\ref{sec:phoSF}). 
-
-Chapter~\ref{chap:EventSelect} will discuss the offline criteria used to further refine the photon selection.
+It is worthwhile to note that the photon reconstruction algorithm does not differentiate between showers initiated by an electron and those initiated by a photon. This is important, because it means that $Z \rightarrow ee$ events can be used as a high-purity sample of $e/\gamma$ objects to study essential analysis inputs. These include the trigger efficiency (as previously described in Chapter~\ref{chap:Trigger}) and the photon ID efficiency in data and simulation (see Section~\ref{sec:phoSF}). Chapter~\ref{chap:EventSelect} will discuss the offline criteria used to further refine the photon selection.

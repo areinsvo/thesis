@@ -2,9 +2,7 @@
 \label{chap:DataAnalysis}
 
 \section{Signal region}
-The signal region for this analysis is made up of events with \ETmiss $> 100$ GeV that have two photons passing the medium ID requirements listed in Table~\ref{tab:ID}. The signal region is divided into six \ETmiss bins, with bin boundaries at 100, 115, 130, 150, 185, and 250 GeV. The last bin includes all events with \ETmiss $> 250$ GeV. 
-
-Figure~\ref{fig:eventDisplay} shows an event display of an event in our signal region. The event was recorded on June 12, 2016 and has 144.8 GeV of \ETmiss.
+The signal region for this analysis is made up of events with \ETmiss $> 100$ GeV that have two photons passing the medium ID requirements listed in Table~\ref{tab:ID}. The signal region is divided into six \ETmiss bins, with bin boundaries at 100, 115, 130, 150, 185, and 250 GeV. The last bin includes all events with \ETmiss $> 250$ GeV. Figure~\ref{fig:eventDisplay} shows an event display of an event in our signal region. The event was recorded on June 12, 2016 and has 144.8 GeV of \ETmiss.
 
 \begin{figure*}[h]
 \begin{center}
@@ -33,7 +31,7 @@ comes from QCD events without true \ETmiss and without two real photons.
 The observed \ETmiss is the result of mismeasured hadronic activity, and in most cases the 
 ``photons" are misidentified jets with a large electromagnetic component.
 
-To estimate the contribution from the QCD background in our signal region, we use the ``fake" object selection that was described in Section~\ref{sec:ObjSelect}. The fake identification criteria is orthogonal to the nominal photon identification, and therefore provides a sideband that can be used as a control region. The \ETmiss tail of the QCD background is modeled using a ``fake-fake" (``$ff$") control sample made up of events with two fakes that pass the additional criteria outlined in Section~\ref{sec:samples}.
+To estimate the contribution from the QCD background in our signal region, we use the ``fake" object selection that was described in Section~\ref{sec:ObjSelect}. The fake identification criteria is orthogonal to the nominal photon identification and therefore provides a sideband that can be used as a control region. The \ETmiss tail of the QCD background is modeled using a ``fake-fake" ($ff$) control sample made up of events with two fakes that pass the additional criteria outlined in Section~\ref{sec:samples}.
 
 In the 2015 analysis, a double electron ($ee$) control sample was used as the primary estimate, and $ff$ was used to set an uncertainty on the \ETmiss shape. The various reasons for not using $ee$ anymore and the results if we did choose to use $ee$ are described in Appendix~\ref{app:ee}.
 
@@ -58,7 +56,7 @@ As illustrated in Figure~\ref{fig:diempt}, the \diempt variable is used as a mea
 \label{fig:diempt}
 \end{figure*}
 
-The \diempt distributions for the $\gamma\gamma$ candidate sample and the $ff$ control sample are shown in Figure~\ref{fig:ggffDiempt}. The $ff$ events are reweighted using the $\gamma\gamma$/$ff$ ratios displayed in the bottom panel of Figure~\ref{fig:ggffDiempt}. The $ff$ \ETmiss distribution is normalized to the \ETmiss $<~50$ GeV region of the $\gamma\gamma$ sample, where signal contamination is minimal. 
+The \diempt distributions for the $\gamma\gamma$ candidate sample and the $ff$ control sample are shown in Figure~\ref{fig:ggffDiempt}. The $ff$ events are reweighted using the $\gamma\gamma$/$ff$ ratios displayed in the bottom panel of Figure~\ref{fig:ggffDiempt}. The $ff$ \ETmiss distribution is normalized to the \ETmiss $<~50$ GeV region of the $\gamma\gamma$ sample, where signal contamination is minimal. The unweighted $ff$ and $\gamma\gamma$ \ETmiss distributions are shown in Figure~\ref{fig:ggffUnweighted}, and Figure~\ref{fig:ggffReweighted} compares the reweighted $ff$ \ETmiss distribution to the candidate $\gamma\gamma$ \ETmiss distribution.
 
 \begin{figure*}[h]
 \begin{center}
@@ -68,7 +66,6 @@ The \diempt distributions for the $\gamma\gamma$ candidate sample and the $ff$ c
 \label{fig:ggffDiempt}
 \end{figure*}
 
-The unweighted $ff$ and $\gamma\gamma$ \ETmiss distributions are shown in Figure~\ref{fig:ggffUnweighted}, and Figure~\ref{fig:ggffReweighted} compares the reweighted $ff$ \ETmiss distribution to the candidate $\gamma\gamma$ \ETmiss distribution.
 
 \begin{figure*}[h]
 \begin{center}
@@ -113,12 +110,11 @@ This provides an alternative estimation method for the QCD background.}
 \end{figure*}
 
 Figure~\ref{fig:crossCheck} shows the ratio of $\gamma\gamma$/$ff$ as a function of \ETmiss in the \ETmiss $<$ 100 GeV control region. The ratio has been fit to a constant function $f(\ETmiss)$. The expected number of $\gamma\gamma$ events in bin $i$ of the signal region is then given by the following equation:
-
 \begin{equation}
 N_{\gamma\gamma}^i = f(\ETmiss) \times N_{ff}^i 
 \end{equation}
 
-Table~\ref{tab:crossCheck} compares the expected QCD background contribution as predicted with the cross check method to that predicted with the \diempt reweighting method. For the cross check method, the uncertainty arising from the choice of fitting function is estimated by fitting the ratio to a linear function instead. In addition, the cross check uncertainties listed in Table~\ref{tab:crossCheck} include the statistical uncertainty from the limited control sample statistics and the $1~\sigma$ uncertainties from the fit. For the \diempt reweighting method, the uncertainties include the statistical uncertainty and the uncertainty from the \diempt reweighting procedure (the derivation of this uncertainty is described in detail in Section~\ref{sec:QCDSys}). 
+Table~\ref{tab:crossCheck} compares the expected QCD background contribution as predicted with the cross check method to that predicted with the \diempt reweighting method. For the cross check method, the uncertainty arising from the choice of fitting function is estimated by fitting the ratio to a linear function instead. In addition, the cross check uncertainties listed in Table~\ref{tab:crossCheck} include the statistical uncertainty from the limited control sample statistics and the $1\sigma$ uncertainties from the fit. For the \diempt reweighting method, the uncertainties include the statistical uncertainty and the uncertainty from the \diempt reweighting procedure (the derivation of which is described in detail in Section~\ref{sec:QCDSys}). 
 
 \begin{table}[ht]
      \caption{COMPARISON BETWEEN REWEIGHTING METHOD AND RATIO METHOD FOR THE QCD BACKGROUND ESTIMATE}
@@ -139,9 +135,13 @@ $> 250$ & ${13.4}^{+ 17.7}_{-8.7}$ & ${ 4.5}^{+ 6.0}_{-4.5}$ \\
      \hline
      \end{tabular}
 }
-	\justify{Comparison of the background estimate using the di-EM \pt reweighting method and the $\gamma\gamma$/$ff$ ratio method. The uncertainties on the 
-	 di-EM \pt reweighting method include the statistical uncertainties and the reweighting uncertainty. The uncertainties on the ratio method include the 
-	 statistical uncertainties, the uncertainties in the fit parameter, and the uncertainty from the choice of fitting function. }
+	\justify{Comparison of the background estimate using the 
+	di-EM \pt reweighting method and the $\gamma\gamma$/$ff$ ratio method. 
+	The uncertainties on the di-EM \pt reweighting method include the 
+	statistical uncertainties and the reweighting uncertainty. 
+	The uncertainties on the ratio method include the 
+	 statistical uncertainties, the uncertainties in the fit parameter, 
+	 and the uncertainty from the choice of fitting function. }
      \label{tab:crossCheck}
 \end{table}
 
@@ -264,13 +264,11 @@ the number of events $N_{e\gamma}$ that will actually get reconstructed as havin
 \begin{equation}
 N_{e\gamma}=(1-f_{e\rightarrow\gamma})N_{e\gamma}'
 \end{equation}
-
 The background $N_{\gamma\gamma}$, the fraction of $N_{e\gamma}'$ that ends up in the candidate
-$\gamma\gamma$ sample, can be written as:
+$\gamma\gamma$ sample, can be written as
 \begin{equation}
 N_{\gamma\gamma} = f_{e\rightarrow\gamma} N_{e\gamma}' = N_{e\gamma}\frac{f_{e\rightarrow\gamma}}{1-f_{e\rightarrow\gamma}}
 \end{equation}
-
 By looking at Equation~\ref{equ:fake}, it can be seen that this last factor is precisely the ratio $R_{\gamma/e} = N_{e\gamma}^Z/N_{ee}^Z = 2.63\%$ that was discussed above. Thus, the EWK background prediction is simply given by $R_{\gamma/e}$ times the number of observed $e\gamma$ events. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,7 +276,7 @@ By looking at Equation~\ref{equ:fake}, it can be seen that this last factor is p
 \subsection{EWK results}
 \label{sec:EWKresults}
 
-Table~\ref{tab:EWKValue} shows the final EWK estimate in the six signal region bins. There are two sources of uncertainty on the EWK estimate: the statistical uncertainty from the limited number of $e\gamma$ events observed in data, and the 30\% systematic uncertainty from the calculation of the fake rate. Both of these are included in the uncertainties listed in Table~\ref{tab:EWKValue} .
+Table~\ref{tab:EWKValue} shows the final EWK estimate in the six signal region bins. There are two sources of uncertainty on the EWK estimate: the statistical uncertainty from the limited number of $e\gamma$ events observed in data and the 30\% systematic uncertainty from the calculation of the fake rate. Both of these are included in the uncertainties listed in Table~\ref{tab:EWKValue} .
 
 \begin{table}[ht]
      \caption{EWK BACKGROUND ESTIMATE}
@@ -310,7 +308,10 @@ Table~\ref{tab:EWKValue} shows the final EWK estimate in the six signal region b
 \section{Irreducible background}
 \label{sec:Zgg}
 
-In addition to the QCD and EWK backgrounds, there is a small irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. Because there is inherent \ETmiss from this process, it is not included in the QCD background, and because it has two true photons, it is not included in the EWK background either. We model this background using MC simulation and assign a 50\% uncertainty to the estimate to cover any potential mis-modeling. The predicted background from $Z\gamma\gamma$ events is shown in Table~\ref{tab:ZGG}.
+In addition to the QCD and EWK backgrounds, there is a small irreducible background from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$ events. These events have inherent \ETmiss, and 
+are therefore not included in the QCD background. These events also have two
+real photons, meaning they are not included in the EWK background either. 
+We model this background using MC simulation and assign a 50\% uncertainty to the estimate to cover any potential mis-modeling. The predicted background from $Z\gamma\gamma$ events is shown in Table~\ref{tab:ZGG}.
 
 \begin{table}[ht]
      \caption{$Z\gamma\gamma$ BACKGROUND ESTIMATE}
@@ -342,7 +343,7 @@ In addition to the QCD and EWK backgrounds, there is a small irreducible backgro
 
 \section{Systematic uncertainties}
 The systematic uncertainties fall into two main categories: 
-those associated with one of the background estimates,
+those associated with one of the background estimates
 and those associated with the expected signal yields.
 
 \subsection{Uncertainties on background estimates}
@@ -355,7 +356,7 @@ Table~\ref{tab:QCDSys} for each signal bin. All uncertainties are expressed as n
 The first uncertainty on the QCD estimate comes from the \diempt reweighting procedure. Recall that to
 correct for differences in hadronic activity in the events, the \ETmiss distribution of the $ff$ sample 
 is reweighted by the $\gamma\gamma/ff$ \diempt ratio, so that its \diempt spectrum matches that of the double photon
-candidate sample. To propagate the uncertainty from the \diempt reweighting, we generated
+candidate sample. To propagate the uncertainty from the \diempt reweighting, we generate
 one thousand different \diempt ratios. In each case, the value of the ratio in the bin is obtained by varying the
 nominal \diempt ratio using a Gaussian distribution with $\sigma$ equal to the statistical uncertainty of that bin. 
 We then reweight the \ETmiss distributions of the $ff$ control sample with the 1000
@@ -387,7 +388,7 @@ $>~250$   & 13.4 & $+17.7, -8.6$   & $\pm 8.8$  & $\pm 1.0$ \\
  described in Section~\ref{sec:crossCheck} as a cross check. 
  By fitting the ratio of $\gamma\gamma$ to $ff$ at low \ETmiss to a constant, 
  the expected number of $\gamma\gamma$ events at high \ETmiss can be extrapolated from the observed 
- number of $ff$ events. This procedure gives us a second estimates for the QCD background in each
+ number of $ff$ events. This procedure gives us a second estimate for the QCD background in each
 bin of \ETmiss. The difference between the two estimates is taken as a symmetric
 systematic uncertainty and is shown in the second-to-last column
 of Table~\ref{tab:QCDSys}.
@@ -422,7 +423,7 @@ factor described in Section~\ref{sec:phoSF}. There is also a 2.5\% uncertainty o
 luminosity of the data sample \cite{lumiPAS}. 
 
 The last source of uncertainty comes from propagating the jet energy scale uncertainty described in Section~\ref{sec:JEC} to the \ETmiss. 
-The expected signal yields are recalculated using the 1 $\sigma$ fluctuations of \ETmiss if the jet energy scale is varied by its uncertainty. The difference between the yields with and without the jet energy scale changes is taken as a systematic uncertainty. 
+The expected signal yields are recalculated using the 1$\sigma$ fluctuations of \ETmiss if the jet energy scale is varied by its uncertainty. The difference between the yields with and without the jet energy scale changes is taken as a systematic uncertainty. 
 
 %The nominal \ETmiss value is calculated using jets with only the Type-I corrections applied. 
 
@@ -437,7 +438,7 @@ The expected signal yields are recalculated using the 1 $\sigma$ fluctuations of
         Systematic Uncertainty & [\%] \\
 
     \hline
-        PDF error on cross section & 13 - 22 \\
+        PDF error on cross section & 19 - 35 \\
         Finite MC statistics & 0 - 16 \\
         Photon Data/MC scale factor & 2.4 \\                                                                                   
     	Integrated luminosity & 2.3 \\

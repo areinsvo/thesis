@@ -38,27 +38,28 @@ background process simulations are used for validation of the analysis performan
 and to model the contribution from $Z\gamma\gamma\rightarrow\nu\nu\gamma\gamma$
 events. 
 
-There are three steps to created simulated events. The first step is the 
+There are three steps to create simulated events. The first step is the 
 event generation, which simulates the primary scattering given an 
 initial state ($p$-$p$ collisions in our case) and a list of final state particles.
 To do so, a Monte Carlo (MC) method is utilized. The momentum phase-space
 of the final particles is randomly sampled using a probability distribution
 proportional to the differential cross section. For our analysis samples,
-the M\textsc{AD}G\textsc{RAPH}5~\cite{Alwall:2014hca} matrix-element generator was used.
+the \textsc{MadGraph}5~\cite{Alwall:2014hca} matrix-element generator was used.
 
-The second step is to take the list of partons and corresponding 
+The second step is to take the list of particles and corresponding 
 momentum 4-vectors from the output of the event generator and 
-perform parton showering. The partons are randomly fragmented into
-multiple partons until the energy of each parton is below a set threshold. 
-The partons are then hadronized. Additionally, the generation of initial state radiation
-(ISR) occurs during this step. 
+perform parton showering. The partons are fragmented 
+until the energy of each is below a set threshold. 
+The new set of partons from the fragmentation 
+are then hadronized. Additionally, the generation of initial state radiation
+(ISR) occurs during this stage. 
 We used the general-purpose event generator 
-\textsc{PYTHIA}8~\cite{Sjostrand:2007gs}.
+\PYTHIA8~\cite{Sjostrand:2007gs} for this step.
 
 Finally, the last step is to simulate the detector response and to convert the list
 of particles into detector observables. There are two approaches that were used
 for the detector simulation: full simulation (FullSim) and fast simulation (FastSim). Both
-rely on the G\textsc{EANT}4 program.
+rely on the \textsc{Geant}4 program.
 In FullSim, the interactions are calculated from first principles using the full 
 geometry of the detector modeled with as much detail as possible. In FastSim, 
 the detector response is parameterized to avoid the time-consuming steps of FullSim. 
@@ -69,7 +70,7 @@ The simulated tracker hits and calorimeter deposits are passed through the
 full reconstruction algorithm that was previously described in
 Chapter~\ref{sec:EventReconstruction} with one exception: in FastSim, the time-consuming track 
 reconstruction uses the MC truth information rather than the simulated
-detector hist. The final simulated output ends up in the same format as the output of the 
+detector hits. The final simulated output ends up in the same format as the output of the 
 data reconstruction.
 
 The full list of MC samples for this analysis is shown in Table~\ref{tab:MC}.
@@ -165,7 +166,7 @@ The values of the effective area for each isolation correction are listed in Tab
     \label{tab:EA}
     \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
 \end{table}
-In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to pass a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL 
+In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to pass a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL.
 
 \subsection{Electron identification}
 \label{sec:eleID}
@@ -252,8 +253,8 @@ First, because muons are reconstructed with a higher purity than any other parti
 any electromagnetic object (photon, electron, or fake) that is within \dR~$< 0.3$ of a muon candidate is removed.
 Second, any photon that overlaps within \dR~$< 0.3$ of an electron is removed. Finally, if a fake overlaps with an electron or 
 photon candidate within \dR~$< 0.4$, the fake candidate is removed. The larger \dR~separation for fakes is due to the fact
-that fakes are primarily jets and, as described in Section~\ref{sec:Jet}, jets are reconstructed using the \antikt algorithm with a distance
-parameter of 0.4.  
+that fakes are primarily jets and jets are reconstructed using the \antikt algorithm with a distance
+parameter of 0.4, as described in Section~\ref{sec:Jet}.  
 
 \subsection{Lepton veto}
 \label{sec:lepVeto}
@@ -326,14 +327,13 @@ points shown in Figure~\ref{fig:SFmap}:
 Our prescription for photon identification is nearly identical to that for
 electron identification, differing only by the presence or absence of a seed
 track in the pixel detector. The efficiency of the pixel seed veto
-for photons cannot be determined from the tag-and-probe method described above,
+for photons cannot be determined from the tag-and-probe method described above
 and must be obtained from photons in $Z\rightarrow \mu\mu\gamma$
 events. Again we use the official scale factor calculated by the
 EGM POG:
 \begin{equation}
   \textrm{Pixel Seed Veto Scale Factor} = 0.998\pm0.013
 \end{equation}
-
 Since our candidate sample requires two photons in the final state,
 two factors of both values are used.
 
