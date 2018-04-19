@@ -13,7 +13,7 @@ that we faced.
 The simplest method would be to simply bin in jet multiplicity.
 This was done in the 8 TeV analysis, but it was dropped in the 
 2015 analysis because of the limited size of the data set (2.3 \fbinv).
-It was explored in the 2016 analysis, but ultimately we decided not 
+It was explored in the 2016 analysis, but we decided not 
 to pursue it when we made the switch from $ee$ to $ff$ for our 
 primary QCD control sample. We are 
 already limited enough in $ff$ statistics that binning further 
@@ -33,7 +33,7 @@ in unexpected ways (Figure~\ref{fig:weirdDiempt}).
 \caption{The \diempt distributions for $\gamma\gamma$ (red) and $ee$ (black)
 events with $\geq$ 2 jets. The data corresponds to the first 12.9 \fbinv collected 
 with the CMS detector in 2016. The double peak structure only appears if one 
-applies a cut on $N_{\mathrm{jet}}$. }
+applies a cut on the number of jets. }
 \label{fig:weirdDiempt}
 \end{figure*}
 
@@ -68,16 +68,16 @@ A wide variety of variables were explored:
 \item Missing transverse energy \ETmiss
 \item $S_T$: scalar sum of the transverse momentum from all photons, leptons, and jets in the event. The sum sometimes includes \ETmiss as well.
 \item $H_T$: scalar sum of the transverse momentum from all jets in the event. 
-\item \ETmiss significance = \ETmiss/$\sqrt{S_T}$: quantifies the likelihood that the \ETmiss in an event is real missing energy rather than the result of hadronic mismeasurement. 
+\item \ETmiss significance: Defined as \ETmiss/$\sqrt{S_T}$. This variable quantifies the likelihood that the \ETmiss in an event is real missing energy rather than the result of hadronic mismeasurement. 
 \item Missing $H_T$: the magnitude of the vector sum of all photons, leptons, and jets passing our ID criteria.
 \item MT2: sometimes referred to as the ``stransverse mass". It is calculated as a function of the two electromagnetic objects and the \ETmiss, and it has a cut-off at the mass of the parents of the invisible particles.
 \end{itemize}
 
 To quantify the correlation between two variables $a$ and $b$, I looked at how the ratio 
-$N(a > \alpha)/N(a < \alpha)$ changed as a function of $b$, where $\alpha$ is the boundary between
+$N_{a > \alpha}/N_{a < \alpha}$ changes as a function of $b$, where $\alpha$ is the boundary between
 regions $AC$ and regions $BD$. The ABCD method relies on the assumption
 that this ratio is a constant.
-Similarly, one can consider $N(b > \beta)/N(b < \beta)$ as a function 
+Similarly, one can consider $N_{b > \beta}/N_{b < \beta}$ as a function 
 of $a$ for the boundary $\beta$ between $AB$ and $CD$. Figure~\ref{fig:kappa} shows these ratios 
 for $S_T$ and \ETmiss significance. Not only are the ratios not constant,
 but they exhibit a noticeable change in behavior at $S_T$ = 400 GeV and \ETmiss 
@@ -95,7 +95,7 @@ ratios are for the $ee$ control sample in data.}
 \label{fig:kappa}
 \end{figure*}
 
-Ultimately, we decided that it was more important to publish the results and keep to 
+In the end, we decided that it was more important to publish the results and keep to 
 a schedule that would allow us to be part of the GMSB combination effort. Efforts at a 
 multivariate analysis were tabled until there is time to properly explore it.
 
