@@ -3,7 +3,7 @@
 In the analysis performed using the 2015 CMS data set~\cite{CMS:2015_anal}, 
 a sample of $Z\rightarrow ee$ events (referred to as the $ee$ sample) was used as the 
 primary QCD background estimate, and the $ff$ control 
-sample was used to set a systematic uncertainty on the background.
+sample was used to set a systematic uncertainty on the shape of the \ETmiss tail.
 The idea was that the $ee$ and $ff$ control samples represent
 100$\%$ and 0$\%$ photon purity, respectively. By using both, we could
 derive a bound on any possible sensitivity of the \ETmiss spectrum
@@ -16,7 +16,7 @@ There are several reasons we decided not to use the $ee$ control sample
  the efficiency of the control 
  trigger. As mentioned in Chapter~\ref{chap:Trigger},
 the primary analysis trigger 
-cannot be used due to the $m_{\gamma\gamma}~<~90~GeV$
+cannot be used for $Z\rightarrow ee$ events due to the $m_{\gamma\gamma}~>~90$ GeV
 invariant mass requirement. Instead, the $ee$ sample uses the control trigger 
 listed in Table~\ref{tab:triggers}. As shown in~\ref{sec:eeEff}, the
 control trigger is only 79.8\% efficient because it 
@@ -29,11 +29,11 @@ as \pT increases.
 
 Another reason why we prefer $ff$ over $ee$ is that the kinematics
 of $ff$ are more similar to the kinematics of our SUSY signal events.
-In $ee$ events, the the two electromagnetic objects are obviously correlated, 
-since they come from the decay of the $Z$ boson. In the $ff$ and SUSY diphoton
+In $ee$ events, the two electromagnetic objects are obviously correlated, 
+since they come from the decay of the $Z$ boson. In $ff$ and SUSY diphoton
 events, on the other hand, the photons and fakes are uncorrelated. The result
 is that the $ee$ and $\gamma\gamma$ \ETmiss distributions start to diverge
-once the statistical uncertainties do down. 
+once the statistical uncertainties go down. 
 
 The most significant reason for not using $ee$, was actually 
 not the trigger or kinematics, but large contributions from processes with real \ETmiss 
@@ -79,28 +79,38 @@ Table~\ref{tab:subtract} shows the percent contribution
 from these processes in the signal region. In some bins, 
 95\% of the observed $ee$ events can be attributed to 
 these real-\ETmiss processes.
-As you can see in Figure~\ref{fig:eeWeighted},
+As you can see in Figure~\ref{fig:eeUnweighted},
 very few $ee$ events remain in the tail after 
 performing this subtraction.
 
 
 \begin{table}[ht]
-     \caption{Contribution to the $ee$ sample from processes with real \ETmiss}
+     \caption{CONTRIBUTIONS TO EE SAMPLE}
      \centering % used for centering table                                                                                                                    
      \begin{tabular}{| c | c | c |} % centered columns (4 columns)                                                                                            
     \hline
      \ETmiss bin (GeV) & \ttbar Contribution & ZZ Contribution\\ [0.5ex]
      \hline
-     $100-115$ & 58.8\% & 3.9\% \\
-     $115-130$ & 87.4\% & 6.6\% \\
-     $130-150$ & 87.3\% & 8.1\% \\
-     $150-185$ & 86.7\% & 10.4\% \\
-     $185-250$ & 64.2\% & 15.2\% \\
-     $~>~250$  & 45.8\% & 22.6\% \\
+     $100-115$ & 56.1\% & 4.4\% \\
+$115-130$ & 82.8\% & 8.54\% \\
+$130-150$ & 75.8\% & 9.9\% \\
+$150-185$ & 80.8\% & 14.6\% \\
+$185-250$ & 50.9\% & 16.8\% \\
+$> 250$ & 33.4\% & 27.7\% \\
      \hline
      \end{tabular}
      \label{tab:subtract}
 \end{table}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Figures/Appendix/compare_ee_gg_unweighted.pdf}
+\end{center}
+\caption{Unweighted \ETmiss distributions of the $ee$ control sample and the $\gamma\gamma$ candidate sample.
+The $ee$ distribution has been normalized to the \ETmiss$<50$ GeV region of the candidate sample. Contributions 
+from \ttbar and $ZZ$ events have been subtracted.}
+\label{fig:eeUnweighted}
+\end{figure*}
 
 %\subsection{Systematic uncertainties on \ttbar subtraction}
 %\label{sec:ttbarUncert}
@@ -108,7 +118,7 @@ performing this subtraction.
 For the subtraction of $ZZ \rightarrow ee\nu\nu$ events, 
 we consider uncertainties from
 MC statistics and jet energy scale corrections.
-Both uncertainties are less than a 2\% effect
+Both uncertainties are less than a 3\% effect
 on the final $ee$ estimate in the signal region.
 
 The systematic uncertainties associated with 
@@ -121,10 +131,10 @@ In the signal region, the limited MC \ttbar statistics
 leads to an uncertainty of up to 140\%. Uncertainties
 from the parton distribution function and overall
 scale of the cross section lead to uncertainties
-on the final $ee$ estimate up to 94\%.
+on the final $ee$ estimate up to 73\%.
 Jet energy scale corrections
 of the \ttbar sample lead to uncertainties up to
-97\%, and the effect of reweighting by the
+60\%, and the effect of reweighting by the
 top \pt to correct for differences between
 MC and data is up to 70\%.
 
@@ -143,27 +153,37 @@ QCD background estimate.
 As was done for the $ff$ sample,
 any difference in hadronic activity between the control and candidate
 samples needs to be corrected.
-This includes differences in hadronic
-activity as modeled by the di-EM \pt variable, but also includes
-differences in the jet multiplicity distributions.
-For example, the energy resolution in an event where
-there are three jets having a total \pt of $100$ GeV will be worse than that
-of an event where there is only one jet with \pt of $100$ GeV.
-Figure~\ref{fig:eediEMPTRatio} shows a
-comparison of the $ee$ and $\gamma\gamma$ di-EM \pt distributions, and
-the jet multiplicity distributions are shown in Figure~\ref{fig:JetDistribution1D}.
-The jet multiplicity distributions for the candidate and $ff$ samples are
-similar, but the candidate and $ee$ distributions are noticeably different.
-%%
-%%\begin{figure}[h]
-%%\begin{center}
-%%\includegraphics[width=4.0in]{figs/eeDiempt.pdf}
-%%\end{center}
-%%\caption{Comparison of di-EM \pt distributions of $\gamma\gamma$ and $ee$ samples.}
-%%\label{fig:eediEMPTRatio}
-%%\end{figure}
-%%
-%%
+Figure~\ref{fig:eediEMPTRatio} shows the $ee$ and 
+$\gamma\gamma$ di-EM \pt distributions. 
+The \ETmiss distributions after reweighting are shown in Figure~\ref{fig:eeWeighted}.
+It is clear from the plot that even after \diempt reweighting, the $ee$ sample 
+systematically underestimates the QCD background.
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Figures/Appendix/eeDiempt.pdf}
+\end{center}
+\caption{Comparison of the di-EM \pt distributions of the $\gamma\gamma$ and $ee$ samples.}
+\label{fig:eediEMPTRatio}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{Figures/Appendix/compare_ee_gg_unweighted.pdf}
+\end{center}
+\caption{\ETmiss distributions of the candidate sample and the reweighted $ee$ sample.
+The $ee$ distribution has been normalized to the \ETmiss$<50$ GeV region of the candidate sample.
+Contributions to $ee$
+from \ttbar and $ZZ$ events have been subtracted.}
+\label{fig:eeWeighted}
+\end{figure*}
+
+%This includes differences in hadronic
+%activity as modeled by the di-EM \pt variable, but also includes
+%differences in the jet multiplicity distributions.
+%For example, the energy resolution in an event where
+%there are three jets having a total \pt of $100$ GeV will be worse than that
+%of an event where there is only one jet with \pt of $100$ GeV.
 %%\begin{figure}
 %%\begin{center}
 %% \includegraphics[width=6.0in]{figs/JetMultiplicity.pdf}
@@ -202,22 +222,3 @@ similar, but the candidate and $ee$ distributions are noticeably different.
 %$ff$ control samples and the $\gamma\gamma$ candidate sample
 %is shown in Figure \ref{fig:eeUnweighted}. The comparison after
 %the reweighting procedure is shown in Figure~\ref{fig:eeWeighted}.
-%
-%%\begin{figure}[h]
-%%\begin{center}
-%%\includegraphics[width=6.0in]{figs/eeUnweightedMet.pdf}
-%%\end{center}
-%%\caption{Unweighted \ETmiss distributions of the $ee$ and $ff$ control samples and the $\gamma\gamma$ candidate sample.
-%%The $ee$ and $ff$ distributions have been normalized to the \ETmiss$<50$ GeV region of the candidate sample.}
-%%\label{fig:eeUnweighted}
-%%\end{figure}
-%%
-%%\begin{figure}[h]
-%%\begin{center}
-%%\includegraphics[width=6.0in]{figs/eeReweightedMet.pdf}
-%%\end{center}
-%%\caption{\ETmiss distributions of the candidate sample, the reweighted $ee$ sample and the reweighted $ff$ sample.
-%%The $ee$ and $ff$ distributions have been normalized to the \ETmiss$<50$ GeV region of the candidate sample.}
-%%\label{fig:eeWeighted}
-%%\end{figure}
-%
