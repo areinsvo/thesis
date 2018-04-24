@@ -11,7 +11,8 @@ Figure~\ref{fig:cmsSlice} shows how each type of particle interacts with the dif
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/EventReconstruction/cms_slice.pdf}
-       \caption{Slice of the transverse plane of the CMS detector showing how different particles interact with the detector subsystems. The most important particle for this analysis is the photon (blue dotted line), which interacts only with the ECAL (shown in green).
+       \caption[Slice of the transverse plane of the CMS detector showing how different particles interact with the detector subsystems.]
+       {Slice of the transverse plane of the CMS detector showing how different particles interact with the detector subsystems. The most important particle for this analysis is the photon (blue dotted line), which interacts only with the ECAL (shown in green).
        Reprinted from Reference~\cite{CDS}.}
        \label{fig:cmsSlice}
 \end{figure*}
@@ -95,7 +96,8 @@ The clustering algorithm first finds the smallest value of $d_{ij}$ and $d_{iB}$
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/EventReconstruction/jetAlgorithms.pdf}
-       \caption{Behavior of several jet-clustering algorithms illustrated with a sample parton-level event. 
+       \caption[Behavior of several jet-clustering algorithms illustrated with a sample parton-level event.]
+       {Behavior of several jet-clustering algorithms illustrated with a sample parton-level event. 
        CMS uses the \antikt algorithm (bottom right) with a distance parameter $R = 0.4$.
        Reprinted from Reference~\cite{antikt}.}
        \label{fig:jetAlgorithms}
@@ -114,7 +116,8 @@ A series of jet energy corrections (JEC) are applied to the jets after clusterin
 	\centering
 	\includegraphics[width=1.0\linewidth]{Figures/EventReconstruction/JEC1.png}
 	\includegraphics[width=0.5\linewidth]{Figures/EventReconstruction/JEC2.png}
-       \caption{Ratio of the average reconstructed jet \pt to the particle-level jet \pt ($p_{\mathrm{T,ptcl}}$) in QCD Monte Carlo simulation.
+       \caption[Ratio of the average reconstructed jet \pt to the particle-level jet \pt in QCD Monte Carlo simulation.]
+       {Ratio of the average reconstructed jet \pt to the particle-level jet \pt ($p_{\mathrm{T,ptcl}}$) in QCD Monte Carlo simulation.
        The ratio is calculated in bins of $p_{\mathrm{T,ptcl}}$ before applying any JEC (top left), after applying the $L1$ pileup corrections
        (top right), and after all JEC (bottom). The different curves correspond to different numbers of pileup interactions $\mu$.
        Reprinted from Reference~\cite{JEC}.}
@@ -129,7 +132,9 @@ After the JEC are applied, resolutions of 10\% and 5\% are achieved for 100 GeV 
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=0.65\linewidth]{Figures/EventReconstruction/JER.png}
-       \caption{Jet energy resolution (JER) in 8 TeV simulation as a function of particle-level jet \pt ($p_{\mathrm{T,ptcl}}$). PF+CHS refers to particle flow
+       \caption[Jet energy resolution in 8 TeV simulation as a function of particle-level jet \pt.]
+       {Jet energy resolution (JER) in 8 TeV simulation as a function of particle-level jet \pt ($p_{\mathrm{T,ptcl}}$). 
+       PF+CHS refers to particle flow
        jets with charged hadron subtraction (see Section~\ref{sec:pileup}). Results are shown for various levels of pileup $\mu$. 
        Reprinted from Reference~\cite{JEC}.}
        \label{fig:JER}
@@ -170,7 +175,8 @@ The presence of pileup interactions affects many aspects of the reconstruction p
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=0.65\linewidth]{Figures/EventReconstruction/pileup_pp_2016.pdf}
-       \caption{Number of pileup interactions per bunch crossing as observed in $p$-$p$ collisions with the CMS detector in 2016. On average, 27 pileup interactions were observed per bunch crossing. }
+       \caption[Number of pileup interactions per bunch crossing as observed in $p$-$p$ collisions with the CMS detector in 2016.]
+       {Number of pileup interactions per bunch crossing as observed in $p$-$p$ collisions with the CMS detector in 2016. On average, 27 pileup interactions were observed per bunch crossing. }
        \label{fig:pileup}
 \end{figure*}
 
@@ -179,7 +185,9 @@ Fortunately, there are several ways in which the PF algorithm can be used to mit
  \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/EventReconstruction/jetComp.png}
-       \caption{Energy composition as a function of the number of pileup (PU) interactions $\mu$ for jets in 
+       \caption[Energy composition as a function of the number of pileup interactions for jets in 
+       data and simulation.]
+       {Energy composition as a function of the number of pileup (PU) interactions $\mu$ for jets in 
        data (markers) and simulation (histogram). The data distributions correspond to 19.7\fbinv collected at 
        $\sqrt{s} = 8$ TeV with the CMS detector in 2012.
        The contribution from charged hadrons from pileup is shown in dark red.
