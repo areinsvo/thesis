@@ -26,7 +26,7 @@ Cert$\_$271036-284044$\_$13TeV$\_$23Sep2016ReReco$\_$Collisions16$\_$JSON.txt
 \hline
 \hline
 \end{tabular}
- \justify{List of data samples used in this analysis.}
+% \justify{List of data samples used in this analysis.}
 \end{center}
 \end{table}
 
@@ -119,7 +119,7 @@ asymptotic$\_$2016$\_$miniAODv2$\_$v0$\_$ext1-v1/MINIAODSIM }\\
 \hline
 \hline
 \end{tabular}
- \justify{List of MC samples used for signal and background studies.}
+% \justify{List of MC samples used for signal and background studies.}
 \end{center}
 \end{table}
 
@@ -134,7 +134,7 @@ Photons are required to satisfy \pT $> 40$ GeV in order to be in the region wher
 
 We use the medium working point of the cut-based photon ID derived by the CMS $e/\gamma$ Physics Object Group (EGM POG). The medium working point was tuned to have an efficiency of 80\% and includes the following cuts:
 
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item { H/E :} The ratio of the energy deposited in the HCAL tower directly behind the ECAL supercluster to the supercluster energy is required to be less than $0.0396$.
 \item {$\sigma_{i{\eta}i{\eta}}$:} The log-fractional weighted width of the shower in i{$\eta$}-space is required to be less then $0.01022$.
 \item {Particle Flow Charged Isolation :} The $\pT$ sum of all PF charged hadrons within a hollow cone of $0.02 < \Delta R < 0.3$ around the supercluster is required to be less than $0.441$~GeV.
@@ -164,7 +164,7 @@ The values of the effective area for each isolation correction are listed in Tab
            \hline
     \end{tabular}
     \label{tab:EA}
-    \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
+ %   \justify{Effective areas used in the definition of photon, charged hadron, and neutral hadron isolation values. }
 \end{table}
 In addition to the medium ID criteria, photons must satisfy $R_9 > 0.5$. This is imposed to ensure that photons pass the trigger (which includes an $R_9$ requirement) with a high efficiency. Finally, to distinguish photon candidates from electrons, photons are required to pass a pixel seed veto (PSV). That is, photons must not be matched to a pixel seed, defined as at least two hits in the pixel detectors consistent with a charged particle trajectory which would arrive at the ECAL.
 
@@ -195,6 +195,7 @@ neutral hadron isolation and photon isolation cuts are loosened significantly.
 \begin{table}[ht]
     \caption{PHOTON AND ELECTRON ID CRITERIA}
     \centering
+        \begin{threeparttable}
     \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.25\linewidth} >{\centering\arraybackslash}m{0.25\linewidth} |}
         \hline
         	\hline
@@ -212,16 +213,22 @@ neutral hadron isolation and photon isolation cuts are loosened significantly.
            \hline
            \hline
     \end{tabular}
+        \begin{tablenotes}
+
     \label{tab:ID}
-    \justify{Photon and electron identification criteria used to define the signal and control samples for this analysis. 
+\footnotesize
+\item{~~Photon and electron identification criteria used to define the signal and control samples for this analysis. 
     The definitions of each of the variables can be found in 
     Section~\ref{sec:phoID}.}
+    \end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 
 \begin{table}[ht]
     \caption{FAKE ID CRITERIA}
     \centering
+        \begin{threeparttable}
     \begin{tabular}{ |>{\centering\arraybackslash}m{0.25\linewidth}| >{\centering\arraybackslash}m{0.5\linewidth} |}
         \hline
         	\hline
@@ -240,9 +247,13 @@ neutral hadron isolation and photon isolation cuts are loosened significantly.
            \hline
     \end{tabular}
     \label{tab:fakeID}
-    \justify{Identification criteria for ``fakes." Fakes come from a photon ID sideband and are primarily
+    \begin{tablenotes}
+\footnotesize
+\item{~~Identification criteria for ``fakes." Fakes come from a photon ID sideband and are primarily
     jets that have been misidentified as photons. The definitions of each of the variables can be found in 
     Section~\ref{sec:phoID}.}
+    \end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 \subsection{Object cleaning}

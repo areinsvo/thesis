@@ -30,7 +30,7 @@ The ingredients to the PF algorithm are reconstructed tracks and calorimeter clu
 \subsection{Track reconstruction}
 \label{sec:trackReco}
 Tracking in CMS takes place with a combinatorial track finder that is applied in ten iterations. The iterations use successively more complex algorithms with looser requirements on the track properties. Each iteration includes three basic steps:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item Seed generation: The first step is to find a track seed consisting of two or three hits compatible with a charged-particle track.
 \item Track finding: Pattern recognition is used to identify hits in all layers of the tracker that are compatible with the trajectory implied by the track seed. 
 \item Track fitting: A global $\chi^2$ fit is performed to determine the final properties of the track, including origin, direction, and transverse momentum. 
@@ -51,7 +51,7 @@ The tracker-driven method is better for electrons in jets and for low-\pt electr
 \subsection{Muon track reconstruction}
 \label{sec:muonTrackReco}
 PF muons are classified into three categories:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item All reconstructed tracks with $\pt > 0.5$ GeV and $|\vec{p}| > 2.5$ GeV in the inner tracker are propagated to the muon system, and classified as \textbf{tracker muons} if they match at least one hit in the muon section. 
 \item \textbf{Standalone muons} are reconstructed using the muon system only. The process starts with seed tracks in the DT or CSC detectors, and a pattern recognition algorithm identifies DT, CSC, and RPC hits corresponding to the muon trajectory.
 \item \textbf{Global muons} are standalone muons that are consistent with a track in the inner tracker. 
@@ -153,7 +153,7 @@ The magnitude of this quantity is referred to as the missing transverse energy \
 There are several situations that can arise where particle misidentification or poor reconstruction leads to an artificially large value of \ETmiss. These are dealt with in post-processing by substituting the reconstructed particles with alternative hypotheses and checking how the \ETmiss changes. For example, very energetic charged hadrons can occasionally punch through the HCAL and leave tracks in the muon system. In this case, PF will reconstruct a neutral hadron and a muon, leading to a large value of $\vec{\pt}^{\mathrm{miss}}$ pointing in the opposite direction. If replacing the neutral hadron and muon with a charged hadron reduces the \ETmiss by 50\% or more, then that alternative reconstruction is used instead.
 
 In addition to the post-processing corrections just described, a series of \ETmiss filters are applied. The filters are designed to tag events where the \ETmiss is poorly reconstructed. At the analysis stage, if an event fails any of the \ETmiss filters it is removed from consideration. The following \ETmiss filters applied in this analysis:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item Primary vertex filter
 \item CSC beam halo filter
 \item HBHE noise filter
@@ -221,7 +221,7 @@ For photons and electrons used to define signal regions or control samples, howe
 
 In order to achieve an excellent energy resolution, the clustering algorithm must collect the deposits corresponding to all electrons from photon conversions and all photons from electron bremsstrahlung. Similar to the PF cluster reconstruction described above, the reconstruction of photon clusters begins with a local energy maxima or ``seed" crystal. In the barrel, clusters have a fixed width of 5 crystals in $\eta$ centered on the seed. The initial cluster is made from parallel 5 $\times$ 1 strips in $\eta \times \phi$, and further strips in the $\phi$ direction (up to a total of 17 strips) are added if the energy is above a set threshold and lower than the previously added strip. In the endcap, the default cluster size is a 5 $\times$ 5 region, and adjacent 5 $\times$ 5 regions are added to the supercluster if they are sufficiently energetic. Any overlapping signal in the preshower detectors is simply added to the supercluster energy.
 
-The variable $R_9$ is defined as the ratio of the energy in a 3 $\times$ 3 array of crystals to the energy in the full supercluster. It is used to distinguish between converted and unconverted photons. For photons that have converted, the value of $R_9$ is lower because the $e^+e^-$ pair will separate in the $\phi$ direction due to the strong magnetic field. If $R_9$ is less than 0.93, then the photon is classified as converted, and the energy of the supercluster is used. If the photon is unconverted (ie, $R_9 < 0.93$), then the energy of the 5 $\times$ 5 region is assigned as the photon supercluster energy.
+The variable $R_9$ is defined as the ratio of the energy in a 3 $\times$ 3 array of crystals to the energy in the full supercluster. It is used to distinguish between converted and unconverted photons. For photons that have converted, the value of $R_9$ is lower because the $e^+e^-$ pair will separate in the $\phi$ direction due to the strong magnetic field. If $R_9$ is less than 0.93, then the photon is classified as converted, and the energy of the supercluster is used. If the photon is unconverted (ie, $R_9 > 0.93$), then the energy of the 5 $\times$ 5 region is assigned as the photon supercluster energy.
 
 A series of corrections are applied to the supercluster energy to account for variations in the shower containment and any potential losses for photons that convert in the tracker. The shower containment can vary for several reasons, including variations in the longitudinal depth at which the shower passes through the sides of the crystal and is lost in the inter-crystal dead space. The corrections are derived in simulation as a function of $\eta$, \ET, $R_9$, and the spread of the cluster in $\phi$. After the corrections, the photon energy resolution is better than 3\% for photons in the barrel \cite{phoPerf8TeV}.
 

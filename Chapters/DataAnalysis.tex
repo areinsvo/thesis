@@ -114,44 +114,49 @@ This provides an alternative estimation method for the QCD background.}
 \label{fig:crossCheck}
 \end{figure*}
 
-Figure~\ref{fig:crossCheck} shows the ratio of $\gamma\gamma$/$ff$ as a function of \ETmiss in the \ETmiss $<$ 100 GeV control region. The ratio has been fit to a constant function $f(\ETmiss)$. The expected number of $\gamma\gamma$ events in bin $i$ of the signal region is then given by the following equation:
+Figure~\ref{fig:crossCheck} shows the ratio of $\gamma\gamma$/$ff$ as a function of \ETmiss in the \ETmiss $<$ 100 GeV control region. The ratio has been fit to an exponential function, $f(\ETmiss) = p_0\exp{(p_1~\ETmiss)}$. The expected number of $\gamma\gamma$ events in bin $i$ of the signal region is then given by the following equation:
 \begin{equation}
 N_{\gamma\gamma}^i = f(\ETmiss) \times N_{ff}^i 
 \end{equation}
 
-Table~\ref{tab:crossCheck} compares the expected QCD background contribution as predicted with the cross check method to that predicted with the \diempt reweighting method. For the cross check method, the uncertainty arising from the choice of fitting function is estimated by fitting the ratio to a linear function instead. In addition, the cross check uncertainties listed in Table~\ref{tab:crossCheck} include the statistical uncertainty from the limited control sample statistics and the $1\sigma$ uncertainties from the fit. For the \diempt reweighting method, the uncertainties include the statistical uncertainty and the uncertainty from the \diempt reweighting procedure (the derivation of which is described in detail in Section~\ref{sec:QCDSys}). 
+Table~\ref{tab:crossCheck} compares the expected QCD background contribution as predicted with the cross check method to that predicted with the \diempt reweighting method. For the cross check method, the uncertainty arising from the choice of fitting function is estimated by fitting the ratio to a constant function instead. In addition, the cross check uncertainties listed in Table~\ref{tab:crossCheck} include the statistical uncertainty from the limited control sample statistics and the $1\sigma$ uncertainties from the fit. For the \diempt reweighting method, the uncertainties include the statistical uncertainty and the uncertainty from the \diempt reweighting procedure (the derivation of which is described in detail in Section~\ref{sec:QCDSys}). 
 
 \begin{table}[ht]
      \caption{COMPARISON BETWEEN REWEIGHTING METHOD AND RATIO METHOD FOR THE QCD BACKGROUND ESTIMATE}
+        \label{tab:crossCheck}
      \centering
+         \begin{threeparttable}
      {\renewcommand{\arraystretch}{1.2} %<- modify value to suit your needs                                                            
      \begin{tabular}{| c | c | c | c |}
      \hline
      \hline
     \ETmiss (Gev) & Reweighted ff estimate & Ratio method estimate \\
      \hline
-$100-115$ & ${101.0}^{+ 19.5}_{-16.6}$ & ${ 84.2}^{+ 16.2}_{-31.7}$ \\
-$115-130$ & ${60.6}^{+ 16.9}_{-13.5}$ & ${ 45.5}^{+ 12.6}_{-22.6}$ \\
-$130-150$ & ${19.84}^{+ 13.6}_{-8.8}$ & ${ 11.4}^{+ 7.7}_{-7.8}$ \\
-$150-185$ & ${12.1}^{+ 8.2}_{-5.2}$ & ${ 11.4}^{+ 7.7}_{-9.0}$ \\
-$185-250$ & ${2.5}^{+ 5.8}_{-2.1}$ & ${ 2.3}^{+ 5.2}_{-2.3}$ \\
-$> 250$ & ${13.4}^{+ 17.7}_{-8.7}$ & ${ 4.5}^{+ 6.0}_{-4.5}$ \\
+$100-115$ & ${163.8}^{+ 12.0}_{-11.2}$ & ${ 99.8}^{+ 40.3}_{-7.8}$ \\
+$115-130$ & ${57.3}^{+ 7.4}_{-6.6}$ & ${ 31.7}^{+ 18.2}_{-3.6}$ \\
+$130-150$ & ${45.8}^{+ 7.8}_{-6.7}$ & ${ 18.1}^{+ 12.8}_{-2.6}$ \\
+$150-185$ & ${28.9}^{+ 6.6}_{-5.4}$ & ${ 9.5}^{+ 8.9}_{-1.8}$ \\
+$185-250$ & ${10.3}^{+ 4.1}_{-3.1}$ & ${ 3.0}^{+ 4.3}_{-0.9}$ \\
+$\geq 250$ & ${6.6}^{+ 5.2}_{-3.1}$ & ${ 0.8}^{+ 1.9}_{-0.4}$ \\
+
      \hline
      \hline
      \end{tabular}
 }
-	\justify{Comparison of the background estimate using the 
+\begin{tablenotes}
+\footnotesize
+\item{~~Comparison of the background estimate using the 
 	di-EM \pt reweighting method and the $\gamma\gamma$/$ff$ ratio method. 
 	The uncertainties on the di-EM \pt reweighting method include the 
 	statistical uncertainties and the reweighting uncertainty. 
 	The uncertainties on the ratio method include the 
 	 statistical uncertainties, the uncertainties in the fit parameter, 
 	 and the uncertainty from the choice of fitting function. }
-     \label{tab:crossCheck}
+     \end{tablenotes}
+\end{threeparttable}
 \end{table}
 
-The two methods give overlapping predictions
-within uncertainty, and therefore this cross check serves to validate our di-EM \pt reweighting
+This cross check serves to validate our di-EM \pt reweighting
 background estimation method. The difference between the two methods
 is taken as a systematic uncertainty on the overall \ETmiss shape.
 
@@ -302,12 +307,12 @@ Table~\ref{tab:EWKValue} shows the final EWK estimate in the six signal region b
      \ETmiss (GeV) & Expected number of EWK events \\ [0.5ex] % inserts table                                                                            
 %heading                                                                                                                                                      
      \hline % inserts single horizontal line                                                                                                                  
-     $100-115$ & $8.0 \pm 2.5$\\
-     $115-130$ & $5.4 \pm 1.7$\\
-     $130-150$ & $4.7 \pm 1.5$\\
-     $150-185$ & $3.9 \pm 1.2$\\
-     $185-250$ & $3.4 \pm 1.1$\\
-     $~>~250$  & $2.0 \pm 0.7$\\
+    $100-115$ & $13.7 \pm 4.2$\\
+    $115-130$ & $ 9.0  \pm 2.7$\\
+    $130-150$ & $ 7.4 \pm 2.3$\\
+    $150-185$ & $ 6.1 \pm 1.9$\\
+    $185-250$ & $ 5.8 \pm 1.8$\\
+    $\geq 250$ & $ 3.3 \pm 1.0$\\
      \hline
           \hline
      \end{tabular}
@@ -336,11 +341,11 @@ We model this background using MC simulation and assign a 50\% uncertainty to th
        \ETmiss (GeV) & Expected number of $Z\gamma\gamma$ events \\
        \hline
        $100-115$ & $1.3 \pm 0.6$ \\
-       $115-130$ & $1.1 \pm 0.6$ \\
-       $130-150$ & $1.1 \pm 0.6$ \\
-       $150-185$ & $1.3 \pm 0.7$ \\
-       $185-250$ & $1.3 \pm 0.6$ \\
-       $~>~250$  & $1.1 \pm 0.5$ \\
+	$115-130$ & $1.1 \pm 0.6$ \\
+	$130-150$ & $1.1 \pm 0.6$ \\
+	$150-185$ & $1.3 \pm 0.7$ \\
+	$185-250$ & $1.3 \pm 0.6$ \\
+	$\geq 250$ & $1.1 \pm 0.6$ \\
        \hline     
        \hline
      \end{tabular}
@@ -385,12 +390,14 @@ generated \diempt ratios. Final uncertainties are determined from the fluctuatio
           \hline
      \ETmiss (GeV) & QCD Estimate &  Stat. Uncert.   & Shape Uncert. & Di-EM \pT Uncert. \\
      \hline
-$100-115$ & 101.0 & $+19.5, -16.5$ & $\pm 16.8$ & $\pm 1.5$ \\
-$115-130$ & 60.6 & $+16.8, -13.4$  & $\pm 15.1$ & $\pm 1.6$ \\
-$130-150$ & 19.8 & $+13.4, -8.6 $  & $\pm 8.5$  & $\pm 1.9$ \\
-$150-185$ & 12.1 & $+8.2, -5.2  $  & $\pm 0.7$  & $\pm 0.2$ \\
-$185-250$ & 2.5  & $+5.8, -2.1  $  & $\pm 0.3$  & $\pm 0.1$ \\
-$>~250$   & 13.4 & $+17.7, -8.6$   & $\pm 8.8$  & $\pm 1.0$ \\
+$100-115$ & 163.8 & +12.0, -11.2 & $\pm 64.1 $& $\pm 1.3 $\\
+$115-130$ & 57.3 & +7.4, -6.6 & $\pm 25.6 $& $\pm 0.4 $\\
+$130-150$ & 45.8 & +7.70, -6.7 & $\pm 27.7 $& $\pm 0.9 $\\
+$150-185$ & 28.9 & +6.6, -5.4 & $\pm 19.3 $& $\pm 0.5 $\\
+$185-250$ & 10.3 & +4.1, -3.1 & $\pm 7.3 $& $\pm 0.1 $\\
+$\geq 250$ & 6.6 & +5.2, -3.1 & $\pm 5.8 $& $\pm 0.3 $\\
+
+
      \hline
           \hline
      \end{tabular}

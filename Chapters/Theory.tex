@@ -32,7 +32,9 @@ As can be seen in Table~\ref{tab:fermions}, the weak interaction does not respec
 
 \begin{table}[ht]
     \caption{FERMIONS IN THE STANDARD MODEL}
+    \label{tab:fermions}
     \centering
+    \begin{threeparttable}
     \begin{tabular}{|c|c|c|c|}
     \hline
     \hline
@@ -48,10 +50,12 @@ leptons       & ($\nu~e_L$)      &  (\textbf{1}, \textbf{2}, $-\frac{1}{2}$) \\
            \hline
            \hline
     \end{tabular}
-    \label{tab:fermions}
-    \justify{Fermions in the standard model and their representations under $G_{SM}$. }
+\begin{tablenotes}
+\footnotesize
+\item{~~Fermions in the standard model and their representations under $G_{SM}$.}
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The gauge bosons are responsible for mediating the interactions between the fermions. Before electroweak symmetry breaking (EWSB), the three gauge bosons of $SU(2)_L$ are the $W^+,~W^-,$ and $W^0$, and the $U(1)_\Upsilon$ gauge boson is the $B$ boson. After EWSB, the $W^+$ and $W^-$ bosons gain a mass, and the $W_0$ and $B$ bosons mix to form the massive $Z$ boson and the massless photon $\gamma$. EWSB will be described in more detail in Section~\ref{sec:EWSB}.
 
@@ -60,6 +64,7 @@ For the strong force $SU(3)_C$, the gauge bosons are the gluons. Processes invol
 \begin{table}[ht]
     \caption{GAUGE BOSONS IN THE STANDARD MODEL}
     \centering
+    \begin{threeparttable}
     \begin{tabular}{|c|c|c|c|}
     \hline
     \hline
@@ -75,9 +80,13 @@ $B$ boson & $B^0$ & (\textbf{1}, \textbf{1}, 0) \\
            \hline
     \end{tabular}
     \label{tab:bosons}
-    \justify{Gauge bosons in the standard model before electroweak symmetry breaking and their representations under $G_{SM}$. }
+\begin{tablenotes}
+\setlength\labelsep{0pt}
+\footnotesize
+\item ~~Gauge bosons in the standard model before electroweak symmetry breaking and their representations under $G_{SM}$. 
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Finally, the only particle not included in Table~\ref{tab:fermions} or \ref{tab:bosons} is the Higgs boson. The Higgs boson was discovered by the CMS and ATLAS collaborations in 2012 \cite{ATLASHiggs,CMSHiggs}. %and is responsible for EWSB. 
@@ -88,7 +97,7 @@ Figure~\ref{fig:SMint} summarizes the SM particles and their allowed interaction
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Figures/Theory/SM_Interactions.pdf}
-    \caption[Particle content of the standard model.]{Particle content of the standard model. Allowed interactions are indicated with gray lines between particles or particle groups. The mass of each particle is listed underneath its symbol and name. The electric charge Q of the leptons and quarks is also indicated. Particles connected to themselves can have self-interactions.
+    \caption[Particle content of the standard model.]{Particle content of the standard model. Allowed interactions are indicated with gray lines between particles or particle groups. The mass of each particle is listed underneath its symbol and name. The electric charge Q of the leptons and quarks is also indicated. Particles connected to themselves can have self-interactions. Note that in the standard model, neutrinos are still treated as being massless, even though it has been established that at least two neutrinos must have non-zero mass.
     Reprinted from Reference~\cite{Yutaro}.}
     \label{fig:SMint}
 \end{figure*}
@@ -135,7 +144,7 @@ where $\Upsilon$ is the weak hypercharge and $T^3$ is the isospin. The short-ran
 \subsection{Limitations of the standard model}
 \label{sec:SMweakness}
 It is undeniable that the standard model has been a huge triumph of modern physics. However, there are known limitations. These fall into two categories: 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
 	\item Experimentally-established phenomena which are not incorporated into the standard model
 	\item Unsettling questions that the standard model cannot answer but which perhaps would be explained by some more fundamental theory
 \end{enumerate}
@@ -147,7 +156,7 @@ The existence of dark matter also falls into the first category. A wealth of evi
 The second category includes questions about why the 19 free parameters in the standard model have the values that they do. For instance, it could be seen as disconcerting that the masses of the particles in Figure~\ref{fig:SMint} cover such a large range, from $m_e = 0.000511$ GeV to $m_t = 173$ GeV. This 
 has motivated the formation of flavor models that explain the mass structure between the generations of quarks and leptons.
 
-The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with fine-tuning, it as an unsatisfying way to solve a problem. Many people use fine-tuned parameters as sign-posts pointing to the existence of a broader theory in which the coincidences are explained.
+The problem of ``fine-tuning" is often discussed in this context. A theory is said to be fine-tuned if several free parameters have to take on precise values and interact in a convenient way in order to explain the observed results. While nothing is inherently wrong with fine-tuning, it is an unsatisfying way to solve a problem. Many people use fine-tuned parameters as sign-posts pointing to the existence of a broader theory in which the coincidences are explained.
 
 The hierarchy problem\footnote{Much of the description here and in Section~\ref{sec:SUSY} is derived from the excellent pedagogical paper ``A Supersymmetry Primer" by Stephen P. Martin \cite{SUSYprimer}.} is a particularly worrisome fine-tuning problem. The squared mass parameter $\mu^2$ in the Higgs potential receives huge quantum corrections from loop diagrams. As already stated in Equation~\ref{equ:HiggsMass}, $\mu^2$ can be written in terms $v$ and $\lambda$, and $v$ has been measured to be approximately 174 GeV. Some fantastic cancellation must occur to counteract these quantum corrections.
 
@@ -239,7 +248,7 @@ accompanied by their superpartners and $\mu^2$ would remain unaffected.
 \subsection{Particles in minimal SUSY models}
 \label{sec:SUSYparticles}
 In a supersymmetric theory, the SM particles shown in Tables~\ref{tab:fermions} and \ref{tab:bosons} must be arranged into ``supermultiplets" containing the SM fermions and bosons and their superpartners. There must be an equal number of bosonic and fermionic degrees of freedom in each supermultiplet ($n_b$ and $n_f$, respectively). The SM particles fall into two types of supermultiplets:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item The standard model fermions belong to \textbf{chiral supermultiplets}. Each chiral supermultiplet contains one Weyl fermion ($n_f = 2$) and a complex scalar field ($n_b = 2$).
 \item The spin-1 gauge bosons belong to \textbf{gauge supermultiplets}. Before EWSB, the gauge bosons are massless and have $n_b = 2$. Their superpartners are massless spin-1/2 Weyl fermions with $n_f = 2$. 
 \end{itemize}
@@ -254,6 +263,7 @@ There must be two Higgs chiral supermultiplets in the MSSM to avoid gauge anomal
 \begin{table}[ht]
     \caption{CHIRAL SUPERMULTIPLETS IN MSSM}
     \centering
+    \begin{threeparttable}
     \begin{tabular}{|c|c|c|c|c|}
     \hline
     \hline
@@ -273,13 +283,18 @@ Higgs, higgsinos & $H_u$  & ($H_u^+ ~ H_u^0$) & ($\tilde{H}_u^+ ~ \tilde{H}_u^0$
            \hline
     \end{tabular}
     \label{tab:SUSY_fermions}
-    \justify{List of chiral supermultiplets in the MSSM. Reprinted from Reference~\cite{SUSYprimer}.}
+    \begin{tablenotes}
+\footnotesize
+\item{~~List of chiral supermultiplets in the MSSM. Reprinted from Reference~\cite{SUSYprimer}.}
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[ht]
     \caption{GAUGE SUPERMULTIPLETS IN THE MSSM}
     \centering
+        \begin{threeparttable}
     \begin{tabular}{|c|c|c|c|c|}
     \hline
     \hline
@@ -295,7 +310,11 @@ bino, $B$ boson & $\widetilde{B}^0$ & $B^0$ & (\textbf{1}, \textbf{1}, 0) \\
            \hline
     \end{tabular}
     \label{tab:SUSY_bosons}
-    \justify{List of gauge supermultiplets in the MSSM. Reprinted from Reference~\cite{SUSYprimer}.}
+        \begin{tablenotes}
+\footnotesize
+\item{~~List of gauge supermultiplets in the MSSM. Reprinted from Reference~\cite{SUSYprimer}.}
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 
 The names of the MSSM superpartners are very creatively derived from their SM counterparts. For fermions, the SM names are prefixed with ``s" to get the superpartner name: electrons to selectrons, quarks to squarks, etc. For bosons, the suffix ``ino" is added: $W$ to wino, gauge boson to gaugino, etc. The symbols for supersymmetric particles are given simply by adding a tilde to the SM symbol. For example, $\tilde{e}$ is the symbol for the selectron.
@@ -358,7 +377,8 @@ Theorists have come up with many different mechanisms by which SUSY can be broke
 The SUSY breaking mechanism and the SUSY breaking scale 
 determine the phenomenology of the model, including the SUSY particle masses and their allowed decay modes.
 
-In gauge-mediated supersymmetry breaking (GMSB), SUSY is spontaneously broken in a ``hidden" sector that is decoupled from the SM interactions. 
+In gauge-mediated supersymmetry breaking (GMSB)~\cite{Fayet:1977vd, Fayet:1979yb, Fayet:1986zc, Dine:1993yw, Dine:1994vc,                                                   
+Dine:1995ag,Meade:2008wd, Buican:2008ws, Abel:2009ve}, SUSY is spontaneously broken in a ``hidden" sector that is decoupled from the SM interactions. 
 New chiral supermultiplets known as messengers interact with the hidden sector and 
 also interact with the ``visible" sector (ie, SM particles and their superpartners) through the normal
 SM gauge interactions. The messengers are said to communicate between the two sectors and relay the information about the SUSY breaking.
@@ -453,13 +473,14 @@ The difference between the orange and blue bars illustrate the effect of nearly 
 data set, from 12.9 \fbinv to 35.9 \fbinv. See Reference~\cite{pdgReview} for an full overview of SUSY 
 limits from both colliders and precision measurements.
 
-\begin{figure*}[htbp]
+\begin{sidewaysfigure}[htbp]
     \centering
-    \includegraphics[angle=90,origin=c,width=.9\textwidth]{Figures/Theory/Moriond2017_BarPlot.pdf}
+      \includegraphics[width=.9\textwidth]{Figures/Theory/Moriond2017_BarPlot.pdf}
+  %  \includegraphics[angle=90,origin=c,width=.9\textwidth]{Figures/Theory/Moriond2017_BarPlot.pdf}
     \caption[Excluded sparticle mass ranges for a selection of CMS results using the 2016 data set.]
     {Excluded sparticle mass ranges for a selection of CMS results using the 2016 data set \cite{SUSYtwiki}.}
     \label{fig:CMSexclusions}
-\end{figure*}
+\end{sidewaysfigure}
 
 \subsection{Exclusion contours for GGM in the diphoton final state}
 \label{sec:GMSBlimits}
