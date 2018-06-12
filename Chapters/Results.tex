@@ -7,34 +7,48 @@
 
 \section{Prediction versus observation}
 \label{sec:fullCount}
-After deriving estimates for all standard model backgrounds, we compare the number of 
+After deriving estimates for all standard model backgrounds (summarized in Table~\ref{tab:Exp}), we compare the number of 
 observed events to the expected number of background events. 
 The \ETmiss distributions for the full background prediction and the unblinded data are
 shown in Figure~\ref{fig:FinalPlot}. Two benchmark signal models are also shown, 
 corresponding to the gluino pair production simplified model 
  with gluino mass equal to 1700 GeV or 2000 GeV.
 
-Table~\ref{tab:ExpObs} shows the expected and observed numbers of events for each bin in the signal region.
+Table~\ref{tab:ExpObs} shows the total expected and observed numbers of events for each bin in the signal region.
 Within the uncertainties, no excess is observed with respect to the Standard Model prediction.
+
+\begin{table}[ht]
+    \caption{FINAL BACKGROUND ESTIMATE}
+    \centering
+    \begin{tabular}{ |c|c|c|c|c|}
+        \hline
+        \hline
+        $\ETmiss$ (GeV) & QCD &  EWK &  Z$\gamma\gamma$ & Total  \\ [0.5ex]
+        \hline
+        \hline
+        $100-115$  	& ${163.8}^{+ 65.2}_{- 65.1}$ 	& $13.7 \pm 4.2$ & $1.3 \pm 0.6$ 	& ${ 178.8 }^{+ 65.3 }_{- 65.2 }$  \\
+	$115-130$ 	& ${57.3}^{+ 26.7}_{- 26.4}$ 	& $ 9.0  \pm 2.7$ & $1.1 \pm 0.6$ 	& ${ 67.4 }^{+ 26.7 }_{- 26.5 }$   \\
+	$130-150$ 	& ${45.8}^{+ 28.8}_{- 28.5}$ 	& $ 7.4 \pm 2.3$  & $1.1 \pm 0.6$ 	& ${ 54.3 }^{+ 28.9 }_{- 28.6 }$   \\
+	$150-185$ 	& ${28.9}^{+ 20.4}_{- 20.0}$ 	& $ 6.1 \pm 1.9$  & $1.3 \pm 0.7$ 	& ${ 36.3 }^{+ 20.5 }_{- 20.2 }$   \\
+	$185-250$ 	& ${10.3}^{+ 8.4}_{- 7.9}$ 		& $ 5.8 \pm 1.8$  & $1.3 \pm 0.6$ 	& ${ 17.4 }^{+ 8.6 }_{- 8.1 }$  \\
+	$\geq 250$  	& ${6.6}^{+ 7.8}_{- 6.6}$ 		& $ 3.3 \pm 1.0$ & $1.1 \pm 0.6$ 	& ${ 11.0 }^{+ 7.9 }_{- 6.7 }$  \\
+
+        \hline
+        \hline
+    \end{tabular}
+    \label{tab:Exp}
+\end{table}
 
 
 \begin{table}[ht]
     \caption{EXPECTED AND OBSERVED EVENTS IN THE SIGNAL REGION}
     \centering
-%        \begin{tabular}{ |c|c|c|c|c|c|}
 
     \begin{tabular}{ |c|c|c|c|c|}
         \hline
-  %      $\ETmiss$ (GeV) & Exp. QCD & Exp. EWK &  Exp. Z$\gamma\gamma$ &Total Exp. & Observed \\ [0.5ex]
-  %      \hline
-  %      $100 - 115$ & ${101.0}^{+46.0}_{-44.8}$ & 8.0 $\pm$ 2.5  & 1.3 $\pm$ 0.6 & ${ 110.3 }^{+25.9 }_{- 23.8 }$ & 65  \\
-  %      $115 - 130$ & ${60.6}^{+ 36.7}_{-35.3}$ & 5.4 $\pm$ 1.7 & 1.1 $\pm$ 0.6 & ${ 67.1 }^{+22.7 }_{- 20.4 }$ & 26 \\
-   %     $130 - 150$ & ${19.8}^{+ 19.1}_{-16.0}$ & 4.7 $\pm$ 1.5 & 1.1 $\pm$ 0.6 & ${ 25.7 }^{+16.1 }_{- 12.3 }$ & 17 \\
-   %     $150 - 185$ & ${12.1}^{+ 10.5}_{-8.3}$  & 3.9 $\pm$ 1.2 & 1.3 $\pm$ 0.7 & ${ 17.3 }^{+8.3 }_{- 5.5 }$ & 13 \\
-    %    $185 -  250$& ${2.5}^{+ 6.1}_{-2.5}$ & 3.4 $\pm$ 1.1 & 1.3 $\pm$ 0.6 & ${ 7.2 }^{+6.0 }_{- 2.5 }$ & 8  \\
-     %   $\geq 250$  & ${13.4}^{+ 21.5}_{-13.4}$ & 2.0 $\pm$ 0.7 & 1.1 $\pm$ 0.5 & ${ 16.5 }^{+19.8 }_{- 12.4 }$ & 10 \\
-        
+        \hline
         $\ETmiss$ (GeV) & Total exp. & T5gg (1700,1000) & T5gg (2000,1000)& Observed \\
+        \hline
         \hline
         $100-115$ & ${ 178.8 }^{+ 65.3 }_{- 65.2 }$ & 0.3 $\pm$ 0.1& 0.1 $\pm$ 0.1&105 \\
 	$115-130$ & ${ 67.4 }^{+ 26.7 }_{- 26.5 }$  & 0.2 $\pm$ 0.1& 0.1$\pm$ 0.1&39  \\
@@ -43,6 +57,7 @@ Within the uncertainties, no excess is observed with respect to the Standard Mod
 	$185-250$ & ${ 17.4 }^{+ 8.6 }_{- 8.1 }$     & 2.0  $\pm$ 0.2& 0.4 $\pm$ 0.1&11 \\
 	$\geq 250$& ${ 11.0 }^{+ 7.9 }_{- 6.7 }$      & 31.0 $\pm$ 1.2&6.8 $\pm$ 0.3& 12 \\
 
+        \hline
         \hline
     \end{tabular}
     \label{tab:ExpObs}

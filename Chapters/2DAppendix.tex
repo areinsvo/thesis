@@ -10,7 +10,8 @@ that were explored in the 2016 data set, highlighting the challenges
 that we faced. 
 
 \section{Bin in number of jets}
-The simplest method would be to simply bin in jet multiplicity.
+The most straightforward way to include hadronic information
+would be to simply bin in jet multiplicity.
 This was done in the 8 TeV analysis, but it was dropped in the 
 2015 analysis because of the limited size of the data set (2.3 \fbinv).
 It was explored in the 2016 analysis, but we decided not 
@@ -41,7 +42,13 @@ applies a cut on the number of jets. }
 
 \section{ABCD method}
 The method that we spent the most time exploring is referred to as the ``ABCD" method.
-Two discriminating variables are used. The 2D plane is divided into four regions,
+In this method, two uncorrelated variables are used to discriminate 
+between signal and background. In our case, one variable would represent
+the amount of hadronic activity in the event 
+(for example $S_T$, the scalar sum of the transverse momentum from all visible particles)
+and the other variable would be
+either \ETmiss or a related variable such as \ETmiss significance (defined as \ETmiss/$\sqrt{S_T}$).
+In thismethod, the 2D plane is divided into four regions,
 as shown in Figure~\ref{fig:ABCD}, where Region $D$ is the signal region and 
 Regions $A$--$C$ are control regions with minimal signal contamination.
 If the two variables are uncorrelated, then we have the relation
@@ -76,12 +83,12 @@ A wide variety of variables were explored:
 \item MT2: sometimes referred to as the ``stransverse mass". It is calculated as a function of the two electromagnetic objects and the \ETmiss, and it has a cut-off at the mass of the parents of the invisible particles.
 \end{itemize}
 
-To quantify the correlation between two variables $a$ and $b$, I looked at how the ratio 
-$N_{a > \alpha}/N_{a < \alpha}$ changes as a function of $b$, where $\alpha$ is the boundary between
+To quantify the correlation between two variables $x$ and $y$, I looked at how the ratio 
+$N_{x > \alpha}/N_{x < \alpha}$ changes as a function of $y$, where $\alpha$ is the boundary between
 regions $AC$ and regions $BD$. The ABCD method relies on the assumption
 that this ratio is a constant.
-Similarly, one can consider $N_{b > \beta}/N_{b < \beta}$ as a function 
-of $a$ for the boundary $\beta$ between $AB$ and $CD$. Figure~\ref{fig:kappa} shows these ratios 
+Similarly, one can consider $N_{y > \beta}/N_{y < \beta}$ as a function 
+of $x$ for the boundary $\beta$ between $AB$ and $CD$. Figure~\ref{fig:kappa} shows these ratios 
 for $S_T$ and \ETmiss significance. Not only are the ratios not constant,
 but they exhibit a noticeable change in behavior at $S_T$ = 400 GeV and \ETmiss 
 significance = 15. This makes it very difficult to extrapolate the behavior from the control
